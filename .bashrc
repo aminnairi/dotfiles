@@ -16,3 +16,11 @@ PS1='$(date +%T) $(pwd) \$ '
 node() {
   docker run --rm -itv $(pwd):/app -w /app node node $*
 }
+
+npm() {
+  docker run --rm -itv $(pwd):/app -w /app node:alpine npm $*
+}
+
+yarn() {
+  docker run --rm -itv $(pwd):/app -w /app node:alpine yarn $*
+}
