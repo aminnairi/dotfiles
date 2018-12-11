@@ -9,3 +9,10 @@ alias ls='ls --color=auto'
 
 # 20:34:30 /home/amin $
 PS1='$(date +%T) $(pwd) \$ '
+
+# pacman -S docker
+# usermod -aG docker $USER
+
+node() {
+  docker run --rm -itv $(pwd):/app -w /app node node $*
+}
