@@ -14,7 +14,7 @@ PS1='$(date +%T) $(pwd) \$ '
 # usermod -aG docker $USER
 
 node() {
-  docker run --rm -itv $(pwd):/app -w /app node node $*
+  docker run --rm -itv $(pwd):/app -w /app node:alpine node $*
 }
 
 npm() {
