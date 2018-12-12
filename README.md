@@ -21,6 +21,16 @@ user@host:~$ git pull
 user@host:~# pacman -S vim
 ```
 
+### Docker
+
+```console
+user@host:~# pacman -S docker
+user@host:~# usermod -aG docker $USER
+user@host:~# systemctl enable docker
+```
+
+*Note: you may have to reboot after issueing these commands.*
+
 ## Update
 
 ```console
