@@ -29,6 +29,13 @@ user@host:~# usermod -aG docker $USER
 user@host:~# systemctl enable docker
 ```
 
+### Noto Emoji Fonts
+
+```console
+user@host:~# pacman -S noto-fonts-emoji
+user@host:~$ fc-cache -f -v
+```
+
 *Note: you may have to reboot after issueing these commands.*
 
 ## Update
