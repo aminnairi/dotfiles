@@ -15,6 +15,12 @@ user@host:~$ git remote add origin https://github.com/aminnairi/dotfiles.git
 user@host:~$ git pull
 ```
 
+### i3 Window Manager
+
+```console
+user@host:~# pacman -S i3 i3status i3lock dmenu
+```
+
 ### VIM
 
 ```console
