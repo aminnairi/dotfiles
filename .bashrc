@@ -7,8 +7,17 @@
 
 alias ls='ls --color=auto'
 
-# 20:34:30 /home/amin $
-PS1='$(date +%T) $(pwd) \$ '
+user() {
+  if [ "$(id -u)" -eq 0 ]
+  then
+    echo '#'
+  else
+    echo '>'
+  fi
+}
+
+# /home/amin >
+export PS1='$(pwd) $(user) '
 
 # pacman -S docker
 # usermod -aG docker $USER
