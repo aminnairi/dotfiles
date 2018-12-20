@@ -10,9 +10,11 @@ Dotfiles for users running Archlinux with I3 window manager
 
 ```console
 user@host:~$ cd
-user@host:~$ git init
-user@host:~$ git remote add origin https://github.com/aminnairi/dotfiles.git
-user@host:~$ git pull
+user@host:~$ git clone https://github.com/aminnairi/dotfiles.git
+user@host:~$ cd dotfiles
+user@host:~$ mv * ~/
+user@host:~$ cd
+user@host:~$ rm -rf dotfiles
 ```
 
 ### i3 Window Manager
