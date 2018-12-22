@@ -25,6 +25,7 @@ wifion() {
   then
     echo "No Wi-Fi configuration file for \"$1\". Try running the following command:"
     echo "wpa_passphrase \"YOURESSID\" \"YOURPASSWORD\" | sudo tee $configuration_file"
+    echo "See https://github.com/aminnairi/dotfiles/ for more informations"
   else
     sudo wpa_supplicant -B -i $interface -c /etc/wpa_supplicant/$1.conf && sudo dhcpcd $interface
   fi
