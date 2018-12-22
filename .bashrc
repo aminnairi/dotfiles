@@ -17,7 +17,7 @@ user() {
 }
 
 # /home/amin >
-export PS1='$(pwd) $(user) '
+export PS1='\u@\h:\w\$ '
 
 wifion() {
   interface=$(iw dev | grep Interface | cut -d ' ' -f 2 | cut -d ' ' -f 2)
