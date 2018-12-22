@@ -14,7 +14,8 @@ _git_branch_name() {
   fi
 }
 
-# /home/amin >
+# user@host:~$
+# root@host:~#
 export PS1='\u@\h:\w\$ $(_git_branch_name)'
 
 wifion() {
