@@ -52,6 +52,15 @@ user@host:~$ fc-cache -f -v
 user@host:~# pacman -S ttf-fira-code
 ```
 
+### Wifi
+
+```console
+user@host:~# pacman -S iw wpa_supplicant dhcpcd
+user@host:~# wpa_passphrase "ESSID" "PASSWORD" > /etc/wpa_supplicant/example.conf
+user@host:~# sudo wifion example
+user@host:~# sudo wifioff
+```
+
 ## Update
 
 ```console
