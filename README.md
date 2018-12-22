@@ -17,24 +17,35 @@ user@host:~$ cd
 user@host:~$ rm -rf dotfiles
 ```
 
+Same thing goes for the `root` user.
+
+```console
+root@host:~# cd
+root@host:~# git clone https://github.com/aminnairi/dotfiles.git
+root@host:~# cd dotfiles
+root@host:~# mv * ~/
+root@host:~# cd
+root@host:~# rm -rf dotfiles
+```
+
 ### i3 Window Manager
 
 ```console
-user@host:~# pacman -S i3 i3status i3lock dmenu
+root@host:~# pacman -S i3 i3status i3lock dmenu
 ```
 
 ### VIM
 
 ```console
-user@host:~# pacman -S vim
+root@host:~# pacman -S vim
 ```
 
 ### Docker
 
 ```console
-user@host:~# pacman -S docker
-user@host:~# usermod -aG docker $USER
-user@host:~# systemctl enable docker
+root@host:~# pacman -S docker
+root@host:~# usermod -aG docker $USER
+root@host:~# systemctl enable docker
 ```
 
 *Note: you may have to reboot after issueing these commands.*
@@ -42,23 +53,23 @@ user@host:~# systemctl enable docker
 ### Noto Emoji Fonts
 
 ```console
-user@host:~# pacman -S noto-fonts-emoji
+root@host:~# pacman -S noto-fonts-emoji
 user@host:~$ fc-cache -f -v
 ```
 
 ### Fira Font
 
 ```console
-user@host:~# pacman -S ttf-fira-code
+root@host:~# pacman -S ttf-fira-code
 ```
 
 ### Wifi
 
 ```console
-user@host:~# pacman -S iw wpa_supplicant dhcpcd sudo
-user@host:~# wpa_passphrase "ESSID" "PASSWORD" > /etc/wpa_supplicant/example.conf
-user@host:~# sudo wifion example
-user@host:~# sudo wifioff
+root@host:~# pacman -S iw wpa_supplicant dhcpcd sudo
+root@host:~# wpa_passphrase "ESSID" "PASSWORD" > /etc/wpa_supplicant/example.conf
+user@host:~$ wifion example
+user@host:~$ wifioff
 ```
 
 ## Update
@@ -66,4 +77,6 @@ user@host:~# sudo wifioff
 ```console
 user@host:~$ cd
 user@host:~$ git pull
+root@host:~# cd
+root@host:~# git pull
 ```
