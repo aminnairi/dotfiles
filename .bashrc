@@ -7,17 +7,15 @@
 
 alias ls='ls --color=auto'
 
-user() {
-  if [ "$(id -u)" -eq 0 ]
+_git_branch_name() {
+  if [ -d '.git' ]
   then
-    echo '#'
-  else
-    echo '>'
+    echo "($(git branch | grep '*' | cut -d ' ' -f 2)) "
   fi
 }
 
 # /home/amin >
-export PS1='\u@\h:\w\$ '
+export PS1='\u@\h:\w\$ $(_git_branch_name)'
 
 wifion() {
   interface=$(iw dev | grep Interface | cut -d ' ' -f 2 | cut -d ' ' -f 2)
