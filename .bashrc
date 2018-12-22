@@ -20,7 +20,14 @@ export PS1='\u@\h:\w\$ $(_git_branch_name)'
 
 wifion() {
   interface=$(iw dev | grep Interface | cut -d ' ' -f 2 | cut -d ' ' -f 2)
-  sudo wpa_supplicant -B -i $interface -c /etc/wpa_supplicant/$1.conf && sudo dhcpcd $interface
+  configuration_file="/etc/wpa_supplicant/${1}.conf"
+  if [ ! -f "$configuration_file" ]
+  then
+    echo "No Wi-Fi configuration file for \"$1\". Try running the following command:"
+    echo "wpa_passphrase \"YOURESSID\" \"YOURPASSWORD\" | sudo tee $configuration_file"
+  else
+    sudo wpa_supplicant -B -i $interface -c /etc/wpa_supplicant/$1.conf && sudo dhcpcd $interface
+  fi
 }
 
 wifioff() {
