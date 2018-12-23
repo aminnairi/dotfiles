@@ -78,6 +78,13 @@ user@host:~$ wifioff
 root@host:~# pacman -S pulseaudio playerctl
 ```
 
+### Wallpaper
+
+```console
+user@host:~$ mkdir -p ~/Pictures
+user@host:~$ mv ~/Downloads/yourPicture.jpg ~/Pictures/wallpaper.jpg
+```
+
 ## Update
 
 ```console
