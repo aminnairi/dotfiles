@@ -42,7 +42,7 @@ battery all {
 }
 
 tztime local {
-        format = "📅%A %d %B %Y %H:%M:%S"
+        format = "📅 %A %d %B %Y %H:%M:%S"
 }
 
 load {
@@ -50,5 +50,5 @@ load {
 }
 
 disk "/" {
-        format = "[USED] %used (%percentage_used) [AVAILABLE] %avail (%percentage_avail)"
+        format = "💾 %used (%percentage_used) / %avail (%percentage_avail)"
 }
