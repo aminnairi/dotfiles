@@ -148,4 +148,5 @@ bindsym $mod+x exec i3lock
 # finds out, if available)
 bar {
         status_command i3status
+        separator_symbol "​"
 }
