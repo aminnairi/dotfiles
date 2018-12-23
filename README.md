@@ -37,7 +37,7 @@ root@host:~# pacman -S i3 i3status i3lock dmenu
 ### VIM
 
 ```console
-root@host:~# pacman -S vim
+root@host:~# pacman -S vim vim-nerdtree
 ```
 
 ### Docker
