@@ -75,4 +75,9 @@ set autoindent
 " disable vi emulation
 set nocompatible
 
+" relative line number from the cursor
 set rnu
+
+" opens NERDTree with CTRL + N
+" pacman -S vim-nerdtree
+nnoremap <C-n> :NERDTreeToggle<CR>
