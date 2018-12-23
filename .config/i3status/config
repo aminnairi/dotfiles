@@ -18,6 +18,7 @@ order += "ethernet _first_"
 order += "battery all"
 #order += "load"
 order += "tztime local"
+order += "volume master"
 
 wireless _first_ {
         format_up = "📡 %essid %frequency (%bitrate%quality)"
@@ -51,4 +52,10 @@ load {
 
 disk "/" {
         format = "💾 %used (%percentage_used) / %avail (%percentage_avail)"
+}
+
+volume master {
+        format = "🔊 %volume"
+        format_muted = "🔇 %volume"
+        device = "pulse"
 }
