@@ -72,6 +72,12 @@ user@host:~$ wifion example
 user@host:~$ wifioff
 ```
 
+### Volume
+
+```console
+root@host:~# pacman -S pulseaudio playerctl
+```
+
 ## Update
 
 ```console
