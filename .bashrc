@@ -29,6 +29,10 @@ wifion() {
   else
     sudo wpa_supplicant -B -i $interface -c /etc/wpa_supplicant/$1.conf && sudo dhcpcd $interface
   fi
+  if [ ! -z $2 -a ! -z $3 ]
+  then
+    sudo openvpn --auth-nocache --config /etc/openvpn/client/$2.ovpn --auth-user-pass /etc/openvpn/client/$3.txt
+  fi
 }
 
 wifioff() {
