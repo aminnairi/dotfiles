@@ -72,6 +72,15 @@ user@host:~$ wifion example
 user@host:~$ wifioff
 ```
 
+### OpenVPN
+
+```console
+root@host:~# pacman -S openvpn
+root@host:~# mv ~/Downloads/config.ovpn /etc/openvpn/client
+root@host:~# mv ~/Downloads/credentials.txt /etc/openvpn/client
+user@host:~$ wifion example config credentials
+```
+
 ### Volume
 
 ```console
