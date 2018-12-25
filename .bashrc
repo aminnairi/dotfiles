@@ -53,5 +53,3 @@ npm() {
 yarn() {
   docker run --rm -itv "$(pwd)":/app -w /app node:alpine yarn "$@"
 }
-
-exit 0
