@@ -1,4 +1,4 @@
-#
+#!/usr/bin/env bash
 # ~/.bashrc
 #
 
@@ -10,7 +10,7 @@ alias ls='ls --color=auto'
 _git_branch_name() {
   if [ -d '.git' ]
   then
-    echo "($(git branch | grep '*' | cut -d ' ' -f 2)) "
+    echo "($(git branch | grep '\*' | cut -d ' ' -f 2)) "
   fi
 }
 
@@ -27,11 +27,11 @@ wifion() {
     echo "wpa_passphrase \"YOURESSID\" \"YOURPASSWORD\" | sudo tee $configuration_file"
     echo "See https://github.com/aminnairi/dotfiles/ for more informations"
   else
-    sudo wpa_supplicant -B -i $interface -c /etc/wpa_supplicant/$1.conf && sudo dhcpcd $interface
+    sudo wpa_supplicant -B -i "$interface" -c /etc/wpa_supplicant/"$1".conf && sudo dhcpcd "$interface"
   fi
-  if [ ! -z $2 -a ! -z $3 ]
+  if [ -n "$2" ] && [ -n "$3" ]
   then
-    sudo openvpn --auth-nocache --config /etc/openvpn/client/$2.ovpn --auth-user-pass /etc/openvpn/client/$3.txt
+    sudo openvpn --auth-nocache --config /etc/openvpn/client/"$2".ovpn --auth-user-pass /etc/openvpn/client/"$3".txt
   fi
 }
 
@@ -43,13 +43,15 @@ wifioff() {
 # usermod -aG docker $USER
 
 node() {
-  docker run --rm -itv $(pwd):/app -w /app node:alpine node $*
+  docker run --rm -itv "$(pwd)":/app -w /app node:alpine node "$@"
 }
 
 npm() {
-  docker run --rm -itv $(pwd):/app -w /app node:alpine npm $*
+  docker run --rm -itv "$(pwd)":/app -w /app node:alpine npm "$@"
 }
 
 yarn() {
-  docker run --rm -itv $(pwd):/app -w /app node:alpine yarn $*
+  docker run --rm -itv "$(pwd)":/app -w /app node:alpine yarn "$@"
 }
+
+exit 0
