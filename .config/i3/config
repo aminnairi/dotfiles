@@ -152,6 +152,7 @@ bindsym $mod+x exec i3lock
 bar {
         status_command i3status
         separator_symbol "​"
+        mode hide
 }
 
 # Audio Volume Control
@@ -170,13 +171,14 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # class                 border          backgr.         text            indicator       child_border
-#
 client.focused          $teal           $teal           $teal-lighten-5 $teal-lighten-5 $teal
 client.focused_inactive $teal-darken-5  $teal-darken-5  $teal           $teal           #222222
 client.unfocused        $teal-darken-5  $teal-darken-5  $teal           $teal           #222222
 client.urgent           #2f343a         #900000 #ffffff #900000         #900000
 client.placeholder      #000000         #0c0c0c #ffffff #000000         #0c0c0c
-
 client.background       $teal-darken-5
+
+# will automatically go back to the previous workspace when pressing the shortcut for the current workspace
+workspace_auto_back_and_forth yes
 
 exec_always feh --bg-fill /home/amin/Pictures/wallpaper.jpg
