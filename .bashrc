@@ -43,13 +43,13 @@ wifioff() {
 # usermod -aG docker $USER
 
 node() {
-  docker run --rm -itv "$(pwd)":/app -w /app node:alpine node "$@"
+  docker run --rm -itv "$(pwd)":/app -u node -w /app node:alpine node "$@"
 }
 
 npm() {
-  docker run --rm -itv "$(pwd)":/app -w /app node:alpine npm "$@"
+  docker run --rm -itv "$(pwd)":/app -u node -w /app node:alpine npm "$@"
 }
 
 yarn() {
-  docker run --rm -itv "$(pwd)":/app -w /app node:alpine yarn "$@"
+  docker run --rm -itv "$(pwd)":/app -u node -w /app node:alpine yarn "$@"
 }
