@@ -1,7 +1,10 @@
 # https://i3wm.org/docs/userguide.html
 # pacman -S i3
 
-set $mod Mod4
+set $mod            Mod4
+set $teal           #009688
+set $teal-lighten-5 #e0f2f1
+set $teal-darken-5  #004d40
 
 # pacman -S ttf-fira-code
 font pango:Fira Code Retina 12
@@ -165,5 +168,15 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# class                 border          backgr.         text            indicator       child_border
+#
+client.focused          $teal           $teal           $teal-lighten-5 $teal-lighten-5 $teal
+client.focused_inactive $teal-darken-5  $teal-darken-5  $teal           $teal           #222222
+client.unfocused        $teal-darken-5  $teal-darken-5  $teal           $teal           #222222
+client.urgent           #2f343a         #900000 #ffffff #900000         #900000
+client.placeholder      #000000         #0c0c0c #ffffff #000000         #0c0c0c
+
+client.background       $teal-darken-5
 
 exec_always feh --bg-fill /home/amin/Pictures/wallpaper.jpg
