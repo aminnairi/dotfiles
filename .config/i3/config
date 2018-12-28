@@ -159,11 +159,12 @@ bar {
     statusline #ffffff
     separator #666666
 
-    focused_workspace  #4c7899 #285577 #ffffff
-    active_workspace   #333333 #5f676a #ffffff
-    inactive_workspace #333333 #222222 #888888
-    urgent_workspace   #2f343a #900000 #ffffff
-    binding_mode       #2f343a #900000 #ffffff
+    # color class       # border        # background    # text
+    focused_workspace   $teal-darken-5  $teal           $teal-lighten-5
+    active_workspace    $teal-darken-5  $teal           $teal-lighten-5
+    inactive_workspace  $teal-darken-5  $teal-darken-5  $teal
+    urgent_workspace    #2f343a         #900000         #ffffff
+    binding_mode        #2f343a         #900000         #ffffff
 }
 }
 
