@@ -13,14 +13,15 @@ font pango:Fira Code Retina 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+A kill
 
 # start dmenu (a program launcher)
 # pacman -S dmenu
-bindsym $mod+d exec dmenu_run
+# pacman -S rofi
+bindsym $mod+d exec rofi -show run
 
 # change focus
 bindsym $mod+j focus left
