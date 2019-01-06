@@ -111,6 +111,8 @@ bindsym $mod+Shift+agrave move container to workspace $ws10
 
 # assign default application to containers
 assign [class="Lxterminal"] $ws1
+assign [class="Chromium"] $ws2
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
