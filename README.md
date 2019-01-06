@@ -53,7 +53,7 @@ root@host:~# systemctl enable docker
 ### Icons & Emojis
 
 ```console
-root@host:~# pacman -S noto-fonts-emoji ttf-font-awesome
+root@host:~# pacman -S noto-fonts-emoji otf-font-awesome
 user@host:~$ fc-cache -f -v
 ```
 
