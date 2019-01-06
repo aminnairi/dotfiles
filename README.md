@@ -1,6 +1,8 @@
 # dotfiles
 Dotfiles for users running Archlinux with I3 window manager
 
+![dotfiles screenshot](https://i.ibb.co/ZKB6Gkc/i3status.png)
+
 ## Requirement
 - [Git](https://git-scm.com/)
 
