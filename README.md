@@ -50,10 +50,10 @@ root@host:~# systemctl enable docker
 
 *Note: you may have to reboot after issueing these commands.*
 
-### Noto Emoji Fonts
+### Icons & Emojis
 
 ```console
-root@host:~# pacman -S noto-fonts-emoji
+root@host:~# pacman -S noto-fonts-emoji ttf-font-awesome
 user@host:~$ fc-cache -f -v
 ```
 
