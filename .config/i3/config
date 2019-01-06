@@ -115,7 +115,6 @@ assign [class="Chromium"] $ws2
 assign [class="discord"] $ws3
 assign [class="Slack"] $ws4
 assign [class="Spotify"] $ws5
-assign [class="Spotify"] $ws5
 assign [class="code-oss"] $ws6
 
 
