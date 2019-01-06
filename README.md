@@ -39,7 +39,7 @@ root@host:~# rm -rf dotfiles
 ### i3 Window Manager
 
 ```console
-root@host:~# pacman -S i3 i3status i3lock dmenu
+root@host:~# pacman -S i3 i3status i3lock rofi
 ```
 
 ### VIM
