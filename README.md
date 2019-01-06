@@ -30,6 +30,12 @@ root@host:~# cd
 root@host:~# rm -rf dotfiles
 ```
 
+### Alacritty
+
+```console
+# pacman -S alacritty
+```
+
 ### i3 Window Manager
 
 ```console
