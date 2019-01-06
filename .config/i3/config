@@ -112,6 +112,8 @@ bindsym $mod+Shift+agrave move container to workspace $ws10
 # assign default application to containers
 assign [class="Lxterminal"] $ws1
 assign [class="Chromium"] $ws2
+assign [class="discord"] $ws3
+assign [class="Slack"] $ws3
 
 
 # reload the configuration file
