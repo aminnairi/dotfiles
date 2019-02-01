@@ -87,16 +87,35 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+ampersand workspace $ws1
-bindsym $mod+eacute workspace $ws2
-bindsym $mod+quotedbl workspace $ws3
-bindsym $mod+apostrophe workspace $ws4
-bindsym $mod+parenleft workspace $ws5
-bindsym $mod+minus workspace $ws6
-bindsym $mod+egrave workspace $ws7
-bindsym $mod+underscore workspace $ws8
-bindsym $mod+ccedilla workspace $ws9
-bindsym $mod+agrave workspace $ws10
+#bindsym $mod+ampersand workspace $ws1
+bindsym $mod+1 workspace $ws1
+
+#bindsym $mod+eacute workspace $ws2
+bindsym $mod+2 workspace $ws2
+
+#bindsym $mod+quotedbl workspace $ws3
+bindsym $mod+3 workspace $ws3
+
+#bindsym $mod+apostrophe workspace $ws4
+bindsym $mod+4 workspace $ws4
+
+#bindsym $mod+parenleft workspace $ws5
+bindsym $mod+5 workspace $ws5
+
+#bindsym $mod+minus workspace $ws6
+bindsym $mod+6 workspace $ws6
+
+#bindsym $mod+egrave workspace $ws7
+bindsym $mod+7 workspace $ws7
+
+#bindsym $mod+underscore workspace $ws8
+bindsym $mod+8 workspace $ws8
+
+#bindsym $mod+ccedilla workspace $ws9
+bindsym $mod+9 workspace $ws9
+
+#bindsym $mod+agrave workspace $ws10
+bindsym $mod+10 workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
