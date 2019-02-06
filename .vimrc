@@ -56,6 +56,7 @@ set smartindent
 " 1 tab = 2 spaces
 set shiftwidth=2
 set softtabstop=2
+set tabstop=2
 
 " always show the status bar
 set laststatus=2
@@ -78,6 +79,12 @@ set nocompatible
 " relative line number from the cursor
 set rnu
 
+" markers to prevent exceeding 80 caracters
+set colorcolumn=80
+
 " opens NERDTree with CTRL + N
 " pacman -S vim-nerdtree
 nnoremap <C-n> :NERDTreeToggle<CR>
+
+" tabs for C files
+autocmd FileType c setlocal tabstop=4 shiftwidth=4 softtabstop=4
