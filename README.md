@@ -30,6 +30,13 @@ root@host:~# cd
 root@host:~# rm -rf dotfiles
 ```
 
+### StartX
+
+```console
+root@host:~# pacman -S xorg-xinit
+user@host:~$ startx
+```
+
 ### Alacritty
 
 ```console
