@@ -1,0 +1,76 @@
+---
+- name: "Laptop installation & configuration"
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Install JetBrains Mono Nerd
+      become: true
+      pacman:
+        name: ttf-jetbrains-mono-nerd
+        state: present
+    - name: Install rsync
+      become: true
+      pacman:
+        name: rsync
+        state: present
+    - name: Install Alacritty
+      become: true
+      pacman:
+        name: alacritty
+        state: present
+    - name: Setup Alacritty
+      synchronize:
+        delete: true
+        src: alacritty
+        dest: /$HOME/.config
+    - name: Install TMUX
+      become: true
+      pacman:
+        name: tmux
+        state: present
+    - name: Setup TMUX
+      synchronize:
+        src: tmux
+        dest: /$HOME
+    - name: Install Neovim
+      become: true
+      pacman:
+        name: neovim
+        state: present
+    - name: Setup AstroNvim
+      synchronize:
+        delete: true
+        src: nvim
+        dest: /$HOME/.config
+    - name: Install Fish
+      become: true
+      pacman:
+        name: fish
+        state: present
+    - name: Setup Fish
+      synchronize:
+        delete: true
+        src: fish
+        dest: /$HOME/.config
+    - name: Install UFW
+      become: true
+      pacman:
+        name: ufw
+        state: present
+    - name: UFW reset all rules
+      become: true
+      ufw:
+        state: reset
+    - name: UFW deny all by default
+      become: true
+      ufw:
+        policy: deny
+    - name: UFW enable
+      become: true
+      ufw:
+        state: enabled
+    - name: UFW service startup
+      become: true
+      service:
+        name: ufw
+        state: restarted
