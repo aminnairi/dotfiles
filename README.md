@@ -36,3 +36,11 @@ ansible-pull \
   --ask-become-pass \
   playbook.yml
 ```
+
+#### With clone
+
+```bash
+git clone https://github.com/aminnairi/laptop.git
+cd laptop
+ansible-playbook --ask-become-pass playbook.yml
+```
