@@ -6,7 +6,7 @@
     - name: Install Xset
       become: true
       pacman:
-        name: xset
+        name: xorg-xset
         state: present
     - name: Install Bat
       become: true
