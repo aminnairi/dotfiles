@@ -11,6 +11,7 @@ Laptop configuration for Arch Linux
 ```bash
 # as root
 pacman -S ansible git which sudo
+sed -i 's/#\s*%sudo/%sudo/g' /etc/sudoers
 usermod -aG sudo $USER
 
 # as user
