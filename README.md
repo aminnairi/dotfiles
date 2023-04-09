@@ -14,9 +14,10 @@ pacman -S ansible git which sudo
 
 # (as root) Allow the "sudo" group to issue sudo commands
 sed -i 's/#\s*%sudo/%sudo/g' /etc/sudoers
-usermod -aG sudo $USER
 
-# as user
+# (as root) Create a new user
+useradd --create-home user
+
 ansible-pull --url https://github.com/aminnairi/laptop.git --ask-become-pass
 ```
 
