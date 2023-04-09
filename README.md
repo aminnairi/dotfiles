@@ -33,5 +33,3 @@ usermod -aG sudo user
 # (as user) Pull the latest configuration and apply the latter
 ansible-pull --url https://github.com/aminnairi/laptop.git --ask-become-pass
 ```
-
-Where `$USER` is the username to allow sudo rights.
