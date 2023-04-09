@@ -30,8 +30,8 @@
         state: present
     - name: Setup TMUX
       synchronize:
-        src: tmux
-        dest: /$HOME
+        src: tmux/.tmux.conf
+        dest: /$HOME/.tmux.conf
     - name: Install Neovim
       become: true
       pacman:
