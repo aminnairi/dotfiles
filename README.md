@@ -11,6 +11,8 @@ Laptop configuration for Arch Linux
 ```bash
 # (as root) Install the necessary dependencies
 pacman -S ansible git which sudo
+
+# (as root) Allow the "sudo" group to issue sudo commands
 sed -i 's/#\s*%sudo/%sudo/g' /etc/sudoers
 usermod -aG sudo $USER
 
