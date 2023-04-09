@@ -8,6 +8,8 @@ if status is-interactive
   # Set the editor to use vim
   set --export --global EDITOR nvim
 
+  # Set the terminal
+  set --export --global TERM alacritty
 
   # Install OMF if it is not already
   if test ! -d ~/.local/share/omf
