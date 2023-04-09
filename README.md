@@ -25,7 +25,11 @@ passwd user
 
 # (as root) Add the "sudo" group for the created user
 usermod -aG sudo user
+```
 
+### As user
+
+```bash
 # (as user) Pull the latest configuration and apply the latter
 ansible-pull --url https://github.com/aminnairi/laptop.git --ask-become-pass
 ```
