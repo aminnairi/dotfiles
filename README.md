@@ -9,7 +9,7 @@ Laptop configuration for Arch Linux
 ## Installation
 
 ```bash
-# as root
+# (as root) Install the necessary dependencies
 pacman -S ansible git which sudo
 sed -i 's/#\s*%sudo/%sudo/g' /etc/sudoers
 usermod -aG sudo $USER
