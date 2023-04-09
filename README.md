@@ -18,6 +18,9 @@ sed -i 's/#\s*%sudo/%sudo/g' /etc/sudoers
 # (as root) Create a new user
 useradd --create-home user
 
+# (as root) Add a password for the newly created user
+passwd user
+
 ansible-pull --url https://github.com/aminnairi/laptop.git --ask-become-pass
 ```
 
