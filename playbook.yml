@@ -52,6 +52,11 @@
         delete: true
         src: fish
         dest: /$HOME/.config
+    - name: Setup OMF
+      synchronize:
+        delete: true
+        src: omf
+        dest: /$HOME/.config
     - name: Install UFW
       become: true
       pacman:
