@@ -6,7 +6,8 @@ if status is-interactive
   xset r rate 150 30
 
   # Set the editor to use vim
-  set -xg EDITOR vim
+  set --export --global EDITOR nvim
+
 
   # Install OMF if it is not already
   if test ! -d ~/.local/share/omf
