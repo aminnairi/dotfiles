@@ -31,5 +31,8 @@ usermod -aG sudo user
 
 ```bash
 # (as user) Pull the latest configuration and apply the latter
-ansible-pull --url https://github.com/aminnairi/laptop.git --ask-become-pass
+ansible-pull \
+  --url https://github.com/aminnairi/laptop.git \
+  --ask-become-pass \
+  playbook.yml
 ```
