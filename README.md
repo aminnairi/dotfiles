@@ -21,6 +21,9 @@ useradd --create-home user
 # (as root) Add a password for the newly created user
 passwd user
 
+# (as root) Add the "sudo" group for the created user
+usermod -aG sudo user
+
 ansible-pull --url https://github.com/aminnairi/laptop.git --ask-become-pass
 ```
 
