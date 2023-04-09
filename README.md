@@ -29,6 +29,8 @@ usermod -aG sudo user
 
 ### As user
 
+#### Without clone
+
 ```bash
 # Pull the latest configuration and apply the latter
 ansible-pull \
