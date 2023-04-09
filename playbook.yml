@@ -3,6 +3,11 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Install Xset
+      become: true
+      pacman:
+        name: xset
+        state: present
     - name: Install JetBrains Mono Nerd
       become: true
       pacman:
