@@ -10,7 +10,7 @@ Laptop configuration for Arch Linux
 
 ```bash
 # as root
-pacman -S ansible git
+pacman -S ansible git which
 usermod -aG sudo $USER
 
 # as user
