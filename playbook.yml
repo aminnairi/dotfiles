@@ -13,6 +13,11 @@
       pacman:
         name: bat
         state: present
+    - name: Install Exa
+      become: true
+      pacman:
+        name: exa
+        state: present
     - name: Install JetBrains Mono Nerd
       become: true
       pacman:
