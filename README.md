@@ -8,6 +8,8 @@ Laptop configuration for Arch Linux
 
 ## Installation
 
+### As root
+
 ```bash
 # (as root) Install the necessary dependencies
 pacman -S ansible git which sudo
