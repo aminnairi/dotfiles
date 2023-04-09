@@ -14,9 +14,7 @@ pacman -S ansible git which
 usermod -aG sudo $USER
 
 # as user
-git clone https://github.com/aminnairi/laptop.git
-cd laptop
-ansible-playbook --ask-become-pass playbook.yml
+ansible-pull --url https://github.com/aminnairi/laptop.git --ask-become-pass
 ```
 
 Where `$USER` is the username to allow sudo rights.
