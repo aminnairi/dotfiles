@@ -19,7 +19,7 @@ if status is-interactive
   end
 
   # Alias for the cat command
-  alias cat="bat --theme Nord"
+  alias cat="bat --theme OneHalfDark"
 
   # Alias for the ls command
   alias ls="exa --icons --long --classify"
