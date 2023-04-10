@@ -9,7 +9,7 @@ if status is-interactive
   set --export --global EDITOR nvim
 
   # Set the terminal
-  set --export --global TERM alacritty
+  set --export --global TERM "screen-256color"
 
   # Install OMF if it is not already
   if test ! -d ~/.local/share/omf
