@@ -8,6 +8,11 @@
       pacman:
         name: rsync
         state: present
+    - name: Install Picom (window compositing manager)
+      become: true
+      pacman:
+        name: picom
+        state: present
     - name: Install Xorg Xinput (input devices manager)
       become: true
       pacman:
