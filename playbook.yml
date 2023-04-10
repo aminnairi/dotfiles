@@ -47,6 +47,7 @@
       pacman:
         name: dua-cli
         state: present
+    - name: Install Xset (Xorg configuration manager)
       become: true
       pacman:
         name: xorg-xset
