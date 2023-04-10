@@ -116,7 +116,7 @@
         delete: true
         src: omf
         dest: /$HOME/.config
-    - name: Install UFW
+    - name: Install UFW (firewall)
       become: true
       pacman:
         name: ufw
