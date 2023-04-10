@@ -7,4 +7,5 @@ xinput set-prop 9 308 1
 # Enable two-fingers click
 xinput set-prop 9 306 0 1
 
+# Start i3 window manager
 exec i3
