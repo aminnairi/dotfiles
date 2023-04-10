@@ -82,7 +82,7 @@
         delete: true
         src: alacritty
         dest: /$HOME/.config
-    - name: Install TMUX
+    - name: Install TMUX (terminal multiplexer)
       become: true
       pacman:
         name: tmux
