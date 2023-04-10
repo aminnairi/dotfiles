@@ -23,6 +23,9 @@ useradd --create-home user
 # Add a password for the newly created user
 passwd user
 
+# Add the sudo group
+groupadd sudo
+
 # Add the "sudo" group for the created user
 usermod --add --groups sudo user
 ```
