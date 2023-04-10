@@ -33,6 +33,11 @@
       pacman:
         name: chafa
         state: present
+    - name: Felix (command-line file manager)
+      become: true
+      pacman:
+        name: felix-rs
+        state: present
       become: true
       pacman:
         name: xorg-xset
