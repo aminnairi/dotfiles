@@ -48,6 +48,10 @@
       pacman:
         name: network-manager-applet
         state: present
+    - name: Setup i3 Window Manager
+      synchronize:
+        src: i3
+        dest: /$HOME/.config
     - name: Install Tokei (line of code counter)
       become: true
       pacman:
