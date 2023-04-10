@@ -13,6 +13,10 @@
       pacman:
         name: picom
         state: present
+    - name: Setup Picom
+      synchronize:
+        src: picom
+        dest: /$HOME/.config
     - name: Install Xorg Xinput (input devices manager)
       become: true
       pacman:
