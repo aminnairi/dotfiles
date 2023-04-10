@@ -1,4 +1,7 @@
 # Enable natural scrolling on the touchpad
 xinput set-prop 9 298 1 
 
+# Enable middle button emulation on the touchpad
+xinput set-prop 9 308 1
+
 exec i3
