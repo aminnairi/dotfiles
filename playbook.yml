@@ -67,7 +67,7 @@
       pacman:
         name: ttf-jetbrains-mono-nerd
         state: present
-    - name: Install rsync
+    - name: Install rsync (file synchronizer)
       become: true
       pacman:
         name: rsync
