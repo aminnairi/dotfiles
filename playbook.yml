@@ -42,6 +42,11 @@
       synchronize:
         src: felix
         dest: /$HOME/.config
+    - name: Dua (disk usage analyzer)
+      become: true
+      pacman:
+        name: dua-cli
+        state: present
       become: true
       pacman:
         name: xorg-xset
