@@ -101,7 +101,7 @@
         delete: true
         src: nvim
         dest: /$HOME/.config
-    - name: Install Fish
+    - name: Install Fish (shell)
       become: true
       pacman:
         name: fish
