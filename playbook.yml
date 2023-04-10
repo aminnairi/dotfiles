@@ -33,6 +33,11 @@
       pacman:
         name: chafa
         state: present
+    - name: Install Zoxide (smarter cd command)
+      become: true
+      pacman:
+        name: zoxide
+        state: present
     - name: Felix (command-line file manager)
       become: true
       pacman:
