@@ -72,7 +72,7 @@
       pacman:
         name: rsync
         state: present
-    - name: Install Alacritty
+    - name: Install Alacritty (terminal emulator)
       become: true
       pacman:
         name: alacritty
