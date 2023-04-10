@@ -38,6 +38,10 @@
       pacman:
         name: felix-rs
         state: present
+    - name: Felix setup
+      synchronize:
+        src: felix
+        dest: /$HOME/.config
       become: true
       pacman:
         name: xorg-xset
