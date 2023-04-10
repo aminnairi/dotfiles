@@ -55,3 +55,8 @@ touch i3/i3status/settings.json
 }
 ```
 
+#### Startup
+
+```bash
+startx
+```
