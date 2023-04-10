@@ -28,6 +28,11 @@
       pacman:
         name: feh
         state: present
+    - name: Install Chafa (command-line graphics)
+      become: true
+      pacman:
+        name: chafa
+        state: present
       become: true
       pacman:
         name: xorg-xset
