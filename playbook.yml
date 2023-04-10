@@ -13,6 +13,11 @@
       pacman:
         name: xorg-xinit
         state: present
+    - name: Install i3-gaps (window manager)
+      become: true
+      pacman:
+        name: i3-gaps
+        state: present
     - name: Install Tokei (line of code counter)
       become: true
       pacman:
