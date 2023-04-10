@@ -37,6 +37,12 @@
       pacman:
         name: network-manager
         state: present
+    - name: Start Network Manager service
+      become: true
+      service:
+        enabled: true
+        name: NetworkManager
+        state: started
     - name: Install Tokei (line of code counter)
       become: true
       pacman:
