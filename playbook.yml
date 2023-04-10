@@ -3,6 +3,16 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Install rsync (file synchronizer)
+      become: true
+      pacman:
+        name: rsync
+        state: present
+    - name: Install Xinit (Xorg startup script)
+      become: true
+      pacman:
+        name: xorg-xinit
+        state: present
     - name: Install Tokei (line of code counter)
       become: true
       pacman:
