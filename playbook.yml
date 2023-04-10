@@ -8,6 +8,11 @@
       pacman:
         name: tokei
         state: present
+    - name: Install Chromium (web browser)
+      become: true
+      pacman:
+        name: chromium
+        state: present
       become: true
       pacman:
         name: xorg-xset
