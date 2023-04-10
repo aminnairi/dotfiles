@@ -1,6 +1,9 @@
 # Enable picom
 picom &
 
+# Enable background
+feh --bg-fill $HOME/.local/share/backgrounds/background.jpg
+
 # Enable natural scrolling on the touchpad
 xinput set-prop 9 298 1 
 
