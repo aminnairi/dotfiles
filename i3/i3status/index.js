@@ -96,7 +96,7 @@ const getBitcoinRate = async () => {
 };
 
 const getWeather = async () => {
-  return json.get("https://api.openweathermap.org/data/2.5/weather?q=paris&appid=f31995fb1e1d69ac2f5d2053ca040a3b&units=metric").then(json => {
+  return json.get(`https://api.openweathermap.org/data/2.5/weather?q=paris&appid=${settings.weather.appid}&units=metric`).then(json => {
     return ` ${Math.round((Number(json.main.temp) || 0) * 10) / 10}°C ${json.weather[0].main}`;
   });
 };
