@@ -43,6 +43,11 @@
         enabled: true
         name: NetworkManager
         state: started
+    - name: Install Network Manager Applet (Network Manager i3status icon)
+      become: true
+      pacman:
+        name: network-manager-applet
+        state: present
     - name: Install Tokei (line of code counter)
       become: true
       pacman:
