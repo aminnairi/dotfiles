@@ -100,6 +100,10 @@
       pacman:
         name: feh
         state: present
+    - name: Install background
+      synchronize:
+        src: background/background.jpg
+        dest: /$HOME/.local/share/backgrounds/background.jpg
     - name: Install Chafa (command-line graphics)
       become: true
       pacman:
