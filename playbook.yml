@@ -62,7 +62,7 @@
       pacman:
         name: exa
         state: present
-    - name: Install JetBrains Mono Nerd
+    - name: Install JetBrains Mono Nerd (IntelliJ font)
       become: true
       pacman:
         name: ttf-jetbrains-mono-nerd
