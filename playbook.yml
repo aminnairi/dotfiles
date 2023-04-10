@@ -13,6 +13,10 @@
       pacman:
         name: xorg-xinit
         state: present
+    - name: Setup Xorg Xinit
+      synchronize:
+        src: xinit/xinitrc
+        dest: /$HOME/.xinitrc
     - name: Install i3-gaps (window manager)
       become: true
       pacman:
