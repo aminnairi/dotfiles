@@ -13,9 +13,7 @@ if status is-interactive
 
   # Install OMF if it is not already
   if test ! -d ~/.local/share/omf
-    curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-  else
-    omf update
+    curl -L https://get.oh-my.fish | fish
   end
 
   # Alias for the cat command
