@@ -32,20 +32,10 @@ usermod --add --groups sudo user
 
 ### As user
 
-#### Without clone
-
-```bash
-# Pull the latest configuration and apply the latter
-ansible-pull \
-  --url https://github.com/aminnairi/laptop.git \
-  --ask-become-pass \
-  playbook.yml
-```
-
-#### With clone
-
 ```bash
 git clone https://github.com/aminnairi/laptop.git
 cd laptop
+touch i3/i3status/settings.json
+echo '{"weather":{"appid":"..."}}' > i3/i3status/settings.json
 ansible-playbook --ask-become-pass playbook.yml
 ```
