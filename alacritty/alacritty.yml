@@ -23,6 +23,9 @@ schemes:
       white: '#acb0d0'
 window:
   opacity: 0.8
+  dimensions:
+    lines: 50
+    columns: 160
 shell:
   program: /bin/fish
 font:
