@@ -91,7 +91,7 @@
       synchronize:
         src: tmux
         dest: /$HOME/.config
-    - name: Install Neovim
+    - name: Install Neovim (command-line text editor)
       become: true
       pacman:
         name: neovim
