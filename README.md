@@ -37,7 +37,6 @@ usermod --add --groups sudo user
 ```bash
 git clone https://github.com/aminnairi/laptop.git
 cd laptop
-echo '{"weather":{"appid":"..."}}' > i3/i3status/settings.json
 ansible-playbook --ask-become-pass playbook.yml
 ```
 
