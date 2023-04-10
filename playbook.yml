@@ -13,6 +13,11 @@
       pacman:
         name: chromium
         state: present
+    - name: Install bottom (processes visualizer)
+      become: true
+      pacman:
+        name: bottom
+        state: present
       become: true
       pacman:
         name: xorg-xset
