@@ -1,1 +1,4 @@
+# Enable natural scrolling on the touchpad
+xinput set-prop 9 298 1 
+
 exec i3
