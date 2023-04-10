@@ -52,7 +52,7 @@
       pacman:
         name: xorg-xset
         state: present
-    - name: Install Bat
+    - name: Install Bat (replacement for cat)
       become: true
       pacman:
         name: bat
