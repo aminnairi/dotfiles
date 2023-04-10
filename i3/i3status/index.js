@@ -111,8 +111,8 @@ const getCpus = () => {
 
 const getBattery = async () => {
   return Promise.all([
-    readFile("/sys/class/power_supply/BAT0/capacity"),
-    readFile("/sys/class/power_supply/BAT0/status")
+    readFile("/sys/class/power_supply/BATT/capacity"),
+    readFile("/sys/class/power_supply/BATT/status")
   ]).then(([batteryBuffer, statusBuffer]) => {
     const battery = batteryBuffer.toString().trim();
     const state = statusBuffer.toString().trim();
