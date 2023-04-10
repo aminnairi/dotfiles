@@ -3,7 +3,11 @@
   hosts: localhost
   connection: local
   tasks:
-    - name: Install Xset
+    - name: Install Tokei (line of code counter)
+      become: true
+      pacman:
+        name: tokei
+        state: present
       become: true
       pacman:
         name: xorg-xset
