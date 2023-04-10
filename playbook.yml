@@ -22,6 +22,11 @@
       pacman:
         name: i3-gaps
         state: present
+    - name: Install i3 Lock (window locker)
+      become: true
+      pacman:
+        name: i3lock
+        state: present
     - name: Install dmenu
       become: true
       pacman:
