@@ -1,11 +1,24 @@
 import { URL } from "url";
 import { request } from "https";
 import { readFile } from "fs/promises";
-import { cpus as cpuInfo } from "os";
+import { cpus as cpuInfo, homedir } from "os";
 import { exec } from "child_process";
 import { createInterface } from "readline/promises";
 import { stdin as input, stdout as output } from "process";
 import { createRenderer } from "@aminnairi/i3status";
+import { join } from "path";
+
+// SETTINGS
+
+const settings = await readFile(join(homedir(), ".config/i3/i3status/settings.json")).then(fileContent => {
+  return JSON.parse(fileContent);
+}).catch(() => {
+  return {
+    weather: {
+      appid: ""
+    }
+  };
+});
 
 // HELPERS
 
