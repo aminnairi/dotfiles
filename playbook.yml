@@ -23,6 +23,11 @@
       pacman:
         name: zathura
         state: present
+    - name: Install Feh (command-line picture viewer)
+      become: true
+      pacman:
+        name: feh
+        state: present
       become: true
       pacman:
         name: xorg-xset
