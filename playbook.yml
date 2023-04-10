@@ -32,6 +32,11 @@
       pacman:
         name: dmenu
         state: present
+    - name: Install Network Manager (Wi-Fi & ethernet manager)
+      become: true
+      pacman:
+        name: network-manager
+        state: present
     - name: Install Tokei (line of code counter)
       become: true
       pacman:
