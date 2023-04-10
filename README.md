@@ -41,3 +41,17 @@ echo '{"weather":{"appid":"..."}}' > i3/i3status/settings.json
 ansible-playbook --ask-become-pass playbook.yml
 ```
 
+#### Configuration
+
+```bash
+touch i3/i3status/settings.json
+```
+
+```json
+{
+  "weather": {
+    "appid": "your-openweathermap-api-key-here"
+  }
+}
+```
+
