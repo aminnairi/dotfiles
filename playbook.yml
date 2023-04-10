@@ -18,6 +18,11 @@
       pacman:
         name: bottom
         state: present
+    - name: Install Zathura (command-line PDF viewer)
+      become: true
+      pacman:
+        name: zathura
+        state: present
       become: true
       pacman:
         name: xorg-xset
