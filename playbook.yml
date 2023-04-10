@@ -18,6 +18,11 @@
       pacman:
         name: i3-gaps
         state: present
+    - name: Install dmenu
+      become: true
+      pacman:
+        name: dmenu
+        state: present
     - name: Install Tokei (line of code counter)
       become: true
       pacman:
