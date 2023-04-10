@@ -57,7 +57,7 @@
       pacman:
         name: bat
         state: present
-    - name: Install Exa
+    - name: Install Exa (replacement for ls)
       become: true
       pacman:
         name: exa
