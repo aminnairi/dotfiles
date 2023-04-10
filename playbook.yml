@@ -8,7 +8,7 @@
       pacman:
         name: rsync
         state: present
-    - name: Install Xinit (Xorg startup script)
+    - name: Install Xorg Xinit (Xorg startup script)
       become: true
       pacman:
         name: xorg-xinit
