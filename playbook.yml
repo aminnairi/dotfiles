@@ -8,6 +8,11 @@
       pacman:
         name: rsync
         state: present
+    - name: Install Flameshot (screenshot utility)
+      become: true
+      pacman:
+        name: flameshot
+        state: present
     - name: Install Notification Daemon
       become: true
       pacman:
