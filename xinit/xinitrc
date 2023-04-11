@@ -1,6 +1,9 @@
 # Enable picom
 picom &
 
+# Enable flameshot
+flameshot &
+
 # Enable background
 feh --bg-fill $HOME/.local/share/backgrounds/background.jpg
 
