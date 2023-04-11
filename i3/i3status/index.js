@@ -148,8 +148,8 @@ const getBattery = async () => {
 };
 
 const getBrightness = async () => {
-  return execute("cat /sys/class/backlight/intel_backlight/brightness").then(brightness => {
-    const brightnessLevel = Math.round((Number(brightness.toString().trim()) || 0) / 1000);
+  return execute("/usr/bin/cat /sys/class/backlight/*/brightness").then(brightness => {
+    const brightnessLevel = Number(brightness.trim()) || 0;
 
     return ` ${brightnessLevel}%`;
   });
