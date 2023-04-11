@@ -19,6 +19,11 @@
         enabled: true
         name: acpid
         state: started
+    - name: Install Xorg Backlight (brightness manager)
+      become: true
+      pacman:
+        name: xorg-xbacklight
+        state: present
     - name: Install Flameshot (screenshot utility)
       become: true
       pacman:
