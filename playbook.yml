@@ -13,6 +13,11 @@
       pacman:
         name: notification-daemon
         state: present
+    - name: Setup Notification Daemon
+      become: true
+      synchronize:
+        src: notification/notification.service
+        dest: /usr/share/dbus-1/services/org.freedesktop.Notification.service
     - name: Install Picom (window compositing manager)
       become: true
       pacman:
