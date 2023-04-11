@@ -8,6 +8,11 @@
       pacman:
         name: rsync
         state: present
+    - name: Install Pulseaudio Systray (system tray volume control)
+      become: true
+      pacman:
+        name: pasystray
+        state: present
     - name: Install ACPID (Power manager)
       become: true
       pacman:
