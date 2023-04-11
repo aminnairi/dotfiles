@@ -35,8 +35,13 @@ usermod --add --groups sudo user
 #### Installation
 
 ```bash
+# Clone the repository
 git clone https://github.com/aminnairi/laptop.git
+
+# Change the current working directory
 cd laptop
+
+# Apply the configuration
 ansible-playbook --ask-become-pass playbook.yml
 ```
 
