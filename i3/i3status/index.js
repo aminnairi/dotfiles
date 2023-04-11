@@ -166,8 +166,8 @@ const getVolume = async () => {
 
 const getMemory = async () => {
   return Promise.all([
-    execute("cat /proc/meminfo | grep MemTotal | cut -d ' ' -f 9"),
-    execute("cat /proc/meminfo | grep MemFree | cut -d ' ' -f 11")
+    execute("/usr/bin/cat /proc/meminfo | grep MemTotal | cut -d ' ' -f 8"),
+    execute("/usr/bin/cat /proc/meminfo | grep MemFree | cut -d ' ' -f 10")
   ]).then(([rawTotalMemory, rawFreeMemory]) => {
     const totalMemory = Math.round((Number(rawTotalMemory.trim()) || 0) / 100000) / 10;
     const freeMemory = Math.round((Number(rawFreeMemory.trim()) || 0) / 100000) / 10;
