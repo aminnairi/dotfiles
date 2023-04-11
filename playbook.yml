@@ -8,6 +8,11 @@
       pacman:
         name: rsync
         state: present
+    - name: Install ACPID (Power manager)
+      become: true
+      pacman:
+        name: acpid
+        state: present
     - name: Install Flameshot (screenshot utility)
       become: true
       pacman:
