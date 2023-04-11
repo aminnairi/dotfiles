@@ -8,13 +8,13 @@ flameshot &
 feh --bg-fill $HOME/.local/share/backgrounds/background.jpg
 
 # Enable natural scrolling on the touchpad
-xinput set-prop 9 298 1 
+xinput set-prop "QXTP7868:00 27C6:01E8 Touchpad" "libinput Natural Scrolling Enabled" 1 
 
 # Enable middle button emulation on the touchpad
-xinput set-prop 9 308 1
+xinput set-prop "QXTP7868:00 27C6:01E8 Touchpad" "libinput Middle Emulation Enabled" 1
 
 # Enable two-fingers click
-xinput set-prop 9 306 0 1
+xinput set-prop "QXTP7868:00 27C6:01E8 Touchpad" "libinput Click Method Enabled" 0 1
 
 # Set the compose key
 setxkbmap -option compose:ralt
