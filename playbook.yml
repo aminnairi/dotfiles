@@ -13,6 +13,11 @@
       pacman:
         name: flameshot
         state: present
+    - name: Install Rofi (application switcher)
+      become: true
+      pacman:
+        name: rofi
+        state: present
     - name: Install Notification Daemon
       become: true
       pacman:
