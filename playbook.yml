@@ -18,6 +18,10 @@
       pacman:
         name: rofi
         state: present
+    - name: Setup Rofi
+      synchronize:
+        src: rofi
+        dest: /$HOME/.config
     - name: Install Notification Daemon
       become: true
       pacman:
