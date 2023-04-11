@@ -111,13 +111,13 @@ const getCpus = () => {
 
 const getBattery = async () => {
   return Promise.all([
-    readFile("/sys/class/power_supply/BATT/capacity"),
-    readFile("/sys/class/power_supply/BATT/status")
-  ]).then(([batteryBuffer, statusBuffer]) => {
-    const battery = batteryBuffer.toString().trim();
-    const state = statusBuffer.toString().trim();
+    execute("/usr/bin/cat /sys/class/power_supply/BAT*/capacity"),
+    execute("/usr/bin/cat /sys/class/power_supply/BAT*/status")
+  ]).then(([rawBattery, rawStatus]) => {
+    const battery = Number(rawBattery.trim()) || 0;
+    const status = rawStatus.trim();
 
-    if (state === "Discharging") {
+    if (status === "Discharging") {
       const full_text = ` ${battery}%`;
 
       if (battery <= 10) {
