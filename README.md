@@ -59,3 +59,10 @@ touch i3/i3status/settings.json
 ```bash
 startx
 ```
+
+## Shortcuts
+
+Shortcut | Description
+---|---
+`Super + x` | Lock the screen
+`Super + p` | Start a new screenshot 
