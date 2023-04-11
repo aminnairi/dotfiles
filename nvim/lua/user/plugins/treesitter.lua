@@ -1,0 +1,26 @@
+return {
+  "nvim-treesitter/nvim-treesitter",
+  opts = {
+    ensure_installed = {
+      "lua",
+      "dart",
+      "dockerfile",
+      "elm",
+      "fish",
+      "html",
+      "css",
+      "javascript",
+      "jsonc",
+      "make",
+      "python",
+      "php",
+      "rust",
+      "sql",
+      "svelte",
+      "tsx",
+      "twig",
+      "vue",
+      "yaml",
+    },
+  },
+}
