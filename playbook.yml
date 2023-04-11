@@ -8,6 +8,11 @@
       pacman:
         name: rsync
         state: present
+    - name: Install Notification Daemon
+      become: true
+      pacman:
+        name: notification-daemon
+        state: present
     - name: Install Picom (window compositing manager)
       become: true
       pacman:
