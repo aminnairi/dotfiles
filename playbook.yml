@@ -225,8 +225,8 @@
     - name: Setup AstroNvim
       synchronize:
         delete: true
-        src: nvim
-        dest: /$HOME/.config
+        src: nvim/lua/user
+        dest: /$HOME/.config/nvim/lua
     - name: Install Fish (shell)
       become: true
       pacman:
