@@ -217,6 +217,11 @@
       pacman:
         name: neovim
         state: present
+    - name: Clone AstroNvim
+      git:
+        repo: https://github.com/AstroNvim/AstroNvim
+        dest: /$HOME/.config/nvim
+        depth: 1
     - name: Setup AstroNvim
       synchronize:
         delete: true
