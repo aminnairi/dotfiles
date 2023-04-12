@@ -18,7 +18,6 @@ return {
         "emmet_ls",
         "jsonls",
         "marksman",
-        "phan",
         "pyright",
         "svelte",
         "volar",
