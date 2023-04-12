@@ -22,6 +22,34 @@ const settings = await readFile(join(homedir(), ".config/i3/i3status/settings.js
 
 // HELPERS
 
+const toHexadecimal = (number) => {
+  const hexadecimal = number.toString(16);
+
+  return hexadecimal.length === 1
+    ? `0${hexadecimal}`
+    : hexadecimal;
+};
+
+const getHexadecimalColorBetween = (color1, color2, ratio) => {
+  const red = Math.round(color1.red + (color2.red - color1.red) * ratio);
+  const green = Math.round(color1.green + (color2.green - color1.green) * ratio);
+  const blue = Math.round(color1.blue + (color2.blue - color1.blue) * ratio);
+
+  return `#${toHexadecimal(red)}${toHexadecimal(green)}${toHexadecimal(blue)}`;
+};
+
+const red = {
+  red: 255,
+  green: 0,
+  blue: 0
+};
+
+const green = {
+  red: 0,
+  green: 255,
+  blue: 0
+};
+
 const json = {
   get: (url) => {
     return new Promise((resolve, reject) => {
@@ -116,33 +144,12 @@ const getBattery = async () => {
   ]).then(([rawBattery, rawStatus]) => {
     const battery = Number(rawBattery.trim()) || 0;
     const status = rawStatus.trim();
-
-    if (status === "Discharging") {
-      const full_text = ` ${battery}%`;
-
-      if (battery <= 10) {
-        return {
-          color: "#FF0000",
-          full_text
-        };
-      }
-
-      if (battery <= 20) {
-        return {
-          color: "#FF7F00",
-          full_text
-        };
-      }
-
-      return {
-        color: "#FFFFFF",
-        full_text
-      };
-    }
+    const icon = status === "Discharging" ? "" : "";
+    const color = getHexadecimalColorBetween(red, green, battery / 100);
 
     return {
-      color: "#00ff00",
-      full_text: ` ${battery}%`
+      color,
+      full_text: `${icon} ${battery}%`
     }
   });
 };
