@@ -196,6 +196,9 @@ bindsym $mod+x exec i3lock --nofork --color 000000 --show-failed-attempts
 # Use Flameshot when hitting the Super+p keybind
 bindsym $mod+p exec flameshot gui
 
+# Show emoji when hitting Super+m keybind
+bindsym $mod+m exec --no-startup-id rofi -modi emoji -show emoji -emoji-format '{emoji}'
+
 # Use Xbacklight to control brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
