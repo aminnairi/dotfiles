@@ -1,1 +1,6 @@
+configuration {
+ modi: "drun,combi";
+ font: "JetBrains Mono Nerd Font 14";
+ combi-modi: "window,drun";
+}
 @theme "/usr/share/rofi/themes/purple.rasi"
