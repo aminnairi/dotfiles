@@ -145,7 +145,7 @@ const getBattery = async () => {
     const battery = Number(rawBattery.trim()) || 0;
     const status = rawStatus.trim();
     const icon = status === "Discharging" ? "" : "";
-    const color = getHexadecimalColorBetween(red, green, battery / 100);
+    const color = status === "Discharging" ? getHexadecimalColorBetween(red, green, battery / 100) : "#00FF00";
 
     return {
       color,
