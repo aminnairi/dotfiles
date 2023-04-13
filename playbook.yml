@@ -39,6 +39,11 @@
       pacman:
         name: rofi
         state: present
+    - name: Install Rofi Emoji (emoji selector for Rofi)
+      become: true
+      pacman:
+        name: rofi-emoji
+        state: present
     - name: Setup Rofi
       synchronize:
         src: rofi
