@@ -13,6 +13,11 @@
       pacman:
         name: xf86-video-amdgpu
         state: present
+    - name: Install Vulkan Radeon (Vulkan for AMDGPU)
+      become: true
+      pacman:
+        name: vulkan-radeon
+        state: present
         state: present
     - name: Install rsync (file synchronizer)
       become: true
