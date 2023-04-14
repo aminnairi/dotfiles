@@ -18,6 +18,11 @@
       pacman:
         name: vulkan-radeon
         state: present
+    - name: Install Libva Mesa (accelerated video decoding driver)
+      become: true
+      pacman:
+        name: libva-mesa-driver
+        state: present
         state: present
     - name: Install rsync (file synchronizer)
       become: true
