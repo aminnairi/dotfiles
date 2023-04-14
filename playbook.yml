@@ -3,6 +3,12 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Install Mesa (graphics driver)
+      become: true
+      pacman:
+        name: mesa
+        state: present
+        state: present
     - name: Install rsync (file synchronizer)
       become: true
       pacman:
