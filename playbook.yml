@@ -28,6 +28,10 @@
       pacman:
         name: radeontop
         state: present
+    - name: Install Mesa Vdpau (accelerated video decoding driver)
+      become: true
+      pacman:
+        name: mesa-vdpau
         state: present
     - name: Install rsync (file synchronizer)
       become: true
