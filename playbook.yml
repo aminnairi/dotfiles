@@ -102,6 +102,11 @@
       synchronize:
         src: notification/notification.service
         dest: /usr/share/dbus-1/services/org.freedesktop.Notification.service
+    - name: Install Xorg (X11 server)
+      become: true
+      pacman:
+        name: xorg-server
+        state: present
     - name: Install Xorg Xinput (input devices manager)
       become: true
       pacman:
