@@ -3,6 +3,11 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Install Xdotool (X11 command-line utility)
+      become: true
+      pacman:
+        name: xdotool
+        state: present
     - name: Install Mesa (graphics driver)
       become: true
       pacman:
