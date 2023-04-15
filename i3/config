@@ -199,6 +199,9 @@ bindsym $mod+p exec flameshot gui
 # Show emoji when hitting Super+m keybind
 bindsym $mod+m exec --no-startup-id rofi -modi emoji -show emoji -emoji-format '{emoji}'
 
+# Use Rofi-rbw to copy password to clipboard when hitting Super+b keybind
+bindsym $mod+b exec --no-startup-id rofi-rbw
+
 # Use Xbacklight to control brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
