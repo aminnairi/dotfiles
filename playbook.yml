@@ -84,6 +84,10 @@
       pacman:
         name: rbw
         state: present
+    - name: Install Rofi Bitwarden (Bitwarden client for Rofi)
+      become: true
+      pip:
+        name: rofi-rbw
     - name: Setup Rofi
       synchronize:
         src: rofi
