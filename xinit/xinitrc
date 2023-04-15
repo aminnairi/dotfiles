@@ -1,6 +1,3 @@
-# Enable picom
-picom &
-
 # Enable flameshot
 flameshot &
 
