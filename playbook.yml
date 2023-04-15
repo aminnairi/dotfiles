@@ -79,6 +79,11 @@
       pacman:
         name: rofi-emoji
         state: present
+    - name: Install Rbw (Bitwarden CLI)
+      become: true
+      pacman:
+        name: rbw
+        state: present
     - name: Setup Rofi
       synchronize:
         src: rofi
