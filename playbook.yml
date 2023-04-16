@@ -3,6 +3,11 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Install Zip (compression utility)
+      become: true
+      pacman:
+        name: zip
+        state: present
     - name: Install Xdotool (X11 command-line utility)
       become: true
       pacman:
