@@ -15,7 +15,6 @@ return {
         "ansiblels",
         "docker_compose_language_service",
         "dockerls",
-        "emmet_ls",
         "jsonls",
         "marksman",
         "pyright",
