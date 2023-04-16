@@ -53,6 +53,11 @@
       pacman:
         name: rsync
         state: present
+    - name: Install Pulseaudio (sound system)
+      become: true
+      pacman:
+        name: pulseaudio
+        state: present
     - name: Install Pulseaudio Systray (system tray volume control)
       become: true
       pacman:
