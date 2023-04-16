@@ -3,6 +3,11 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Install Unzip (uncompression utility)
+      become: true
+      pacman:
+        name: unzip
+        state: present
     - name: Install Zip (compression utility)
       become: true
       pacman:
