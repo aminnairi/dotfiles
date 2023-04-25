@@ -173,11 +173,11 @@ const getVolume = async () => {
 
 const getMemory = async () => {
   return Promise.all([
-    execute("/usr/bin/cat /proc/meminfo | grep MemTotal | cut -d ' ' -f 8"),
-    execute("/usr/bin/cat /proc/meminfo | grep MemFree | cut -d ' ' -f 10")
-  ]).then(([rawTotalMemory, rawFreeMemory]) => {
+    execute("grep MemTotal /proc/meminfo | cut -d ' ' -f 8"),
+    execute("grep MemAvailable /proc/meminfo | cut -d ' ' -f 5")
+  ]).then(([rawTotalMemory, rawAvailableMemory]) => {
     const totalMemory = Math.round((Number(rawTotalMemory.trim()) || 0) / 100000) / 10;
-    const freeMemory = Math.round((Number(rawFreeMemory.trim()) || 0) / 100000) / 10;
+    const freeMemory = Math.round((Number(rawAvailableMemory.trim()) || 0) / 100000) / 10;
 
     return ` ${freeMemory}Go / ${totalMemory}Go`;
   });
