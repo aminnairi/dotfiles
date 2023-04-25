@@ -3,6 +3,11 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Install Noto Fonts Emoji (for emojis support)
+      become: true
+      pacman:
+        name: noto-fonts-emoji
+        state: present
     - name: Install Unzip (uncompression utility)
       become: true
       pacman:
