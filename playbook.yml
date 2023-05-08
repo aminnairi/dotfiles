@@ -12,6 +12,11 @@
       synchronize:
         src: fontconfig
         dest: /$HOME/.config
+    - name: Install JMTPFS (for accessing MTP devices)
+      kewlfft.aur.aur:
+        name: jmtpfs
+        state: present
+        update_cache: yes
     - name: Install Unzip (uncompression utility)
       become: true
       pacman:
