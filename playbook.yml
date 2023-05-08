@@ -8,6 +8,10 @@
       pacman:
         name: noto-fonts-emoji
         state: present
+    - name: Setup Fonts
+      synchronize:
+        src: fontconfig
+        dest: /$HOME/.config
     - name: Install Unzip (uncompression utility)
       become: true
       pacman:
