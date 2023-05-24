@@ -3,6 +3,11 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Install Evince (PDF viewer & editor)
+      become: true
+      pacman:
+        name: evince
+        state: present
     - name: Install Noto Fonts Emoji (for emojis support)
       become: true
       pacman:
