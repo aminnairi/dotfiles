@@ -3,6 +3,11 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Install Playerctl (utility for controlling media playing on the device)
+      become: true
+      pacman:
+        name: playerctl
+        state: present
     - name: Install Evince (PDF viewer & editor)
       become: true
       pacman:
