@@ -165,7 +165,7 @@ const getBrightness = async () => {
 const getVolume = async () => {
   return Promise.all([
     execute("pactl get-sink-volume @DEFAULT_SINK@ | grep 'Volume' | cut -d '/' -f 2"),
-    execute("pactl get-sink-mute 0")
+    execute("pactl get-sink-mute @DEFAULT_SINK@")
   ]).then(([volume, muted]) => {
     return `${muted.includes("no") ? "" : ""} ${volume.trim()}`;
   });
