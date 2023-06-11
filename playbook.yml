@@ -3,6 +3,12 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Install i3lock-fancy (window locker)
+      become: true
+      kewlfft.aur.aur:
+        name: i3lock-fancy
+        state: present
+        update_cache: yes
     - name: Install Playerctl (utility for controlling media playing on the device)
       become: true
       pacman:
@@ -164,11 +170,6 @@
       become: true
       pacman:
         name: i3-gaps
-        state: present
-    - name: Install i3 Lock (window locker)
-      become: true
-      pacman:
-        name: i3lock
         state: present
     - name: Install dmenu
       become: true
