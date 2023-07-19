@@ -335,16 +335,11 @@
       pacman:
         name: neovim
         state: present
-    - name: Clone AstroNvim
-      git:
-        repo: https://github.com/AstroNvim/AstroNvim
-        dest: /$HOME/.config/nvim
-        depth: 1
-    - name: Setup AstroNvim
-      synchronize:
-        delete: true
-        src: nvim/lua/user
-        dest: /$HOME/.config/nvim/lua
+    - name: Setup NeoVim
+      copy:
+        src: nvim
+        dest: /$HOME/.config
+        force: true
     - name: Install Fish (shell)
       become: true
       pacman:
