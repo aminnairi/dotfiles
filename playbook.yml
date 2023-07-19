@@ -3,6 +3,12 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Set the keyboard keymap
+      become: true
+      command: localectl set-keymap us
+    - name: Set the keyboard layout
+      become: true
+      command: localectl set-x11-keymap us pc105 euro --no-convert compose:ralt
     - name: Install Pulsemixer (Pulseaudio Terminal UI)
       become: true
       pacman:
@@ -150,10 +156,10 @@
       pacman:
         name: rbw
         state: present
-    - name: Install Rofi Bitwarden (Bitwarden client for Rofi)
-      become: true
-      pip:
-        name: rofi-rbw
+    # - name: Install Rofi Bitwarden (Bitwarden client for Rofi)
+    #   become: true
+    #   pip:
+    #     name: rofi-rbw
     - name: Setup Rofi
       synchronize:
         src: rofi
