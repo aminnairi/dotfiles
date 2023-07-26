@@ -5,6 +5,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.expandtab = true
 vim.o.smarttab = true
+vim.o.clipboard = "unnamedplus"
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -761,6 +762,16 @@ require("lazy").setup({
 		},
 	},
 	{
+    "xiyaowong/link-visitor.nvim",
+    event = "BufEnter",
+		opts = {
+			open_cmd = nil,
+			silent = true, -- disable all prints, `false` by defaults skip_confirmation
+			skip_confirmation = true, -- Skip the confirmation step, default: false
+			border = "rounded", -- none, single, double, rounded, solid, shadow see `:h nvim_open_win()`
+		},
+	},
+	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		init = function()
@@ -864,6 +875,33 @@ require("lazy").setup({
 						},
 					},
 				},
+        ["<leader>v"] = {
+          name = "Visit link",
+          v = {
+            function()
+              require("link-visitor").visit()
+            end,
+            "Visit"
+          },
+          l = {
+            function()
+              require("link-visitor").link_under_cursor()
+            end,
+            "Under cursor"
+          },
+          n = {
+            function()
+              require("link-visitor").link_near_cursor()
+            end,
+            "Near cursor"
+          },
+          N = {
+            function()
+              require("link-visitor").link_nearest()
+            end,
+            "Near cursor"
+          }
+        }
 			})
 		end,
 	},
