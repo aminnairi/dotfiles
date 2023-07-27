@@ -363,9 +363,9 @@
         name: tmux
         state: present
     - name: Setup TMUX
-      synchronize:
-        src: tmux
-        dest: /$HOME/.config
+      copy:
+        src: tmux/tmux.conf
+        dest: /$HOME/.tmux.conf
     - name: Install Neovim (command-line text editor)
       become: true
       pacman:
