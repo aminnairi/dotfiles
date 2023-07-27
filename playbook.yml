@@ -3,6 +3,41 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Install Fd (alternative to find)
+      become: true
+      pacman:
+        name: fd
+        state: present
+    - name: Install Python
+      become: true
+      pacman:
+        name: python
+        state: present
+    - name: Install Julia
+      become: true
+      pacman:
+        name: julia
+        state: present
+    - name: Install Ruby
+      become: true
+      pacman:
+        name: ruby
+        state: present
+    - name: Install Composer (PHP package manager)
+      become: true
+      pacman:
+        name: composer
+        state: present
+    - name: Install Luarocks (Lua package manager)
+      become: true
+      pacman:
+        name: luarocks
+        state: present
+    - name: Install Wget (HTTP client)
+      become: true
+      pacman:
+        name: wget
+        state: present
     - name: Set the keyboard keymap
       become: true
       command: localectl set-keymap us
@@ -157,9 +192,10 @@
         name: rbw
         state: present
     # - name: Install Rofi Bitwarden (Bitwarden client for Rofi)
-    #   become: true
-    #   pip:
+    #   kewlfft.aur.aur:
     #     name: rofi-rbw
+    #     state: present
+    #     update_cache: yes
     - name: Setup Rofi
       synchronize:
         src: rofi
@@ -335,11 +371,28 @@
       pacman:
         name: neovim
         state: present
-    - name: Setup NeoVim
+    - name: Setup NeoVim for the unprivileged user
       copy:
         src: nvim
         dest: /$HOME/.config
         force: true
+    - name: Setup NeoVim for the administrator user
+      become: true
+      copy:
+        src: nvim
+        dest: /root/.config
+        force: true
+    - name: Install Neovim package from NPM
+      become: true
+      npm:
+        name: neovim
+        global: true
+        state: present
+    - name: Install Neovim package for Python
+      become: true
+      pacman:
+        name: python-neovim
+        state: present
     - name: Install Fish (shell)
       become: true
       pacman:
