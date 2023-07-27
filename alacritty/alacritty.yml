@@ -135,4 +135,4 @@ font:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
   size: 8.0
-colors: *atom-one-light
+colors: *tokyo-night
