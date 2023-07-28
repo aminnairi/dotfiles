@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:JetBrains Mono Nerd Font 12
+font pango:JetBrains Mono Nerd Font 14
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -215,5 +215,18 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command node $HOME/.config/i3/i3status
+  status_command node $HOME/.config/i3/i3status
+
+  colors {
+    background #24283b
+    statusline #c0caf5 
+    separator #666666
+
+    # Location         Border  Background Text
+    focused_workspace  #24283b #24283b    #c0caf5
+    active_workspace   #7aa2f7 #5f676a    #1f2335
+    inactive_workspace #24283b #24283b    #666666
+    urgent_workspace   #24283b #c0caf5    #24283b
+    binding_mode       #c0caf5 #24283b    #c0caf5
+  }
 }
