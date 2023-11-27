@@ -1,6 +1,6 @@
 ---
 - name: "Laptop installation & configuration"
-  hosts: localhost
+  hosts: all
   connection: local
   tasks:
     - name: Install Fd (alternative to find)
