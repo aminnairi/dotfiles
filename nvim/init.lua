@@ -194,7 +194,8 @@ require("lazy").setup({
         "cssmodules_ls",
         "prismals",
         "yamlls",
-        "marksman"
+        "marksman",
+        "eslint"
       },
     },
   },
@@ -355,8 +356,6 @@ require("lazy").setup({
       lspconfig.volar.setup({
         capabilities = capabilities,
         filetypes = {
-          "javascript",
-          "typescript",
           "vue"
         },
       })
@@ -401,6 +400,16 @@ require("lazy").setup({
           "markdown"
         }
       })
+
+      lspconfig.eslint.setup({
+        capabilities = capabilities,
+        on_attach = function(_, bufnr)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+          })
+        end,
+      })
     end,
   },
   {
@@ -420,7 +429,7 @@ require("lazy").setup({
         "jq",
         "jsonlint",
         "htmlbeautifier",
-        "eslint_d",
+        "eslint",
         "blade-formatter",
         "markdownlint",
         "yamllint",
@@ -451,7 +460,7 @@ require("lazy").setup({
         typescriptreact = { "eslint" },
         vue = { "eslint" },
         blade = { "blade-formatter" },
-        yaml =  { "ansible_lint" }
+        yaml = { "ansible_lint" }
       }
     }
   },
@@ -464,7 +473,8 @@ require("lazy").setup({
     init = function()
       local lint = require("lint")
 
-      vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI", "BufEnter", "BufReadPre", "BufWritePost", "CursorHold", "CursorHoldI" }, {
+      vim.api.nvim_create_autocmd(
+      { "TextChanged", "TextChangedI", "BufEnter", "BufReadPre", "BufWritePost", "CursorHold", "CursorHoldI" }, {
         callback = function()
           lint.try_lint()
         end,
