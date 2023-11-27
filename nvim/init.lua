@@ -178,7 +178,7 @@ require("lazy").setup({
   },
   {
     "williamboman/mason.nvim",
-    opts = {},
+    opts = {}
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -192,7 +192,9 @@ require("lazy").setup({
         "volar",
         "cssls",
         "cssmodules_ls",
-        "prismals"
+        "prismals",
+        "yamlls",
+        "marksman"
       },
     },
   },
@@ -353,11 +355,7 @@ require("lazy").setup({
       lspconfig.volar.setup({
         capabilities = capabilities,
         filetypes = {
-          "typescript",
-          "javascript",
-          "javascriptreact",
-          "typescriptreact",
-          "vue",
+          "vue"
         },
       })
 
@@ -382,97 +380,113 @@ require("lazy").setup({
       })
 
       lspconfig.prismals.setup({
+        filetypes = {
+          "prisma"
+        },
         capabilities = capabilities
+      })
+
+      lspconfig.yamlls.setup({
+        capabilities = capabilities,
+        filetypes = {
+          "yaml"
+        },
+      })
+
+      lspconfig.marksman.setup({
+        capabilities = capabilities,
+        filetypes = {
+          "markdown"
+        }
       })
     end,
   },
   {
-    "jay-babu/mason-null-ls.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
     dependencies = {
       "williamboman/mason.nvim",
     },
     opts = {
       ensure_installed = {
         "stylua",
-        "eslint",
+        "luacheck",
         "stylelint",
-        "prisma"
+        "shellcheck",
+        "rustfmt",
+        "phpcbf",
+        "phpstan",
+        "jq",
+        "jsonlint",
+        "htmlbeautifier",
+        "eslint_d",
+        "blade-formatter",
+        "markdownlint",
+        "yamllint",
+        "ansible-lint"
       },
-    },
+      auto_update = true,
+      run_on_start = true,
+    }
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = "VeryLazy",
+    "stevearc/conform.nvim",
     dependencies = {
-      "jay-babu/mason-null-ls.nvim",
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
-    config = function()
-      local null_ls = require("null-ls")
+    events = { "BufReadPre", "BufNewFile" },
+    opts = {
+      formatters_by_ft = {
+        lua = { "stylua" },
+        css = { "stylelint" },
+        sh = { "shellcheck" },
+        rust = { "rustfmt" },
+        php = { "php_cs_fixer", "phpcbf" },
+        json = { "jq" },
+        html = { "htmlbeautifier" },
+        javascript = { "eslint" },
+        typescript = { "eslint" },
+        javascriptreact = { "eslint" },
+        typescriptreact = { "eslint" },
+        vue = { "eslint" },
+        blade = { "blade-formatter" },
+        yaml =  { "ansible_lint" }
+      }
+    }
+  },
+  {
+    "mfussenegger/nvim-lint",
+    dependencies = {
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
+    },
+    events = { "BufReadPre", "BufWritePost" },
+    init = function()
+      local lint = require("lint")
 
-      null_ls.setup({
-        sources = {
-          null_ls.builtins.formatting.stylua.with({
-            filetypes = {
-              "lua",
-            },
-          }),
-          -- ESLint
-          null_ls.builtins.formatting.eslint.with({
-            filetypes = {
-              "javascript",
-              "typescript",
-              "javascriptreact",
-              "typescriptreact",
-              "tsx",
-              "vue",
-            },
-          }),
-          null_ls.builtins.diagnostics.eslint.with({
-            filetypes = {
-              "javascript",
-              "typescript",
-              "javascriptreact",
-              "typescriptreact",
-              "tsx",
-              "vue",
-            },
-          }),
-          null_ls.builtins.code_actions.eslint.with({
-            filetypes = {
-              "javascript",
-              "typescript",
-              "javascriptreact",
-              "typescriptreact",
-              "tsx",
-              "vue",
-            },
-          }),
-          -- StyleLint
-          null_ls.builtins.diagnostics.stylelint.with({
-            filetypes = {
-              "scss",
-              "less",
-              "css",
-              "sass",
-            },
-          }),
-          null_ls.builtins.formatting.stylelint.with({
-            filetypes = {
-              "scss",
-              "less",
-              "css",
-              "sass",
-            },
-          }),
-          -- prisma
-          null_ls.builtins.formatting.prismaFmt.with({
-            filetypes = {
-              "prisma"
-            }
-          })
-        },
+      vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI", "BufEnter", "BufReadPre", "BufWritePost", "CursorHold", "CursorHoldI" }, {
+        callback = function()
+          lint.try_lint()
+        end,
       })
     end,
+    config = function()
+      local lint = require("lint")
+
+      lint.linter_by_ft = {
+        lua = { "luacheck" },
+        javascript = { "eslint" },
+        typescript = { "eslint" },
+        javascriptreact = { "eslint" },
+        typescriptreact = { "eslint" },
+        vue = { "eslint" },
+        sh = { "shellcheck" },
+        fish = { "fish" },
+        json = { "jsonlint", },
+        markdown = { "markdownlint" },
+        php = { "php", "phpcs", "phpstan" },
+        css = { "stylelint" },
+        yaml = { "yamllint" }
+      }
+    end
   },
   {
     "nvim-treesitter/nvim-treesitter",
