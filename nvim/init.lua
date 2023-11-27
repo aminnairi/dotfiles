@@ -355,6 +355,8 @@ require("lazy").setup({
       lspconfig.volar.setup({
         capabilities = capabilities,
         filetypes = {
+          "javascript",
+          "typescript",
           "vue"
         },
       })
@@ -471,7 +473,7 @@ require("lazy").setup({
     config = function()
       local lint = require("lint")
 
-      lint.linter_by_ft = {
+      lint.linters_by_ft = {
         lua = { "luacheck" },
         javascript = { "eslint" },
         typescript = { "eslint" },
