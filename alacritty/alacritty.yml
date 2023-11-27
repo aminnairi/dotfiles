@@ -134,5 +134,5 @@ font:
   bold_italic:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
-  size: 8.0
+  size: 18.0
 colors: *tokyo-night
