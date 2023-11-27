@@ -192,6 +192,7 @@ require("lazy").setup({
         "volar",
         "cssls",
         "cssmodules_ls",
+        "prismals"
       },
     },
   },
@@ -379,6 +380,10 @@ require("lazy").setup({
           "typescriptreact",
         },
       })
+
+      lspconfig.prismals.setup({
+        capabilities = capabilities
+      })
     end,
   },
   {
@@ -391,6 +396,7 @@ require("lazy").setup({
         "stylua",
         "eslint",
         "stylelint",
+        "prisma"
       },
     },
   },
@@ -458,6 +464,12 @@ require("lazy").setup({
               "sass",
             },
           }),
+          -- prisma
+          null_ls.builtins.formatting.prismaFmt.with({
+            filetypes = {
+              "prisma"
+            }
+          })
         },
       })
     end,
@@ -480,6 +492,7 @@ require("lazy").setup({
           "tsx",
           "json",
           "vue",
+          "prisma"
         },
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
