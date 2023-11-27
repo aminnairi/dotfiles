@@ -9,6 +9,9 @@ function tmux
   # Install Tmux plugins
   ~/.tmux/plugins/tpm/bin/install_plugins
 
+  # Update Tmux plugins
+  ~/.tmux/plugins/tpm/bin/install_plugins
+
   # Execute TMUX
   /usr/bin/tmux -u $argv
 end
