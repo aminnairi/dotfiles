@@ -4,6 +4,7 @@ function tmux
       # Update Oh My Fish if it installed
       omf update
     end
+  end
 
   # Execute TMUX
   /usr/bin/tmux -u $argv
