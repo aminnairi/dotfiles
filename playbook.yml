@@ -372,16 +372,16 @@
         name: neovim
         state: present
     - name: Setup NeoVim for the unprivileged user
-      copy:
+      synchronize:
         src: nvim
         dest: /$HOME/.config
-        force: true
+        delete: true
     - name: Setup NeoVim for the administrator user
       become: true
-      copy:
+      synchronize:
         src: nvim
         dest: /root/.config
-        force: true
+        delete: true
     - name: Install Neovim package from NPM
       become: true
       npm:
