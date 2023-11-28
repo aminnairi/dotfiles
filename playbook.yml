@@ -64,14 +64,14 @@
       kewlfft.aur.aur:
         name: bluetuith
         state: present
-        update_cache: yes
+        update_cache: true
     - name: Install i3lock-fancy (window locker)
       become: true
       kewlfft.aur.aur:
         name: i3lock-fancy
         state: present
-        update_cache: yes
-    - name: Install Playerctl (utility for controlling media playing on the device)
+        update_cache: true
+    - name: Install Playerctl (control media playing on the device)
       become: true
       pacman:
         name: playerctl
@@ -94,7 +94,7 @@
       kewlfft.aur.aur:
         name: jmtpfs
         state: present
-        update_cache: yes
+        update_cache: true
     - name: Install Unzip (uncompression utility)
       become: true
       pacman:
