@@ -29,9 +29,9 @@ return {
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
       }),
       sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "path" },
+        { name = "nvim_lsp", group_index = 2 },
+        { name = "luasnip",  group_index = 2 },
+        { name = "path",     group_index = 2 },
       }, {
         { name = "buffer" },
       }),
@@ -40,7 +40,7 @@ return {
     -- Set configuration for specific filetype.
     cmp.setup.filetype("gitcommit", {
       sources = cmp.config.sources({
-        { name = "git" },   -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+        { name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
       }, {
         { name = "buffer" },
       }),
