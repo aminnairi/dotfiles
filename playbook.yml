@@ -3,6 +3,11 @@
   hosts: all
   connection: local
   tasks:
+    - name: Install Vue Language Server
+      become: true
+      pacman:
+        name: vue-language-server
+        state: present
     - name: Install Fd (alternative to find)
       become: true
       pacman:
