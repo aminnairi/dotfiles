@@ -1,0 +1,18 @@
+theme = "gruvbox"
+
+[editor]
+mouse = false
+middle-click-paste = false
+shell = ["/bin/fish", "-c"]
+cursorline = false
+cursorcolumn = false
+line-number = "relative"
+auto-completion = true
+auto-format = true
+true-color = true
+color-modes = true
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "block"
