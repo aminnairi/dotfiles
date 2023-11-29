@@ -412,6 +412,11 @@
       pacman:
         name: vue-language-server
         state: present
+    - name: Install Ansible Language Server for Helix
+      become: true
+      pacman:
+        name: ansible-language-server
+        state: present
     - name: Install Rust Analyzer for Helix
       become: true
       pacman:
