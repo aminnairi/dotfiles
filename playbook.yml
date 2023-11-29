@@ -3,11 +3,6 @@
   hosts: all
   connection: local
   tasks:
-    - name: Install Vue Language Server
-      become: true
-      pacman:
-        name: vue-language-server
-        state: present
     - name: Install Helix (text editor)
       become: true
       pacman:
@@ -407,6 +402,11 @@
       become: true
       pacman:
         name: fish
+        state: present
+    - name: Install Helix editor plugin for Vue Language Server
+      become: true
+      pacman:
+        name: vue-language-server
         state: present
     - name: Setup Fish
       synchronize:
