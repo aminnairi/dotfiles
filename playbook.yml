@@ -408,6 +408,11 @@
       pacman:
         name: vue-language-server
         state: present
+    - name: Install Rust Analyzer for Helix
+      become: true
+      pacman:
+        name: rust-analyzer
+        state: present
     - name: Setup Fish
       synchronize:
         delete: true
