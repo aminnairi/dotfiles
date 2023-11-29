@@ -398,6 +398,15 @@
       pacman:
         name: python-neovim
         state: present
+    - name: Install Helix editor
+      become: true
+      pacman:
+        name: helix
+        state: present
+    - name: Setup Helix editor
+      synchronize:
+        src: helix
+        dest: /$HOME/.config
     - name: Install Fish (shell)
       become: true
       pacman:
