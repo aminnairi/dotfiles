@@ -422,6 +422,11 @@
       pacman:
         name: rust-analyzer
         state: present
+    - name: Install HTML language server for Helix
+      become: true
+      pacman:
+        name: vscode-html-languageserver
+        state: present
     - name: Setup Fish
       synchronize:
         delete: true
