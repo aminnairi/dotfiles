@@ -17,7 +17,7 @@ if status is-interactive
   alias cat="bat --theme ColdDark-Cold"
 
   # Alias for the ls command
-  alias ls="exa --icons --long --classify"
+  alias ls="eza --icons --long --classify"
 
   # configuration for Oh My Fish BobTheFish theme
   set -g theme_display_git yes

@@ -337,10 +337,10 @@
       pacman:
         name: bat
         state: present
-    - name: Install Exa (replacement for ls)
+    - name: Install Eza (replacement for ls)
       become: true
       pacman:
-        name: exa
+        name: eza
         state: present
     - name: Install JetBrains Mono Nerd (IntelliJ font)
       become: true
