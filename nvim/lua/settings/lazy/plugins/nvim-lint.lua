@@ -3,7 +3,7 @@ return {
   dependencies = {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
-  events = { "BufReadPre", "BufWritePost" },
+  event = { "BufReadPre", "BufWritePost" },
   init = function()
     local lint = require("lint")
 

@@ -8,6 +8,7 @@ return {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
   },
+  event = "InsertEnter",
   config = function()
     local cmp = require("cmp")
 
