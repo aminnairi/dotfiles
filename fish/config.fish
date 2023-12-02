@@ -19,6 +19,9 @@ if status is-interactive
   # Alias for the ls command
   alias ls="eza --icons --long --classify"
 
+  # Add ruby in the global path for Neovim
+  fish_add_path ~/.local/share/gem/ruby/3.0.0/bin
+
   # configuration for Oh My Fish BobTheFish theme
   set -g theme_display_git yes
   set -g theme_display_git_dirty yes

@@ -393,6 +393,16 @@
       pacman:
         name: python-neovim
         state: present
+    - name: Install Ruby for Neovim
+      become: true
+      pacman:
+        name: ruby
+        state: present
+    - name: Install Ruby Gem for Neovim
+      become: true
+      gem:
+        name: neovim
+        state: present
     - name: Install Helix editor
       become: true
       pacman:
