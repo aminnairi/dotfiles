@@ -354,15 +354,15 @@
       pacman:
         name: ttf-jetbrains-mono-nerd
         state: present
-    - name: Install Alacritty (terminal emulator)
+    - name: Install Kitty (terminal emulator)
       become: true
       pacman:
-        name: alacritty
+        name: kitty
         state: present
-    - name: Setup Alacritty
+    - name: Setup Kitty
       synchronize:
         delete: true
-        src: alacritty
+        src: kitty
         dest: /$HOME/.config
     - name: Install TMUX (terminal multiplexer)
       become: true
