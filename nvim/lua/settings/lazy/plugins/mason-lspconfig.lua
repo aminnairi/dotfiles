@@ -4,6 +4,7 @@ return {
     "williamboman/mason.nvim",
   },
   opts = {
+    automatic_instalation = true,
     ensure_installed = {
       "tsserver",
       "lua_ls",
