@@ -14,10 +14,23 @@ return {
         "query",
         "typescript",
         "javascript",
+        "jsdoc",
         "tsx",
         "json",
         "vue",
-        "prisma"
+        "prisma",
+        "markdown",
+        "markdown_inline",
+        "php",
+        "rust",
+        "scss",
+        "sql",
+        "ssh_config",
+        "svelte",
+        "toml",
+        "twig",
+        "xml",
+        "yaml"
       },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
