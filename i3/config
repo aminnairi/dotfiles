@@ -55,7 +55,7 @@ tiling_drag modifier titlebar
 title_align center
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
