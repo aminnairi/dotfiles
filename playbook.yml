@@ -8,6 +8,11 @@
       pacman:
         name: eza
         state: present
+    - name: Install Neofetch (operating system informations logger)
+      become: true
+      pacman:
+        name: neofetch
+        state: present
     - name: Install Fd (alternative to find)
       become: true
       pacman:
