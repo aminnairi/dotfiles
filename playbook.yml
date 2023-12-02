@@ -3,6 +3,11 @@
   hosts: all
   connection: local
   tasks:
+    - name: Install Eza (alternative to ls)
+      become: true
+      pacman:
+        name: eza
+        state: present
     - name: Install Fd (alternative to find)
       become: true
       pacman:
