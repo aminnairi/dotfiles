@@ -266,6 +266,13 @@
       pacman:
         name: nodejs
         state: present
+    - name: Install Node.js package for Neovim
+      become: true
+      npm:
+        name: neovim
+        global: true
+        state: present
+        path: /usr/local/bin/node_modules
     - name: Install custom i3status dependencies
       npm:
         path: /$HOME/.config/i3/i3status
