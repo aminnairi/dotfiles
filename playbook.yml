@@ -405,6 +405,11 @@
       pacman:
         name: tree-sitter-cli
         state: present
+    - name: Install Java SDK for Neovim
+      become: true
+      pacman:
+        name: jdk-openjdk
+        state: present
     - name: Install Ruby for Neovim
       become: true
       pacman:
