@@ -15,7 +15,8 @@ return {
       "yamlls",
       "marksman",
       "eslint",
-      "dockerls"
+      "dockerls",
+      "rust_analyzer"
     },
   },
 }
