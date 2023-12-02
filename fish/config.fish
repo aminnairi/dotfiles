@@ -17,7 +17,7 @@ if status is-interactive
   alias cat="bat --theme ColdDark-Cold"
 
   # Alias for the ls command
-  alias ls="eza --icons --long --classify"
+  alias ls="eza --icons --long --classify --git --total-size --header --tree --created --accessed --modified"
 
   # Add ruby in the global path for Neovim
   fish_add_path ~/.local/share/gem/ruby/3.0.0/bin
