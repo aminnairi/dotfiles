@@ -19,89 +19,89 @@ return {
           ["<leader>l"] = {
             name = "LSP",
             d = {
-              name = "Diagnostic",
+              name = "LSP Diagnostic",
               o = {
                 function()
                   vim.diagnostic.open_float()
                 end,
-                "Open",
+                "Open LSP diagnostic",
               },
               p = {
                 function()
                   vim.diagnostic.goto_prev()
                 end,
-                "Previous",
+                "Previous LSP diagnostic",
               },
               n = {
                 function()
                   vim.diagnostic.goto_next()
                 end,
-                "Next",
+                "Next LSP diagnostic",
               },
             },
             b = {
-              name = "File",
-              d = {
+              name = "LSP Buffer",
+              D = {
                 function()
                   vim.lsp.buf.declaration()
                 end,
-                "Declaration",
+                "Go to symbol declaration",
                 buffer = ev.buf,
               },
-              D = {
+              d = {
                 function()
                   vim.lsp.buf.definition()
                 end,
-                "Definition",
+                "Go to symbol definition",
                 buffer = ev.buf,
               },
               h = {
                 function()
                   vim.lsp.buf.hover()
                 end,
-                "Hover",
+                "Hover symbol documentation",
                 buffer = ev.buf,
               },
               i = {
                 function()
                   vim.lsp.buf.implementation()
                 end,
-                "Implementation",
+                "Go to symbol implementation",
                 buffer = ev.buf,
               },
               s = {
                 function()
                   vim.lsp.buf.signature_help()
                 end,
-                "Signature",
+                "Go to symbol signature",
                 buffer = ev.buf,
               },
               t = {
                 function()
                   vim.lsp.buf.type_definition()
                 end,
-                "Type definition",
+                "Go to symbol type definition",
                 buffer = ev.buf,
               },
               r = {
                 function()
                   vim.lsp.buf.rename()
                 end,
-                "Rename",
+                "Rename symbol",
                 buffer = ev.buf,
               },
               c = {
                 function()
                   vim.lsp.buf.code_action()
                 end,
-                "Code action",
+                "LSP code action",
                 buffer = ev.buf,
               },
               R = {
                 function()
                   vim.lsp.buf.references()
                 end,
-                "References",
+                "Go to symbol deferences",
                 buffer = ev.buf,
               },
               f = {
@@ -110,7 +110,7 @@ return {
                     async = true,
                   })
                 end,
-                "Format",
+                "Format file",
                 buffer = ev.buf,
               },
             },

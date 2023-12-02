@@ -18,5 +18,37 @@ return {
         dotfiles = false,
       },
     })
+
+    local whichKey = require("which-key")
+
+    whichKey.register({
+      ["<leader>n"] = {
+        name = "NvimTree",
+        t = {
+          function()
+            require("nvim-tree.api").tree.toggle()
+          end,
+          "Toggle NvimTree",
+        },
+        f = {
+          function()
+            require("nvim-tree.api").tree.focus()
+          end,
+          "Focus NvimTree",
+        },
+        e = {
+          function()
+            require("nvim-tree.api").tree.expand_all()
+          end,
+          "Expand NvimTree",
+        },
+        c = {
+          function()
+            require("nvim-tree.api").tree.collapse_all()
+          end,
+          "Collapse NvimTree",
+        },
+      },
+    })
   end,
 }
