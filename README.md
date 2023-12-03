@@ -42,7 +42,7 @@ git clone https://github.com/aminnairi/laptop.git
 cd laptop
 
 # Apply the configuration
-ansible-playbook --ask-become-pass playbook.yml
+make install
 ```
 
 #### Configuration
