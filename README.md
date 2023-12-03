@@ -49,7 +49,7 @@ make install
 
 ##### Configuration of Bitwarden
 
-```
+```bash
 rbw config set email <email>
 ```
 
