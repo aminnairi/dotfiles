@@ -47,7 +47,7 @@ make install
 
 #### Configuration of the used programs
 
-##### Bitwarden
+##### Configuration of Bitwarden
 
 ```
 rbw config set email <email>
