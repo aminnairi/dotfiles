@@ -55,7 +55,7 @@ rbw config set email <email>
 
 Where `<email>` is the email to use for Bitwarden.
 
-##### i3
+##### Configuration of i3
 
 ```bash
 touch i3/i3status/settings.json
