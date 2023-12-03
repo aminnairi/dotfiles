@@ -6,7 +6,7 @@ Laptop configuration for Arch Linux
 
 - [Archlinux](https://archlinux.org/)
 
-## Installation
+## Setup
 
 ### As root
 
