@@ -8,7 +8,7 @@ Laptop configuration for Arch Linux
 
 ## Setup
 
-### As root
+### Setup as the `root` user
 
 ```bash
 # Install the necessary dependencies
