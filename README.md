@@ -80,4 +80,4 @@ startx
 Shortcut | Description
 ---|---
 `Super + x` | Lock the screen
-`Super + p` | Start a new screenshot 
+`Super + p` | Start a new screenshot
