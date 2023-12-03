@@ -30,7 +30,7 @@ groupadd sudo
 usermod --add --groups sudo user
 ```
 
-### As user
+### Setup as the created user
 
 #### Installation
 
