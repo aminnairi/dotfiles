@@ -4,7 +4,7 @@ Laptop configuration for Arch Linux
 
 ## Requirements
 
-- [Arch](https://archlinux.org/)
+- [Archlinux](https://archlinux.org/)
 
 ## Installation
 
