@@ -69,7 +69,7 @@ touch i3/i3status/settings.json
 }
 ```
 
-#### Startup
+#### Startup of i3
 
 ```bash
 startx
