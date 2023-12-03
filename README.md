@@ -32,7 +32,7 @@ usermod --add --groups sudo user
 
 ### Setup as the created user
 
-#### Installation
+#### Installation of the necessary dependencies
 
 ```bash
 # Clone the repository
