@@ -45,7 +45,7 @@ cd laptop
 make install
 ```
 
-#### Configuration
+#### Configuration of the used programs
 
 ##### Bitwarden
 
