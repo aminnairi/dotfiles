@@ -19,7 +19,6 @@ return {
   config = function()
     local lint = require("lint")
     local phpcs = lint.linters.phpcs
-    local phpstan = lint.linters.phpstan
 
     phpcs.args = {
       "-q",
@@ -27,13 +26,6 @@ return {
       "--standard=PSR12",
       "--report=json",
       "-",
-    }
-
-    phpstan.args = {
-      "analyze",
-      "--error-format=json",
-      "--no-progress",
-      "--level-max"
     }
 
     lint.linters_by_ft = {
