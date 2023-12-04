@@ -121,11 +121,12 @@ return {
   end,
   config = function()
     local lspconfig = require("lspconfig")
-
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    local on_attach = function() end
 
     lspconfig.lua_ls.setup({
       capabilities = capabilities,
+      on_attach = on_attach,
       settings = {
         Lua = {
           runtime = {
@@ -150,10 +151,12 @@ return {
 
     lspconfig.tsserver.setup({
       capabilities = capabilities,
+      on_attach = on_attach
     })
 
     lspconfig.volar.setup({
       capabilities = capabilities,
+      on_attach = on_attach,
       filetypes = {
         "vue"
       },
@@ -161,6 +164,7 @@ return {
 
     lspconfig.cssls.setup({
       capabilities = capabilities,
+      on_attach = on_attach,
       filetypes = {
         "css",
         "scss",
@@ -171,6 +175,7 @@ return {
 
     lspconfig.cssmodules_ls.setup({
       capabilities = capabilities,
+      on_attach = on_attach,
       filetypes = {
         "javascript",
         "javascriptreact",
@@ -180,6 +185,7 @@ return {
     })
 
     lspconfig.prismals.setup({
+      on_attach = on_attach,
       filetypes = {
         "prisma"
       },
@@ -211,11 +217,13 @@ return {
     })
 
     lspconfig.dockerls.setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = on_attach
     })
 
     lspconfig.rust_analyzer.setup({
-      capabilities = capabilities
+      capabilities = capabilities,
+      on_attach = on_attach
     })
   end,
 }
