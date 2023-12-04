@@ -10,8 +10,6 @@ return {
       "stylelint",
       "shellcheck",
       "rustfmt",
-      "phpcbf",
-      "phpstan",
       "jq",
       "jsonlint",
       "htmlbeautifier",
@@ -19,7 +17,11 @@ return {
       "blade-formatter",
       "markdownlint",
       "yamllint",
-      "ansible-lint"
+      "ansible-lint",
+      "eslint_d",
+      "phpcbf",
+      "phpcs",
+      "phpstan"
     },
     auto_update = true,
     run_on_start = true,
