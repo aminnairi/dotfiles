@@ -6,6 +6,7 @@ return {
   },
   init = function()
     local whichKey = require("which-key")
+    local conform = require("conform")
 
     -- Use LspAttach autocommand to only map the following keys
     -- after the language server attaches to the current buffer
@@ -109,6 +110,8 @@ return {
                   vim.lsp.buf.format({
                     async = true,
                   })
+
+                  conform.format({ buffnr = ev.buff }) 
                 end,
                 "Format file",
                 buffer = ev.buf,
@@ -208,12 +211,7 @@ return {
 
     lspconfig.eslint.setup({
       capabilities = capabilities,
-      on_attach = function(_, bufnr)
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          buffer = bufnr,
-          command = "EslintFixAll",
-        })
-      end,
+      on_attach = on_attach
     })
 
     lspconfig.dockerls.setup({
@@ -222,6 +220,11 @@ return {
     })
 
     lspconfig.rust_analyzer.setup({
+      capabilities = capabilities,
+      on_attach = on_attach
+    })
+
+    lspconfig.intelephense.setup({
       capabilities = capabilities,
       on_attach = on_attach
     })
