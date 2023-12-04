@@ -16,7 +16,8 @@ return {
       "marksman",
       "eslint",
       "dockerls",
-      "rust_analyzer"
+      "rust_analyzer",
+      "intelephense"
     },
   },
 }
