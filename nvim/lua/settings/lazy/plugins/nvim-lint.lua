@@ -6,15 +6,19 @@ return {
   event = { "BufReadPre", "BufWritePost" },
   init = function()
     local lint = require("lint")
+    local whichKey = require("which-key")
 
-    vim.api.nvim_create_autocmd(
-    { "TextChanged", "TextChangedI", "BufEnter", "BufReadPre", "BufWritePost", "CursorHold", "CursorHoldI" },
-    {
-      callback = function()
-        lint.try_lint()
-      end,
-    }
-    )
+    whichKey.register({
+      ["<leader>e"] = {
+        name = "Errors",
+        f = {
+          function()
+            lint.try_lint()
+          end,
+          "Find linter errors"
+        }
+      }
+    })
   end,
   config = function()
     local lint = require("lint")
