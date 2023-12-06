@@ -1,12 +1,5 @@
 return {
   "stevearc/conform.nvim",
-  opts = {
-    formatters_by_ft = {
-      lua = { "stylua" },
-      javascript = { "eslint_d" },
-      php = { "phpcbf" }
-    },
-  },
   init = function()
     local whichKey = require("which-key");
     local conform  = require("conform")
@@ -25,4 +18,21 @@ return {
       }
     })
   end,
+  config = function()
+    local conform = require("conform")
+
+    conform.setup({
+      formatters_by_ft = {
+        lua = { "stylua" },
+        javascript = { "eslint_d" },
+        php = { "phpcbf" }
+      },
+    })
+
+    conform.formatters.phpcbf = {
+      prepend_args = {
+        "--standard=PSR12"
+      }
+    }
+  end
 }
