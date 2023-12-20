@@ -10,6 +10,40 @@ return {
 
     local map = vim.api.nvim_set_keymap
     local opts = { noremap = true, silent = true }
+    local whichKey = require("which-key")
+
+    whichKey.register({
+      ["<leader>b"] = {
+        name = "Barbar",
+        d = {
+          "<cmd>BarbarDisable<cr>",
+          "Disable Barbar"
+        },
+        e = {
+          "<cmd>BarbarEnable<cr>",
+          "Enable Barbar"
+        },
+        c = {
+          name = "Close",
+          c = {
+            "<cmd>BufferCloseAllButCurrent<cr>",
+            "Close all buffers but the current one"
+          },
+          p = {
+            "<cmd>BufferCloseAllButPinned<cr>",
+            "Close all buffers but the pinned ones"
+          },
+          l = {
+            "<cmd>BufferCloseBuffersLeft<cr>",
+            "Close all buffers to the left"
+          },
+          r = {
+            "<cmd>BufferCloseBuffersRight<cr>",
+            "Close all buffers to the right"
+          }
+        }
+      }
+    })
 
     map("n", "<A-,>", "<Cmd>BufferPrevious<CR>", opts)
     map("n", "<A-.>", "<Cmd>BufferNext<CR>", opts)
