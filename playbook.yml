@@ -2,6 +2,7 @@
 - name: "Laptop installation & configuration"
   hosts: all
   connection: local
+  gather_facts: false
   tasks:
     - name: Install Eza (alternative to ls)
       become: true
