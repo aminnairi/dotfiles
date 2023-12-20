@@ -8,6 +8,11 @@
       pacman:
         name: eza
         state: present
+    - name: Install Xclip (clipboard manager for X)
+      become: true
+      pacman:
+        name: xclip
+        state: present
     - name: Install Neofetch (operating system informations logger)
       become: true
       pacman:
