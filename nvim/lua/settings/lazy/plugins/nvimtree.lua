@@ -17,6 +17,10 @@ return {
       filters = {
         dotfiles = false,
       },
+      notify = {
+        threshold = vim.log.levels.INFO,
+        absolute_path = true,
+      },
     })
 
     local whichKey = require("which-key")
