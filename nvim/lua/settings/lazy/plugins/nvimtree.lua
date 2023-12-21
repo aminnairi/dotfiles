@@ -21,7 +21,7 @@ return {
       },
       notify = {
         threshold = vim.log.levels.INFO,
-        absolute_path = true,
+        absolute_path = false,
       },
     })
 
