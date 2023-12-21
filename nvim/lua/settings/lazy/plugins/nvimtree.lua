@@ -14,7 +14,7 @@ return {
       auto_reload_on_write = true,
       sort_by = "case_sensitive",
       view = {
-        width = 30,
+        width = {},
       },
       filters = {
         dotfiles = false,
