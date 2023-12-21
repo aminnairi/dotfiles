@@ -8,6 +8,8 @@ return {
     vim.g.loaded_netrwPlugin = 1
     vim.opt.termguicolors = true
 
+    local nvimTreeApi = require("nvim-tree.api")
+
     require("nvim-tree").setup({
       auto_reload_on_write = true,
       sort_by = "case_sensitive",
@@ -30,25 +32,25 @@ return {
         name = "NvimTree",
         t = {
           function()
-            require("nvim-tree.api").tree.toggle()
+            nvimTreeApi.tree.toggle()
           end,
           "Toggle NvimTree",
         },
         f = {
           function()
-            require("nvim-tree.api").tree.focus()
+            nvimTreeApi.tree.focus()
           end,
           "Focus NvimTree",
         },
         e = {
           function()
-            require("nvim-tree.api").tree.expand_all()
+            nvimTreeApi.tree.expand_all()
           end,
           "Expand NvimTree",
         },
         c = {
           function()
-            require("nvim-tree.api").tree.collapse_all()
+            nvimTreeApi.tree.collapse_all()
           end,
           "Collapse NvimTree",
         },
