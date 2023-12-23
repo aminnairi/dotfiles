@@ -1,8 +1,6 @@
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
-    "L3MON4D3/LuaSnip",
-    "saadparwaiz1/cmp_luasnip",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
@@ -13,11 +11,6 @@ return {
     local cmp = require("cmp")
 
     cmp.setup({
-      snippet = {
-        expand = function(args)
-          require("luasnip").lsp_expand(args.body)
-        end,
-      },
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
@@ -34,7 +27,6 @@ return {
       sources = cmp.config.sources({
         { name = "copilot", group_index = 2 },
         { name = "nvim_lsp", group_index = 2 },
-        { name = "luasnip",  group_index = 2 },
         { name = "path",     group_index = 2 },
       }, {
         { name = "buffer" },
