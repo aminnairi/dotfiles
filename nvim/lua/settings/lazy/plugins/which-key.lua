@@ -8,11 +8,11 @@ return {
   config = function()
     require("which-key").register({
       ["<C-s>"] = {
-        ":write",
+        ":write<CR>",
         "Persist the content of the current buffer to the file system"
       },
       ["<C-q>"] = {
-        ":quitall",
+        ":quitall<CR>",
         "Quit the editor with confirmation"
       },
       ["<C-h>"] = {
