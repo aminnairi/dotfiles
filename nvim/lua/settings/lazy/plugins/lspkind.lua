@@ -5,7 +5,6 @@ return {
       mode = 'symbol_text',
       preset = 'codicons',
       symbol_map = {
-        Copilot = "",
         Text = "󰉿",
         Method = "󰆧",
         Function = "󰊕",
@@ -33,7 +32,5 @@ return {
         TypeParameter = "",
       },
     })
-
-    vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6CC644"})
   end
 }
