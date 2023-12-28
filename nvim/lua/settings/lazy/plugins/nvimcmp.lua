@@ -5,12 +5,19 @@ return {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip'
   },
   event = "InsertEnter",
   config = function()
     local cmp = require("cmp")
 
     cmp.setup({
+      snippet = {
+        expand = function(args)
+          require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        end,
+      },
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
@@ -27,6 +34,7 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp", group_index = 2 },
         { name = "path",     group_index = 2 },
+        { name = 'luasnip' },
       }, {
         { name = "buffer" },
       }),
