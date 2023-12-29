@@ -4,6 +4,7 @@ return {
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "hrsh7th/nvim-cmp",
+    "folke/neodev.nvim"
   },
   config = function()
     local lspconfig = require("lspconfig")
@@ -120,27 +121,29 @@ return {
       })
     end
 
+    -- Needed in order to get more completion in Lua files for Vim/Neovim
+    require("neodev").setup()
+
     local languageServers = {
-      lua_ls = {},
-      tsserver = {},
-      volar = {},
-      cssls = {},
-      cssmodules_ls = {},
-      prismals = {},
-      yamlls = {},
-      marksman = {},
-      eslint = {},
-      dockerls = {},
-      rust_analyzer = {},
-      intelephense = {},
-      elmls = {}
+      "lua_ls",
+      "tsserver",
+      "volar",
+      "cssls",
+      "cssmodules_ls",
+      "prismals",
+      "yamlls",
+      "marksman",
+      "eslint",
+      "dockerls",
+      "rust_analyzer",
+      "intelephense",
+      "elmls",
     }
 
-    for languageServer, languageServerSettings in pairs(languageServers) do
-      lspconfig[languageServer].setup({
+    for _, languageServerName in pairs(languageServers) do
+      lspconfig[languageServerName].setup({
         capabilities = capabilities,
-        on_attach = on_attach,
-        settings = languageServerSettings
+        on_attach = on_attach
       })
     end
   end,
