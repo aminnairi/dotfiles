@@ -4,6 +4,16 @@
   pacman:
     name: xorg-server
     state: present
+- name: Install Xclip (clipboard manager for X)
+  become: true
+  pacman:
+    name: xclip
+    state: present
+- name: Install Xdotool (X11 command-line utility)
+  become: true
+  pacman:
+    name: xdotool
+    state: present
 - name: Install Xset (Xorg configuration manager)
   become: true
   pacman:

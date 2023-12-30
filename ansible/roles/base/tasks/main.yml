@@ -18,11 +18,6 @@
   pacman:
     name: eza
     state: present
-- name: Install Xclip (clipboard manager for X)
-  become: true
-  pacman:
-    name: xclip
-    state: present
 - name: Install Neofetch (operating system informations logger)
   become: true
   pacman:
@@ -114,11 +109,6 @@
   become: true
   pacman:
     name: zip
-    state: present
-- name: Install Xdotool (X11 command-line utility)
-  become: true
-  pacman:
-    name: xdotool
     state: present
 - name: Install Mesa (graphics driver)
   become: true
@@ -232,11 +222,6 @@
   become: true
   pacman:
     name: chafa
-    state: present
-- name: Install Zoxide (smarter cd command)
-  become: true
-  pacman:
-    name: zoxide
     state: present
 - name: Dua (disk usage analyzer)
   become: true
