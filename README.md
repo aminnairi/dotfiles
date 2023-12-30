@@ -12,6 +12,7 @@ Laptop configuration for Arch Linux
 ### Setup the variables needed for running the playbook
 
 ```bash
+mkdir --parent ansible/roles/user/vars
 touch ansible/roles/user/vars/main.yml
 ```
 
