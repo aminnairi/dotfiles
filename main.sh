@@ -1,8 +1,8 @@
 #!/bin/env bash
 
-if [[ "$(id -u)" -eq 0 ]]
+if [[ "$(id -u)" -ne 0 ]]
 then
-  echo "Please, use an unprivileged user with sudo permissions instead of the root user to run this script properly."
+  echo "Please, run this script as root"
   exit 1
 fi
 
@@ -58,6 +58,6 @@ ANSIBLE_COLLECTIONS_PATH="$PWD/ansible/collections" ansible-galaxy collection in
 echo "Done installing needed Ansible packages."
 echo "Running choosen Ansible Playbook at $choosen_playbook_path..."
 
-ansible-playbook --ask-become-pass --inventory localhost, --module-path ansible/collections "$choosen_playbook_path"
+ansible-playbook --inventory localhost, --module-path ansible/collections "$choosen_playbook_path"
 
 echo "Done running choosen Ansible Playbook. If this is your first installation, you might want to reboot in order for the settings to take effect."
