@@ -1,0 +1,49 @@
+---
+- name: Install Node.js package for Neovim
+  become: true
+  npm:
+    name: neovim
+    global: true
+    state: present
+    path: /usr/local/bin/node_modules
+- name: Install Neovim (command-line text editor)
+  become: true
+  pacman:
+    name: neovim
+    state: present
+- name: Install Neovim package for Python
+  become: true
+  pacman:
+    name: python-neovim
+    state: present
+- name: Install TreeSitter CLI for Neovim
+  become: true
+  pacman:
+    name: tree-sitter-cli
+    state: present
+- name: Install Java SDK for Neovim
+  become: true
+  pacman:
+    name: jdk-openjdk
+    state: present
+- name: Install Ruby for Neovim
+  become: true
+  pacman:
+    name: ruby
+    state: present
+- name: Install Ruby Gem for Neovim
+  become: true
+  gem:
+    name: neovim
+    state: present
+- name: Setup NeoVim for the unprivileged user
+  synchronize:
+    src: nvim
+    dest: /$HOME/.config
+    delete: true
+- name: Setup NeoVim for the administrator user
+  become: true
+  synchronize:
+    src: nvim
+    dest: /root/.config
+    delete: true

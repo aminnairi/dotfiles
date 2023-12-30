@@ -1,0 +1,11 @@
+---
+- name: Install Kitty (terminal emulator)
+  become: true
+  pacman:
+    name: kitty
+    state: present
+- name: Setup Kitty
+  synchronize:
+    delete: true
+    src: kitty
+    dest: /$HOME/.config

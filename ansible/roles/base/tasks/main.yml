@@ -1,0 +1,245 @@
+---
+- name: Update package manager cache
+  become: true
+  pacman:
+    update_cache: true
+- name: Install Eza (alternative to ls)
+  become: true
+  pacman:
+    name: eza
+    state: present
+- name: Install Xclip (clipboard manager for X)
+  become: true
+  pacman:
+    name: xclip
+    state: present
+- name: Install Neofetch (operating system informations logger)
+  become: true
+  pacman:
+    name: neofetch
+    state: present
+- name: Install Fd (alternative to find)
+  become: true
+  pacman:
+    name: fd
+    state: present
+- name: Install Python
+  become: true
+  pacman:
+    name: python
+    state: present
+- name: Install Julia
+  become: true
+  pacman:
+    name: julia
+    state: present
+- name: Install Ruby
+  become: true
+  pacman:
+    name: ruby
+    state: present
+- name: Install Composer (PHP package manager)
+  become: true
+  pacman:
+    name: composer
+    state: present
+- name: Install Luarocks (Lua package manager)
+  become: true
+  pacman:
+    name: luarocks
+    state: present
+- name: Install Wget (HTTP client)
+  become: true
+  pacman:
+    name: wget
+    state: present
+- name: Set the keyboard keymap
+  become: true
+  command: localectl set-keymap us
+- name: Set the keyboard layout
+  become: true
+  command: localectl set-x11-keymap us pc105 euro --no-convert compose:ralt
+- name: Install Pulsemixer (Pulseaudio Terminal UI)
+  become: true
+  pacman:
+    name: pulsemixer
+    state: present
+- name: Install Bluez (Bluetooth management)
+  become: true
+  pacman:
+    name: bluez
+    state: present
+- name: Install Bluez Utils (Bluetooth utilities)
+  become: true
+  pacman:
+    name: bluez-utils
+    state: present
+- name: Install Bluetuith (Bluetooth Terminal UI)
+  become: true
+  kewlfft.aur.aur:
+    name: bluetuith
+    state: present
+    update_cache: true
+- name: Install Playerctl (control media playing on the device)
+  become: true
+  pacman:
+    name: playerctl
+    state: present
+- name: Install Evince (PDF viewer & editor)
+  become: true
+  pacman:
+    name: evince
+    state: present
+- name: Install JMTPFS (for accessing MTP devices)
+  kewlfft.aur.aur:
+    name: jmtpfs
+    state: present
+    update_cache: true
+- name: Install Unzip (uncompression utility)
+  become: true
+  pacman:
+    name: unzip
+    state: present
+- name: Install Zip (compression utility)
+  become: true
+  pacman:
+    name: zip
+    state: present
+- name: Install Xdotool (X11 command-line utility)
+  become: true
+  pacman:
+    name: xdotool
+    state: present
+- name: Install Mesa (graphics driver)
+  become: true
+  pacman:
+    name: mesa
+    state: present
+- name: Install Vulkan Radeon (Vulkan for AMDGPU)
+  become: true
+  pacman:
+    name: vulkan-radeon
+    state: present
+- name: Install Libva Mesa (accelerated video decoding driver)
+  become: true
+  pacman:
+    name: libva-mesa-driver
+    state: present
+- name: Install Radeon Top (graphics monitoring)
+  become: true
+  pacman:
+    name: radeontop
+    state: present
+- name: Install Mesa Vdpau (accelerated video decoding driver)
+  become: true
+  pacman:
+    name: mesa-vdpau
+    state: present
+- name: Install rsync (file synchronizer)
+  become: true
+  pacman:
+    name: rsync
+    state: present
+- name: Install Pulseaudio (sound system)
+  become: true
+  pacman:
+    name: pulseaudio
+    state: present
+- name: Install Pulseaudio Systray (system tray volume control)
+  become: true
+  pacman:
+    name: pasystray
+    state: present
+- name: Install ACPID (Power manager)
+  become: true
+  pacman:
+    name: acpid
+    state: present
+- name: Start ACPID service
+  become: true
+  service:
+    enabled: true
+    name: acpid
+    state: started
+- name: Install Flameshot (screenshot utility)
+  become: true
+  pacman:
+    name: flameshot
+    state: present
+- name: Install dmenu
+  become: true
+  pacman:
+    name: dmenu
+    state: present
+- name: Install Network Manager (Wi-Fi & ethernet manager)
+  become: true
+  pacman:
+    name: networkmanager
+    state: present
+- name: Start Bluetooth service
+  become: true
+  service:
+    enabled: true
+    name: bluetooth
+    state: started
+- name: Start Network Manager service
+  become: true
+  service:
+    enabled: true
+    name: NetworkManager
+    state: started
+- name: Install Node.js
+  become: true
+  pacman:
+    name: nodejs
+    state: present
+- name: Install Tokei (line of code counter)
+  become: true
+  pacman:
+    name: tokei
+    state: present
+- name: Install Chromium (web browser)
+  become: true
+  pacman:
+    name: chromium
+    state: present
+- name: Install bottom (processes visualizer)
+  become: true
+  pacman:
+    name: bottom
+    state: present
+- name: Install Zathura (command-line PDF viewer)
+  become: true
+  pacman:
+    name: zathura
+    state: present
+- name: Install Feh (command-line picture viewer)
+  become: true
+  pacman:
+    name: feh
+    state: present
+- name: Install Chafa (command-line graphics)
+  become: true
+  pacman:
+    name: chafa
+    state: present
+- name: Install Zoxide (smarter cd command)
+  become: true
+  pacman:
+    name: zoxide
+    state: present
+- name: Dua (disk usage analyzer)
+  become: true
+  pacman:
+    name: dua-cli
+    state: present
+- name: Install Bat (replacement for cat)
+  become: true
+  pacman:
+    name: bat
+    state: present
+- name: Install Eza (replacement for ls)
+  become: true
+  pacman:
+    name: eza
+    state: present

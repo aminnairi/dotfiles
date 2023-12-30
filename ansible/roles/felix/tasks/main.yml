@@ -1,0 +1,10 @@
+---
+- name: Felix (command-line file manager)
+  become: true
+  pacman:
+    name: felix-rs
+    state: present
+- name: Felix setup
+  synchronize:
+    src: felix
+    dest: /$HOME/.config

@@ -1,0 +1,35 @@
+---
+- name: Install Xorg (X11 server)
+  become: true
+  pacman:
+    name: xorg-server
+    state: present
+- name: Install Xset (Xorg configuration manager)
+  become: true
+  pacman:
+    name: xorg-xset
+    state: present
+- name: Install Xorg AMDGPU (AMD graphics driver for Xorg)
+  become: true
+  pacman:
+    name: xf86-video-amdgpu
+    state: present
+- name: Install Xorg Backlight (brightness manager)
+  become: true
+  pacman:
+    name: xorg-xbacklight
+    state: present
+- name: Install Xorg Xinput (input devices manager)
+  become: true
+  pacman:
+    name: xorg-xinput
+    state: present
+- name: Install Xorg Xinit (Xorg startup script)
+  become: true
+  pacman:
+    name: xorg-xinit
+    state: present
+- name: Setup Xorg Xinit
+  synchronize:
+    src: xinit/xinitrc
+    dest: /$HOME/.xinitrc

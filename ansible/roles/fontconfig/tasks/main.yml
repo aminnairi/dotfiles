@@ -1,0 +1,15 @@
+---
+- name: Install JetBrains Mono Nerd (IntelliJ font)
+  become: true
+  pacman:
+    name: ttf-jetbrains-mono-nerd
+    state: present
+- name: Install Noto Fonts Emoji (for emojis support)
+  become: true
+  pacman:
+    name: noto-fonts-emoji
+    state: present
+- name: Setup Fonts
+  synchronize:
+    src: fontconfig
+    dest: /$HOME/.config

@@ -1,0 +1,25 @@
+---
+- name: Install i3-gaps (window manager)
+  become: true
+  pacman:
+    name: i3-gaps
+    state: present
+- name: Install i3lock-fancy (window locker)
+  become: true
+  kewlfft.aur.aur:
+    name: i3lock-fancy
+    state: present
+    update_cache: true
+- name: Install Network Manager Applet (Network Manager i3status icon)
+  become: true
+  pacman:
+    name: network-manager-applet
+    state: present
+- name: Setup i3 Window Manager
+  synchronize:
+    src: i3
+    dest: /$HOME/.config
+- name: Install custom i3status dependencies
+  npm:
+    path: /$HOME/.config/i3/i3status
+    state: present

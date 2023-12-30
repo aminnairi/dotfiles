@@ -1,0 +1,25 @@
+---
+- name: Install Rofi (application switcher)
+  become: true
+  pacman:
+    name: rofi
+    state: present
+- name: Install Rofi Emoji (emoji selector for Rofi)
+  become: true
+  pacman:
+    name: rofi-emoji
+    state: present
+- name: Install Rbw (Bitwarden CLI)
+  become: true
+  pacman:
+    name: rbw
+    state: present
+# - name: Install Rofi Bitwarden (Bitwarden client for Rofi)
+#   kewlfft.aur.aur:
+#     name: rofi-rbw
+#     state: present
+#     update_cache: true
+- name: Setup Rofi
+  synchronize:
+    src: rofi
+    dest: /$HOME/.config

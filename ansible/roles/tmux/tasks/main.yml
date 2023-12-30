@@ -1,0 +1,10 @@
+---
+- name: Install TMUX (terminal multiplexer)
+  become: true
+  pacman:
+    name: tmux
+    state: present
+- name: Setup TMUX
+  copy:
+    src: tmux/tmux.conf
+    dest: /$HOME/.tmux.conf

@@ -1,0 +1,23 @@
+---
+- name: Install UFW (firewall)
+  become: true
+  pacman:
+    name: ufw
+    state: present
+- name: UFW reset all rules
+  become: true
+  ufw:
+    state: reset
+- name: UFW deny all by default
+  become: true
+  ufw:
+    policy: deny
+- name: UFW enable
+  become: true
+  ufw:
+    state: enabled
+- name: UFW service startup
+  become: true
+  service:
+    name: ufw
+    state: restarted

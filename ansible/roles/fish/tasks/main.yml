@@ -1,0 +1,16 @@
+---
+- name: Install Fish (shell)
+  become: true
+  pacman:
+    name: fish
+    state: present
+- name: Setup Fish
+  synchronize:
+    delete: true
+    src: fish
+    dest: /$HOME/.config
+- name: Setup OMF
+  synchronize:
+    delete: true
+    src: omf
+    dest: /$HOME/.config
