@@ -69,22 +69,6 @@
   pacman:
     name: pulsemixer
     state: present
-- name: Install Bluez (Bluetooth management)
-  become: true
-  pacman:
-    name: bluez
-    state: present
-- name: Install Bluez Utils (Bluetooth utilities)
-  become: true
-  pacman:
-    name: bluez-utils
-    state: present
-- name: Install Bluetuith (Bluetooth Terminal UI)
-  become: true
-  kewlfft.aur.aur:
-    name: bluetuith
-    state: present
-    update_cache: true
 - name: Install Playerctl (control media playing on the device)
   become: true
   pacman:
@@ -176,12 +160,6 @@
   pacman:
     name: networkmanager
     state: present
-- name: Start Bluetooth service
-  become: true
-  service:
-    enabled: true
-    name: bluetooth
-    state: started
 - name: Start Network Manager service
   become: true
   service:
