@@ -2,4 +2,4 @@
 - name: Install background
   synchronize:
     src: background/background.jpg
-    dest: /$HOME/.local/share/backgrounds/background.jpg
+    dest: "/home/{{ user.name }}/.local/share/backgrounds/background.jpg"
