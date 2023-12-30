@@ -8,6 +8,11 @@
   pacman:
     name: git
     state: present
+- name: Install Which
+  become: true
+  pacman:
+    name: which
+    state: present
 - name: Install Eza (alternative to ls)
   become: true
   pacman:
