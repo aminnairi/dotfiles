@@ -9,29 +9,23 @@ Laptop configuration for Arch Linux
 
 ## Setup
 
-### Setup as the `root` user
+### Setup the variables needed for running the playbook
 
 ```bash
-# Install the necessary dependencies
-pacman -Syy ansible git which sudo bash
-
-# Allow the "sudo" group to issue sudo commands
-sed -i 's/#\s*%sudo/%sudo/g' /etc/sudoers
-
-# Create a new user
-useradd --create-home user
-
-# Add a password for the newly created user
-passwd user
-
-# Add the sudo group
-groupadd sudo
-
-# Add the "sudo" group for the created user
-usermod --add --groups sudo user
+touch ansible/roles/user/vars/main.yml
 ```
 
-### Setup as the created user
+```yaml
+---
+user:
+  name: "change-me"
+  password: "change-me"
+  groups: sudo
+  uid: 1000
+  shell: /bin/fish
+root:
+  shell: /bin/fish
+```
 
 #### Installation of the necessary dependencies
 
