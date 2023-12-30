@@ -53,7 +53,7 @@ fi
 
 echo "Installing needed Ansible packages..."
 
-ansible-galaxy collection install --collections-path ansible/collections kewlfft.aur
+ANSIBLE_COLLECTIONS_PATH="$PWD/ansible/collections" ansible-galaxy collection install --collections-path ansible/collections --requirements-file ansible/galaxy/requirements.yml
 
 echo "Done installing needed Ansible packages."
 echo "Running choosen Ansible Playbook at $choosen_playbook_path..."
