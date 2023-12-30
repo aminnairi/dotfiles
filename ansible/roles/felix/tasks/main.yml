@@ -7,4 +7,4 @@
 - name: Felix setup
   synchronize:
     src: felix
-    dest: /$HOME/.config
+    dest: "/home/{{ user.name }}/.config"
