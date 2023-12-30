@@ -1,0 +1,23 @@
+---
+- name: Install Bluez (Bluetooth management)
+  become: true
+  pacman:
+    name: bluez
+    state: present
+- name: Install Bluez Utils (Bluetooth utilities)
+  become: true
+  pacman:
+    name: bluez-utils
+    state: present
+- name: Install Bluetuith (Bluetooth Terminal UI)
+  become: true
+  kewlfft.aur.aur:
+    name: bluetuith
+    state: present
+    update_cache: true
+- name: Start Bluetooth service
+  become: true
+  service:
+    enabled: true
+    name: bluetooth
+    state: started
