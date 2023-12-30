@@ -7,6 +7,7 @@
   gather_facts: false
   roles:
     - base
+    - user
     - xorg
     - i3
     - background
