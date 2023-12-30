@@ -1,2 +1,3 @@
 /i3/i3status/settings.json
 /ansible/collections
+/ansible/roles/user/vars/*.yml
