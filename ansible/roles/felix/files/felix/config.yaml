@@ -1,3 +1,4 @@
+---
 # (Optional)
 # Default exec command when open files.
 # If not set, will default to $EDITOR.
@@ -42,7 +43,7 @@ default_theme: Base16OceanDark
 
 # The foreground color of directory, file and symlink.
 # Pick one of the following:
-#     Black           // 0 
+#     Black           // 0
 #     Red             // 1
 #     Green           // 2
 #     Yellow          // 3
@@ -65,3 +66,4 @@ color:
   dir_fg: LightCyan
   file_fg: LightWhite
   symlink_fg: LightYellow
+  dirty_fg: Red
