@@ -8,9 +8,9 @@
   synchronize:
     delete: true
     src: fish
-    dest: /$HOME/.config
+    dest: "/home/{{ user.name }}/.config"
 - name: Setup OMF
   synchronize:
     delete: true
     src: omf
-    dest: /$HOME/.config
+    dest: "/home/{{ user.name }}/.config"
