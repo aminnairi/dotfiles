@@ -28,7 +28,7 @@ root:
   shell: /bin/fish
 ```
 
-### Installation of the necessary dependencies
+### Laptop installation
 
 ```bash
 # Clone the repository
