@@ -3,6 +3,11 @@
   become: true
   pacman:
     update_cache: true
+- name: Install Git
+  become: true
+  pacman:
+    name: git
+    state: present
 - name: Install Eza (alternative to ls)
   become: true
   pacman:
