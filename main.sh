@@ -1,22 +1,20 @@
 #!/bin/env bash
 
+ERROR_BECAUSE_NON_ROOT=1
+ERROR_BECAUSE_NOT_ARCH_LINUX=2
+ERROR_BECAUSE_ANSIBLE_INSTALLATION_FAILED=3
+ERROR_BECAUSE_PLAYBOOK_INVALID_OR_NOT_FOUND=4
+
 if [[ "$(id -u)" -ne 0 ]]
 then
   echo "Please, run this script as root"
-  exit 1
+  exit $ERROR_BECAUSE_NON_ROOT
 fi
 
 if [[ ! -x $(command -v pacman) ]]
 then
   echo "Please, use this script with an Arch Linux operating system."
-  exit 2
-fi
-
-if [[ ! -x "$(command -v sudo)" ]]
-then
-  echo "Sudo not found. Please install it using the following command:"
-  echo "pacman -Syy sudo"
-  exit 3
+  exit $ERROR_BECAUSE_NOT_ARCH_LINUX
 fi
 
 if [[ ! -x "$(command -v ansible)" ]]
@@ -26,7 +24,7 @@ then
     then
 
     echo "Installion failed."
-    exit 4
+    exit $ERROR_BECAUSE_ANSIBLE_INSTALLATION_FAILED
   fi
 fi
 
@@ -48,7 +46,7 @@ choosen_playbook_path=${available_playbook_paths[$index - 1]}
 if [[ -z $choosen_playbook_path ]]
 then
   echo "Error: invalid index."
-  exit 5
+  exit $ERROR_BECAUSE_PLAYBOOK_INVALID_OR_NOT_FOUND
 fi
 
 echo "Installing needed Ansible packages..."
