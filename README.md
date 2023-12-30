@@ -27,7 +27,7 @@ root:
   shell: /bin/fish
 ```
 
-#### Installation of the necessary dependencies
+### Installation of the necessary dependencies
 
 ```bash
 # Clone the repository
@@ -40,9 +40,9 @@ cd laptop
 bash main.sh
 ```
 
-#### Configuration of the used programs
+### Configuration of the used programs
 
-##### Configuration of Bitwarden
+#### Configuration of Bitwarden
 
 ```bash
 rbw config set email <email>
@@ -50,7 +50,7 @@ rbw config set email <email>
 
 Where `<email>` is the email to use for Bitwarden.
 
-##### Configuration of i3
+#### Configuration of i3
 
 ```bash
 touch i3/i3status/settings.json
