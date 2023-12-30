@@ -12,7 +12,7 @@ Laptop configuration for Arch Linux
 
 ```bash
 # Install the necessary dependencies
-pacman -Syy ansible git which sudo
+pacman -Syy ansible git which sudo bash
 
 # Allow the "sudo" group to issue sudo commands
 sed -i 's/#\s*%sudo/%sudo/g' /etc/sudoers
@@ -42,7 +42,7 @@ git clone https://github.com/aminnairi/laptop.git
 cd laptop
 
 # Apply the configuration
-make install
+bash main.sh
 ```
 
 #### Configuration of the used programs
