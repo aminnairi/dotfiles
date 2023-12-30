@@ -5,6 +5,7 @@ Laptop configuration for Arch Linux
 ## Requirements
 
 - [Archlinux](https://archlinux.org/)
+- [GNU/Bash](https://www.gnu.org/software/bash/)
 
 ## Setup
 
