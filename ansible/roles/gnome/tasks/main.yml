@@ -1,0 +1,16 @@
+---
+- name: Install Gnome
+  become: true
+  pacman:
+    name: gnome
+    state: present
+- name: Install Gnome extra packages
+  become: true
+  pacman:
+    name: gnome-extras
+    state: present
+- name: Start the GDM service
+  become: true
+  service:
+    name: gdm
+    state: started
