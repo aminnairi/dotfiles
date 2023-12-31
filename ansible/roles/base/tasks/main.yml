@@ -61,9 +61,6 @@
 - name: Set the keyboard keymap
   become: true
   command: localectl set-keymap us
-- name: Set the keyboard layout
-  become: true
-  command: localectl set-x11-keymap us pc105 euro --no-convert compose:ralt
 - name: Install Evince (PDF viewer & editor)
   become: true
   pacman:
