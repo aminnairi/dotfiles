@@ -64,21 +64,6 @@
 - name: Set the keyboard layout
   become: true
   command: localectl set-x11-keymap us pc105 euro --no-convert compose:ralt
-- name: Remove Pipewire Pulseaudio bridge
-  become: true
-  pacman:
-    name: pipewire-pulse
-    state: absent
-- name: Install Pulsemixer (Pulseaudio Terminal UI)
-  become: true
-  pacman:
-    name: pulsemixer
-    state: present
-- name: Install Playerctl (control media playing on the device)
-  become: true
-  pacman:
-    name: playerctl
-    state: present
 - name: Install Evince (PDF viewer & editor)
   become: true
   pacman:
@@ -103,16 +88,6 @@
   become: true
   pacman:
     name: rsync
-    state: present
-- name: Install Pulseaudio (sound system)
-  become: true
-  pacman:
-    name: pulseaudio
-    state: present
-- name: Install Pulseaudio Systray (system tray volume control)
-  become: true
-  pacman:
-    name: pasystray
     state: present
 - name: Install ACPID (Power manager)
   become: true
