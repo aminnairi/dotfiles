@@ -13,4 +13,4 @@
   become: true
   service:
     name: gdm
-    state: started
+    enabled: true
