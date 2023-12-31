@@ -8,6 +8,7 @@
   roles:
     - base
     - intel
+    - sound
     - xorg
     - i3
     - background
