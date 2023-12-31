@@ -19,13 +19,18 @@
   pacman:
     name: playerctl
     state: present
-- name: Install Pulseaudio (sound system)
-  become: true
-  pacman:
-    name: pulseaudio
-    state: present
 - name: Install Pulseaudio Systray (system tray volume control)
   become: true
   pacman:
     name: pasystray
     state: present
+- name: Enable the Pipewire service
+  become: true
+  service:
+    name: pipewire
+    state: enabled
+- name: Start the Pipewire service
+  become: true
+  service:
+    name: pipewire
+    state: started
