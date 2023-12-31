@@ -3,11 +3,6 @@
   become: true
   pacman:
     update_cache: true
-- name: Install Git
-  become: true
-  pacman:
-    name: git
-    state: present
 - name: Install Which
   become: true
   pacman:
