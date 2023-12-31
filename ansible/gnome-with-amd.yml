@@ -17,5 +17,6 @@
     - neovim
     - ufw
     - hostname
+    - timezone
     - locale
     - gnome
