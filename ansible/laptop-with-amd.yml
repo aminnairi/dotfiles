@@ -1,0 +1,23 @@
+---
+- name: "Laptop installation & configuration"
+  hosts: all
+  connection: local
+  vars:
+    ansible_python_interpreter: auto_silent
+  gather_facts: false
+  roles:
+    - base
+    - amd
+    - xorg
+    - i3
+    - background
+    - fish
+    - fontconfig
+    - notification
+    - kitty
+    - felix
+    - tmux
+    - rofi
+    - neovim
+    - bluetooth
+    - ufw
