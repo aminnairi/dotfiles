@@ -16,4 +16,5 @@
     - tmux
     - neovim
     - ufw
+    - locale
     - gnome
