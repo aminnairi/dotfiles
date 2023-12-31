@@ -24,8 +24,3 @@
   pacman:
     name: pasystray
     state: present
-- name: Start the Pipewire service
-  become: true
-  service:
-    name: pipewire
-    state: started
