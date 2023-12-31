@@ -19,4 +19,5 @@
     - hostname
     - timezone
     - locale
+    - network
     - gnome
