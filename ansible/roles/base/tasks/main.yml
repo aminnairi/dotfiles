@@ -58,16 +58,6 @@
   pacman:
     name: wget
     state: present
-- name: Install Evince (PDF viewer & editor)
-  become: true
-  pacman:
-    name: evince
-    state: present
-- name: Install JMTPFS (for accessing MTP devices)
-  kewlfft.aur.aur:
-    name: jmtpfs
-    state: present
-    update_cache: true
 - name: Install Unzip (uncompression utility)
   become: true
   pacman:
@@ -94,16 +84,6 @@
     enabled: true
     name: acpid
     state: started
-- name: Install Flameshot (screenshot utility)
-  become: true
-  pacman:
-    name: flameshot
-    state: present
-- name: Install dmenu
-  become: true
-  pacman:
-    name: dmenu
-    state: present
 - name: Install Network Manager (Wi-Fi & ethernet manager)
   become: true
   pacman:
@@ -129,26 +109,6 @@
   become: true
   pacman:
     name: bottom
-    state: present
-- name: Install Zathura (command-line PDF viewer)
-  become: true
-  pacman:
-    name: zathura
-    state: present
-- name: Install Feh (command-line picture viewer)
-  become: true
-  pacman:
-    name: feh
-    state: present
-- name: Install Chafa (command-line graphics)
-  become: true
-  pacman:
-    name: chafa
-    state: present
-- name: Dua (disk usage analyzer)
-  become: true
-  pacman:
-    name: dua-cli
     state: present
 - name: Install Bat (replacement for cat)
   become: true
