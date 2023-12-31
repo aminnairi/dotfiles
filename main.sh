@@ -1,14 +1,14 @@
 #!/bin/env bash
 
-ERROR_BECAUSE_NON_ROOT=1
+ERROR_BECAUSE_ROOT=1
 ERROR_BECAUSE_NOT_ARCH_LINUX=2
 ERROR_BECAUSE_ANSIBLE_INSTALLATION_FAILED=3
 ERROR_BECAUSE_PLAYBOOK_INVALID_OR_NOT_FOUND=4
 
-if [[ "$(id -u)" -ne 0 ]]
+if [[ "$(id -u)" -eq 0 ]]
 then
-  echo "Please, run this script as root"
-  exit $ERROR_BECAUSE_NON_ROOT
+  echo "Please, run this script as user"
+  exit $ERROR_BECAUSE_ROOT
 fi
 
 if [[ ! -x $(command -v pacman) ]]
@@ -56,6 +56,6 @@ ANSIBLE_COLLECTIONS_PATH="$PWD/ansible/collections" ansible-galaxy collection in
 echo "Done installing needed Ansible packages."
 echo "Running choosen Ansible Playbook at $choosen_playbook_path..."
 
-ansible-playbook --inventory localhost, --module-path ansible/collections "$choosen_playbook_path"
+ansible-playbook --inventory localhost, --ask-become-pass --module-path ansible/collections "$choosen_playbook_path"
 
 echo "Done running choosen Ansible Playbook. If this is your first installation, you might want to reboot in order for the settings to take effect."
