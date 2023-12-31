@@ -1,0 +1,26 @@
+---
+- name: Install Vulkan Radeon (Vulkan for AMDGPU)
+  become: true
+  pacman:
+    name: vulkan-radeon
+    state: present
+- name: Install Mesa (graphics driver)
+  become: true
+  pacman:
+    name: mesa
+    state: present
+- name: Install Libva Mesa (accelerated video decoding driver)
+  become: true
+  pacman:
+    name: libva-mesa-driver
+    state: present
+- name: Install Radeon Top (graphics monitoring)
+  become: true
+  pacman:
+    name: radeontop
+    state: present
+- name: Install Mesa Vdpau (accelerated video decoding driver)
+  become: true
+  pacman:
+    name: mesa-vdpau
+    state: present
