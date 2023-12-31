@@ -1,13 +1,13 @@
 ---
-- name: Install Pipewire Pulseaudio bridge
+- name: Install Pipewire
   become: true
   pacman:
     name: pipewire
     state: present
-- name: Install Pipewire Pulseaudio bridge
+- name: Install Pipewire Audio
   become: true
   pacman:
-    name: pipewire
+    name: pipewire-audio
     state: present
 - name: Install Pulsemixer (Pulseaudio Terminal UI)
   become: true
