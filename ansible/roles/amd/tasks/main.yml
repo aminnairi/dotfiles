@@ -29,3 +29,8 @@
   pacman:
     name: mesa-vdpau
     state: present
+- name: Install AMD microcode
+  become: true
+  pacman:
+    name: amd-ucode
+    state: present
