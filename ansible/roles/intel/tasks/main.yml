@@ -1,0 +1,21 @@
+---
+- name: Install Mesa (graphics driver)
+  become: true
+  pacman:
+    name: mesa
+    state: present
+- name: Install Libva Mesa (accelerated video decoding driver)
+  become: true
+  pacman:
+    name: libva-mesa-driver
+    state: present
+- name: Install Intel (graphics driver)
+  become: true
+  pacman:
+    name: xf86-video-intel
+    state: present
+- name: Install Vulkan Intel (graphics driver)
+  become: true
+  pacman:
+    name: vulkan-intel
+    state: present
