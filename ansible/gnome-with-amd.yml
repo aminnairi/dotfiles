@@ -16,5 +16,6 @@
     - tmux
     - neovim
     - ufw
+    - hostname
     - locale
     - gnome
