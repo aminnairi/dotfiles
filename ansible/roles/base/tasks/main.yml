@@ -121,11 +121,6 @@
     enabled: true
     name: NetworkManager
     state: started
-- name: Install Node.js
-  become: true
-  pacman:
-    name: nodejs
-    state: present
 - name: Install Tokei (line of code counter)
   become: true
   pacman:
