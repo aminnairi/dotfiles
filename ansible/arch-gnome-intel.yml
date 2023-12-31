@@ -1,5 +1,5 @@
 ---
-- name: "Laptop installation & configuration"
+- name: Arch with Gnome and Intel
   hosts: all
   connection: local
   vars:
