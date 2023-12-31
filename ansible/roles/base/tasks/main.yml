@@ -115,8 +115,3 @@
   pacman:
     name: bat
     state: present
-- name: Install Eza (replacement for ls)
-  become: true
-  pacman:
-    name: eza
-    state: present
