@@ -1,0 +1,12 @@
+---
+- name: Install Network Manager (Wi-Fi & ethernet manager)
+  become: true
+  pacman:
+    name: networkmanager
+    state: present
+- name: Start Network Manager service
+  become: true
+  service:
+    enabled: true
+    name: NetworkManager
+    state: started
