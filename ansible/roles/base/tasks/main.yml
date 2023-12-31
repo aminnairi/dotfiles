@@ -58,9 +58,6 @@
   pacman:
     name: wget
     state: present
-- name: Set the keyboard keymap
-  become: true
-  command: localectl set-keymap us
 - name: Install Evince (PDF viewer & editor)
   become: true
   pacman:
