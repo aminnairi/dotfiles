@@ -1,7 +1,0 @@
-{
-  "type": "module",
-  "private": true,
-  "dependencies": {
-    "@aminnairi/i3status": "1.1.0"
-  }
-}

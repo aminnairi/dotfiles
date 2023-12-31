@@ -1,5 +1,0 @@
----
-- name: Install background
-  synchronize:
-    src: background/background.jpg
-    dest: "/$HOME/.local/share/backgrounds/background.jpg"

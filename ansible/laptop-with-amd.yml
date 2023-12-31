@@ -8,17 +8,12 @@
   roles:
     - base
     - amd
-    - sound
     - xorg
-    - i3
-    - background
     - fish
     - fontconfig
-    - notification
     - kitty
     - felix
     - tmux
-    - rofi
     - neovim
     - bluetooth
     - ufw
