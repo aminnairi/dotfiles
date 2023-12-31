@@ -30,13 +30,19 @@ fi
 
 echo "Choose a configuration";
 
-available_playbook_paths=$(ls ansible/*.yml)
+available_playbooks="$(ls ansible/*.yml)"
+available_playbook_paths=()
 
-for index in $(seq 1 ${#available_playbook_paths[@]})
+for available_playbook in $available_playbooks
 do
-  available_playbook_path="$(basename "${available_playbook_paths[$index - 1]}")"
+  available_playbook_paths+=("$available_playbook")
+done
 
-  echo "$index - $available_playbook_path"
+available_playbook_paths_count=${#available_playbook_paths[@]}
+
+for ((index=0; index < available_playbook_paths_count; index++))
+do
+  echo "$((index + 1)). $(basename "${available_playbook_paths[$index]}")"
 done
 
 read -r -p "Choice: " index
