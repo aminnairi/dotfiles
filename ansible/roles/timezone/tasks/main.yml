@@ -1,0 +1,5 @@
+---
+- name: Set the timezone for Europe/Paris
+  become: true
+  community.general.timezone:
+    name: Europe/Paris
