@@ -1,0 +1,31 @@
+---
+- name: Install Pipewire Pulseaudio bridge
+  become: true
+  pacman:
+    name: pipewire
+    state: present
+- name: Install Pipewire Pulseaudio bridge
+  become: true
+  pacman:
+    name: pipewire
+    state: present
+- name: Install Pulsemixer (Pulseaudio Terminal UI)
+  become: true
+  pacman:
+    name: pulsemixer
+    state: present
+- name: Install Playerctl (control media playing on the device)
+  become: true
+  pacman:
+    name: playerctl
+    state: present
+- name: Install Pulseaudio (sound system)
+  become: true
+  pacman:
+    name: pulseaudio
+    state: present
+- name: Install Pulseaudio Systray (system tray volume control)
+  become: true
+  pacman:
+    name: pasystray
+    state: present
