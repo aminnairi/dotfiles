@@ -7,7 +7,7 @@
 - name: Install Gnome extra packages
   become: true
   pacman:
-    name: gnome-extras
+    name: gnome-extra
     state: present
 - name: Start the GDM service
   become: true
