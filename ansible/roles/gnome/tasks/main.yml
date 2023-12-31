@@ -19,6 +19,12 @@
   pacman:
     name: pipewire-pulse
     state: present
+- name: Enable Pipewire for Pulseaudio
+  systemd_service:
+    name: pipewire-pulse
+    scope: user
+    enabled: true
+    state: started
 - name: Enable compose key for special characters
   community.general.dconf:
     key: /org/gnome/desktop/input-sources/xkb-options
