@@ -8,6 +8,7 @@
   roles:
     - base
     - amd
+    - git
     - xorg
     - fish
     - fontconfig
