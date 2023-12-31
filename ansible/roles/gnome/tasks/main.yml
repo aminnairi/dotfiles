@@ -9,7 +9,7 @@
   pacman:
     name: gnome-extra
     state: present
-- name: Start the GDM service
+- name: Enable the GDM service
   become: true
   service:
     name: gdm
