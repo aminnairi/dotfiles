@@ -64,6 +64,11 @@
 - name: Set the keyboard layout
   become: true
   command: localectl set-x11-keymap us pc105 euro --no-convert compose:ralt
+- name: Remove Pipewire Pulseaudio bridge
+  become: true
+  pacman:
+    name: pipewire-pulse
+    state: absent
 - name: Install Pulsemixer (Pulseaudio Terminal UI)
   become: true
   pacman:
