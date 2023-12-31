@@ -19,3 +19,8 @@
   pacman:
     name: vulkan-intel
     state: present
+- name: Install Intel microcode
+  become: true
+  pacman:
+    name: intel-ucode
+    state: present
