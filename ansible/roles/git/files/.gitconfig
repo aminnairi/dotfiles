@@ -1,8 +1,6 @@
 [user]
 	email = 18418459+aminnairi@users.noreply.github.com
 	name = aminnairi
-	signingkey = F1320F5C56051D51
-	gpgsign = true
 [init]
 	defaultBranch = development
 [core]
