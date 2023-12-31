@@ -39,7 +39,7 @@
 - name: Setup NeoVim for the unprivileged user
   synchronize:
     src: nvim
-    dest: "/home/{{ user.name }}/.config"
+    dest: "/$HOME/.config"
     delete: true
 - name: Setup NeoVim for the administrator user
   become: true

@@ -22,4 +22,4 @@
 - name: Setup Rofi
   synchronize:
     src: rofi
-    dest: "/home/{{ user.name }}/.config"
+    dest: "/$HOME/.config"

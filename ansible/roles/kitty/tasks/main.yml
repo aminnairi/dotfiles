@@ -8,4 +8,4 @@
   synchronize:
     delete: true
     src: kitty
-    dest: "/home/{{ user.name }}/.config"
+    dest: "/$HOME/.config"

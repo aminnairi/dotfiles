@@ -42,4 +42,4 @@
 - name: Setup Xorg Xinit
   synchronize:
     src: xinit/xinitrc
-    dest: "/home/{{ user.name }}/.xinitrc"
+    dest: "/$HOME/.xinitrc"

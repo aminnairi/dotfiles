@@ -18,8 +18,8 @@
 - name: Setup i3 Window Manager
   synchronize:
     src: i3
-    dest: "/home/{{ user.name }}/.config"
+    dest: "/$HOME/.config"
 - name: Install custom i3status dependencies
   npm:
-    path: "/home/{{ user.name }}/.config/i3/i3status"
+    path: "/$HOME/.config/i3/i3status"
     state: present
