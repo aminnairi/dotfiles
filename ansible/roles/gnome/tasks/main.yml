@@ -14,3 +14,8 @@
   service:
     name: gdm
     enabled: true
+- name: Enable compose key for special characters
+  community.general.dconf:
+    key: /org/gnome/desktop/input-sources/xkb-options
+    value: "['compose:ralt']"
+    state: present
