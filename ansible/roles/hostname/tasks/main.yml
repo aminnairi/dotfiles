@@ -1,0 +1,6 @@
+---
+- name: Set the host name
+  become: true
+  ansible.builtin.hostname:
+    name: archlinux
+    use: systemd
