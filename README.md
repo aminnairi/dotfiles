@@ -40,3 +40,8 @@ cd ~/Documents/git/github.com/aminnairi/laptop
 # Apply the configuration
 bash main.sh
 ```
+
+## Tips
+
+- Start Neovim (`nvim`) at least once per user (`root` included) in order to install the necessary plugins
+- Start Tmux at least once in order to install the necessary plugins
