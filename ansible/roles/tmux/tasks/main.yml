@@ -9,6 +9,7 @@
     repo: https://github.com/tmux-plugins/tpm
     dest: /$HOME/.tmux/plugins/tpm
     update: true
+    force: true
     clone: true
     single_branch: true
     depth: 1
