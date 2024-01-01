@@ -31,11 +31,11 @@ passwd user
 ### Laptop installation as user
 
 ```bash
-# Clone the repository
-git clone https://github.com/aminnairi/laptop.git
+# Clone the repository in the home folder
+git clone https://github.com/aminnairi/laptop.git ~/Documents/git/github.com/aminnairi/laptop
 
-# Change the current working directory
-cd laptop
+# Change the current working directory to the source-code for the installation script
+cd ~/Documents/git/github.com/aminnairi/laptop
 
 # Apply the configuration
 bash main.sh
