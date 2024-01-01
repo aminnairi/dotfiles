@@ -7,7 +7,7 @@
 - name: Install TPM (Tmux Plugin Manager)
   git:
     repo: https://github.com/tmux-plugins/tpm
-    desk: /$HOME/.tmux/plugins/tpm
+    dest: /$HOME/.tmux/plugins/tpm
     update: true
     clone: true
     single_branch: true
