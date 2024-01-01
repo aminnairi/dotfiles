@@ -9,6 +9,11 @@
   pacman:
     name: gnome-extra
     state: present
+- name: Install Python PSUtil (process and system utilities for Gnome)
+  become: true
+  pacman:
+    name: python-psutil
+    state: present
 - name: Enable the GDM service
   become: true
   service:
