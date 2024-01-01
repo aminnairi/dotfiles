@@ -4,6 +4,14 @@
   pacman:
     name: tmux
     state: present
+- name: Install TPM (Tmux Plugin Manager)
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    desk: /$HOME/.tmux/plugins/tpm
+    update: true
+    clone: true
+    single_branch: true
+    depth: 1
 - name: Setup TMUX
   copy:
     src: tmux/tmux.conf
