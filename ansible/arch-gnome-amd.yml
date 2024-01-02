@@ -4,7 +4,7 @@
   connection: local
   vars:
     ansible_python_interpreter: auto_silent
-  gather_facts: false
+  gather_facts: true
   roles:
     - base
     - amd
