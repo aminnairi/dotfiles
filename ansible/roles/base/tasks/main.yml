@@ -8,6 +8,11 @@
   pacman:
     name: github-cli
     state: present
+- name: Install Bpytop (system monitor)
+  become: true
+  pacman:
+    name: bpytop
+    state: present
 - name: Install Which
   become: true
   pacman:
