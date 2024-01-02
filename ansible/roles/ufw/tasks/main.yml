@@ -4,10 +4,6 @@
   pacman:
     name: ufw
     state: present
-- name: UFW reset all rules
-  become: true
-  ufw:
-    state: reset
 - name: UFW deny all by default
   become: true
   ufw:
