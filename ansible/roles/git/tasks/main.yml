@@ -4,6 +4,11 @@
   pacman:
     name: git
     state: present
+- name: Install LazyGit (Git TUI)
+  become: true
+  pacman:
+    name: lazygit
+    state: present
 - name: Copy the configuration for Git
   synchronize:
     src: .gitconfig
