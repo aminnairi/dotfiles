@@ -3,6 +3,12 @@
   community.general.locale_gen:
     name: en_US.UTF-8
     state: present
+- name: Get the current keymap
+  shell: localectl status | grep "VC Keymap" | cut -d " " -f 7
+  register: localectl_keymap_status_command
+  ignore_errors: true
+  changed_when: false
 - name: Set the keyboard keymap
   become: true
-  command: localectl set-keymap us
+  command: "localectl set-keymap {{ locale }}"
+  when: 'localectl_keymap_status_command.stdout != locale'
