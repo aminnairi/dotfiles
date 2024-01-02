@@ -1,6 +1,14 @@
 # dotfiles
 
-Laptop configuration for Arch Linux
+My personal software installation & configuration
+
+## Disclaimer
+
+This is a repository that I keep public in order to ease out the installation of my different computers.
+
+The repository is not intended to be used as-is by many people, although special attention and care has been put in order to make it sensibly easy to be used by anyone wanting to try out this installation.
+
+Although the goal for any non-contributor is to get inspiration, not to use it as you daily driver. Nothing can stop you from doing it so feel free to do so and open issues, but I can't guarantee to be available to fix issues.
 
 ## Requirements
 
