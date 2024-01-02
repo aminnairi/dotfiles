@@ -9,6 +9,10 @@
   pacman:
     name: docker-compose
     state: present
+- name: Install LazyDocker (Docker TUI)
+  kewlfft.aur.aur:
+    name: lazydocker
+    state: present
 - name: List groups for the unprivileged user
   command: groups {{ ansible_user_id }}
   register: user_groups_command
