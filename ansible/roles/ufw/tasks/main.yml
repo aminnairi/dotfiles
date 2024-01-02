@@ -15,5 +15,6 @@
 - name: UFW service startup
   become: true
   service:
+    enabled: true
     name: ufw
     state: restarted
