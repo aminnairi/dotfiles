@@ -4,6 +4,11 @@
   pacman:
     name: fish
     state: present
+- name: Install OpenVPN (for openvpn.fish)
+  become: true
+  pacman:
+    name: openvpn
+    state: present
 - name: Setup Fish
   synchronize:
     delete: true
