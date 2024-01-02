@@ -1,0 +1,6 @@
+---
+- name: Install Vifm (file manager for the terminal)
+  become: true
+  pacman:
+    name: vifm
+    state: present
