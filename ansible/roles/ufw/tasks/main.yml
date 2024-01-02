@@ -17,4 +17,4 @@
   service:
     enabled: true
     name: ufw
-    state: restarted
+    state: started
