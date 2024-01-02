@@ -1,4 +1,9 @@
 ---
+- name: Install RipGrep
+  become: true
+  pacman:
+    name: ripgrep
+    state: present
 - name: Install Node.js
   become: true
   pacman:
