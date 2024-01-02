@@ -1,0 +1,25 @@
+---
+- name: Install Docker
+  become: true
+  pacman:
+    name: docker
+    state: present
+- name: Install Docker Compose
+  become: true
+  pacman:
+    name: docker-compose
+    state: present
+- name: List groups for the unprivileged user
+  command: groups {{ ansible_user_id }}
+  register: user_groups_command
+  changed_when: false
+- name: Ensure the user has the correct permission
+  become: true
+  command: usermod -aG docker {{ ansible_user_id }}
+  when: '"docker" not in user_groups_command.stdout'
+- name: Ensure Docker is started and enabled at boot
+  become: true
+  service:
+    name: docker
+    enabled: true
+    state: started
