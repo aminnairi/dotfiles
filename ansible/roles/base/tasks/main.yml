@@ -3,6 +3,11 @@
   become: true
   pacman:
     update_cache: true
+- name: Install GitHub's CLI
+  become: true
+  pacman:
+    name: github-cli
+    state: present
 - name: Install Which
   become: true
   pacman:
