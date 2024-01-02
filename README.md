@@ -1,4 +1,4 @@
-# laptop
+# dotfiles
 
 Laptop configuration for Arch Linux
 
