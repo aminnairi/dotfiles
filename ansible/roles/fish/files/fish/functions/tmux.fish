@@ -4,13 +4,13 @@ function tmux
       # Update Oh My Fish if it installed
       omf update
     end
+
+    # Install Tmux plugins
+    ~/.tmux/plugins/tpm/bin/install_plugins
+
+    # Update Tmux plugins
+    ~/.tmux/plugins/tpm/bin/install_plugins
   end
-
-  # Install Tmux plugins
-  ~/.tmux/plugins/tpm/bin/install_plugins
-
-  # Update Tmux plugins
-  ~/.tmux/plugins/tpm/bin/install_plugins
 
   # Execute TMUX
   /usr/bin/tmux -u $argv
