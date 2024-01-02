@@ -13,6 +13,11 @@
   pacman:
     name: bpytop
     state: present
+- name: Install Bind (network utilities, nslookup, dig, ...)
+  become: true
+  pacman:
+    name: bind
+    state: present
 - name: Install Which
   become: true
   pacman:
