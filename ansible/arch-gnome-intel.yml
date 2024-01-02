@@ -23,4 +23,5 @@
     - timezone
     - locale
     - network
+    - docker
     - gnome
