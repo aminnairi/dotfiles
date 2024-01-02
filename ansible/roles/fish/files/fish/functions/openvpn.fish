@@ -1,3 +1,3 @@
 function openvpn
-  openvpn --auth-nocache --config $argv
+  sudo openvpn --auth-nocache --config $argv
 end
