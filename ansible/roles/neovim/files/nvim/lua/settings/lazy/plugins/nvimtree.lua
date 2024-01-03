@@ -102,6 +102,7 @@ return {
       notify = {
         -- Notifies everything from the INFO severity to ERROR
         threshold = vim.log.levels.INFO,
+        -- Notifies only the relative path instead of the absolute
         absolute_path = false,
       },
         -- dynamically get the width of the tree
