@@ -109,6 +109,8 @@ return {
       hijack_cursor = true,
       -- Disable completely netrw, just in case
       disable_netrw = true,
+      -- Reload the tree whenever a buffer is opened
+      reload_on_bufenter = true,
         -- dynamically get the width of the tree
         width = get_width,
     })
