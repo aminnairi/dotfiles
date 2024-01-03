@@ -128,6 +128,8 @@ return {
         group_empty = true,
         -- Never highlight any files in a special way
         special_files = {},
+        -- Highlight files that have diagnostics
+        highlight_diagnostics = true
     })
 
     local whichKey = require("which-key")
