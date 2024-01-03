@@ -96,9 +96,6 @@ return {
     require("nvim-tree").setup({
       auto_reload_on_write = true,
       sort_by = "case_sensitive",
-      view = {
-        width = get_width,
-      },
       filters = {
         dotfiles = false,
       },
@@ -106,6 +103,8 @@ return {
         threshold = vim.log.levels.INFO,
         absolute_path = false,
       },
+        -- dynamically get the width of the tree
+        width = get_width,
     })
 
     local whichKey = require("which-key")
