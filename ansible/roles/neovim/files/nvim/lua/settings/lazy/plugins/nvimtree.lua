@@ -100,6 +100,7 @@ return {
         dotfiles = false,
       },
       notify = {
+        -- Notifies everything from the INFO severity to ERROR
         threshold = vim.log.levels.INFO,
         absolute_path = false,
       },
