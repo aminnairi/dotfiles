@@ -105,6 +105,8 @@ return {
         -- Notifies only the relative path instead of the absolute
         absolute_path = false,
       },
+      -- Move to the first letter of each folder/files instead of the beginning of the line
+      hijack_cursor = true,
         -- dynamically get the width of the tree
         width = get_width,
     })
