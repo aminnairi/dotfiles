@@ -30,7 +30,7 @@ sed -i 's/# %sudo/%sudo/g' /etc/sudoers
 groupadd sudo
 
 # Add the unprivileged user
-useradd --create-home --shell --groups sudo --uid 1000 /bin/fish user
+useradd --create-home --shell /bin/fish --groups sudo --uid 1000 user
 
 # Setup the password for the unprivileged user
 passwd user
