@@ -12,6 +12,7 @@ return {
 			"elmls",
 			"eslint",
 			"intelephense",
+			"jsonls",
 			"lua_ls",
 			"marksman",
 			"prismals",
