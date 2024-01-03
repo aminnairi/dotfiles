@@ -113,12 +113,17 @@ return {
       reload_on_bufenter = true,
       -- Allows using vim.ui.select for various operation instead of the defaut implementation
       select_prompts = true,
+      view = {
         -- dynamically get the width of the tree
         width = get_width,
         -- Always open the tree on the left side of the screen
         side = "left",
         -- Never display the number line for the tree
         number = false,
+      },
+      renderer = {
+        -- Never add trailing slashes for folders name
+        add_trailing = false,
     })
 
     local whichKey = require("which-key")
