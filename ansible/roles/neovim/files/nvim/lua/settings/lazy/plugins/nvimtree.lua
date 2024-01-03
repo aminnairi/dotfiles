@@ -117,6 +117,8 @@ return {
         width = get_width,
         -- Always open the tree on the left side of the screen
         side = "left",
+        -- Never display the number line for the tree
+        number = false,
     })
 
     local whichKey = require("which-key")
