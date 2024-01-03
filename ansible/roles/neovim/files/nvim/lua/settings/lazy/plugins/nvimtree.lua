@@ -138,6 +138,9 @@ return {
       diagnostics = {
         -- Enable diagnostics for the tree
         enable = true,
+        -- Show diagnostics for the parent folder of the incriminated file
+        show_on_dirs = true
+      }
     })
 
     local whichKey = require("which-key")
