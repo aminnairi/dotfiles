@@ -237,10 +237,13 @@ fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 
 " Web
 filextype {*.xhtml,*.html,*.htm},<text/html>
+        \ {Open with chromium}
+        \ chromium %f,
         \ {Open with qutebrowser}
         \ qutebrowser %f %i,
         \ {Open with firefox}
         \ firefox %f &,
+
 filetype {*.xhtml,*.html,*.htm},<text/html> links, lynx
 
 " Object
