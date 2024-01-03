@@ -130,6 +130,11 @@ return {
         special_files = {},
         -- Highlight files that have diagnostics
         highlight_diagnostics = true
+      },
+      update_focused_file = {
+        -- Focus the file in the tree whenever it is focused in the editor
+        enable = true
+      },
     })
 
     local whichKey = require("which-key")
