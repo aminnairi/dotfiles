@@ -4,3 +4,8 @@
   pacman:
     name: vifm
     state: present
+- name: Synchronizes the configuration
+  synchronize:
+    src: vifm
+    dest: /$HOME/.config
+    delete: true
