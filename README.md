@@ -40,10 +40,10 @@ passwd user
 
 ```bash
 # Clone the repository in the home folder
-git clone https://github.com/aminnairi/laptop.git ~/Documents/git/github.com/aminnairi/laptop
+git clone https://github.com/aminnairi/dotfiles ~/Documents/git/github.com/aminnairi/dotfiles
 
 # Change the current working directory to the source-code for the installation script
-cd ~/Documents/git/github.com/aminnairi/laptop
+cd ~/Documents/git/github.com/aminnairi/dotfiles
 
 # Apply the configuration
 bash main.sh
