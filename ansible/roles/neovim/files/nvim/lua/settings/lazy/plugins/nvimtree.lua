@@ -107,6 +107,8 @@ return {
       },
       -- Move to the first letter of each folder/files instead of the beginning of the line
       hijack_cursor = true,
+      -- Disable completely netrw, just in case
+      disable_netrw = true,
         -- dynamically get the width of the tree
         width = get_width,
     })
