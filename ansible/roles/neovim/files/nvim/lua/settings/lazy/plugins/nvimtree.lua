@@ -93,7 +93,21 @@ return {
       end
     })
 
+    local function on_nvim_tree_attach(buffer)
+      local function opts(desc)
+        return { desc = "nvim-tree: " .. desc, buffer = buffer, noremap = true, silent = true, nowait = true }
+      end
+
+      -- default mappings
+      nvimTreeApi.config.mappings.default_on_attach(buffer)
+
+      -- custom mappings
+      vim.keymap.set('n', 'l', nvimTreeApi.node.open.edit, opts('Open file/directory'))
+      vim.keymap.set('n', 'h', nvimTreeApi.node.navigate.parent_close, opts('Help'))
+    end
+
     require("nvim-tree").setup({
+      on_attach = on_nvim_tree_attach,
       auto_reload_on_write = true,
       sort_by = "case_sensitive",
       filters = {
