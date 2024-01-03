@@ -138,6 +138,7 @@ return {
       "rust_analyzer",
       "intelephense",
       "elmls",
+      "jsonls"
     }
 
     for _, languageServerName in pairs(languageServers) do
