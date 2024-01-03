@@ -135,6 +135,9 @@ return {
         -- Focus the file in the tree whenever it is focused in the editor
         enable = true
       },
+      diagnostics = {
+        -- Enable diagnostics for the tree
+        enable = true,
     })
 
     local whichKey = require("which-key")
