@@ -124,6 +124,8 @@ return {
       renderer = {
         -- Never add trailing slashes for folders name
         add_trailing = false,
+        -- Always group directories in the tree for those that only have one child node
+        group_empty = true,
     })
 
     local whichKey = require("which-key")
