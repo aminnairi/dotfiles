@@ -111,8 +111,12 @@ return {
       disable_netrw = true,
       -- Reload the tree whenever a buffer is opened
       reload_on_bufenter = true,
+      -- Allows using vim.ui.select for various operation instead of the defaut implementation
+      select_prompts = true,
         -- dynamically get the width of the tree
         width = get_width,
+        -- Always open the tree on the left side of the screen
+        side = "left",
     })
 
     local whichKey = require("which-key")
