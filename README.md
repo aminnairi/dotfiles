@@ -120,7 +120,7 @@ If the playbook's path choosen is not found, then you'll get an error.
 
 Neovim's plugins gets installed only when run. Try running `nvim` at least once per user `root` and the choosen unprivileged user.
 
-### Tmux
+### ✈️ Tmux
 
 Tmux's plugins get installed once it is run without argument. A Fish function gets triggered whenever `tmux` is run. If it has no argument, then plugins gets checked and installed. If it has arguments, plugins do not get installed nor checked. Please run at least once `tmux` in order to install the necessary plugins before using it.
 
