@@ -3,12 +3,12 @@
   become: true
   pacman:
     name: ttf-jetbrains-mono-nerd
-    state: present
+    state: latest
 - name: Install Noto Fonts Emoji (for emojis support)
   become: true
   pacman:
     name: noto-fonts-emoji
-    state: present
+    state: latest
 - name: Setup Fonts
   synchronize:
     src: fontconfig

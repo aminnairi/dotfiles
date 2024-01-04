@@ -1,85 +1,83 @@
 ---
-- name: Update pacman & AUR's cache & packages
+- name: Update Archlinux cache & packages
   become: true
-  kewlftt.aur.aur:
+  pacman:
     update_cache: true
-    upgrade: true
-    aur_only: false
 - name: Install Bpytop (system monitor)
   become: true
   pacman:
     name: bpytop
-    state: present
+    state: latest
 - name: Install Bind (network utilities, nslookup, dig, ...)
   become: true
   pacman:
     name: bind
-    state: present
+    state: latest
 - name: Install Which
   become: true
   pacman:
     name: which
-    state: present
+    state: latest
 - name: Install Eza (alternative to ls)
   become: true
   pacman:
     name: eza
-    state: present
+    state: latest
 - name: Install Fd (alternative to find)
   become: true
   pacman:
     name: fd
-    state: present
+    state: latest
 - name: Install Python
   become: true
   pacman:
     name: python
-    state: present
+    state: latest
 - name: Install Julia
   become: true
   pacman:
     name: julia
-    state: present
+    state: latest
 - name: Install Ruby
   become: true
   pacman:
     name: ruby
-    state: present
+    state: latest
 - name: Install Composer (PHP package manager)
   become: true
   pacman:
     name: composer
-    state: present
+    state: latest
 - name: Install Luarocks (Lua package manager)
   become: true
   pacman:
     name: luarocks
-    state: present
+    state: latest
 - name: Install Wget (HTTP client)
   become: true
   pacman:
     name: wget
-    state: present
+    state: latest
 - name: Install Unzip (uncompression utility)
   become: true
   pacman:
     name: unzip
-    state: present
+    state: latest
 - name: Install Zip (compression utility)
   become: true
   pacman:
     name: zip
-    state: present
+    state: latest
 - name: Install rsync (file synchronizer)
   become: true
   pacman:
     name: rsync
-    state: present
+    state: latest
 - name: Install ACPID (Power manager)
   become: true
   pacman:
     name: acpid
-    state: present
+    state: latest
 - name: Start ACPID service
   become: true
   service:
@@ -90,19 +88,24 @@
   become: true
   pacman:
     name: tokei
-    state: present
+    state: latest
 - name: Install Chromium (web browser)
   become: true
   pacman:
     name: chromium
-    state: present
+    state: latest
 - name: Install bottom (processes visualizer)
   become: true
   pacman:
     name: bottom
-    state: present
+    state: latest
 - name: Install Bat (replacement for cat)
   become: true
   pacman:
     name: bat
-    state: present
+    state: latest
+- name: Install slides (terminal presentation tool)
+  become: true
+  pacman:
+    name: slides
+    state: latest

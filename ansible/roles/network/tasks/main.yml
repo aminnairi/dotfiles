@@ -3,7 +3,7 @@
   become: true
   pacman:
     name: networkmanager
-    state: present
+    state: latest
 - name: Start Network Manager service
   become: true
   service:

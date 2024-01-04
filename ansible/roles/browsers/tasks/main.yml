@@ -3,19 +3,18 @@
   become: true
   pacman:
     name: chromium
-    state: present
+    state: latest
 - name: Install Google Chrome
-  become: true
-  kewlftt.aur.aur:
+  kewlfft.aur.aur:
     name: google-chrome
-    state: present
+    state: latest
 - name: Install Firefox
   become: true
   pacman:
     name: firefox
-    state: present
+    state: latest
 - name: Install Opera
   become: true
   pacman:
     name: firefox
-    state: present
+    state: latest

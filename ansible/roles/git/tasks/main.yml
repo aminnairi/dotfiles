@@ -3,17 +3,17 @@
   become: true
   pacman:
     name: git
-    state: present
+    state: latest
 - name: Install LazyGit (Git TUI)
   become: true
   pacman:
     name: lazygit
-    state: present
+    state: latest
 - name: Install GitHub's CLI
   become: true
   pacman:
     name: github-cli
-    state: present
+    state: latest
 - name: Copy the configuration for Git
   synchronize:
     src: .gitconfig

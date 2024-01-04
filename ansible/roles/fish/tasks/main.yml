@@ -3,17 +3,17 @@
   become: true
   pacman:
     name: fish
-    state: present
+    state: latest
 - name: Install Neofetch (operating system informations logger)
   become: true
   pacman:
     name: neofetch
-    state: present
+    state: latest
 - name: Install OpenVPN (for openvpn.fish)
   become: true
   pacman:
     name: openvpn
-    state: present
+    state: latest
 - name: Setup Fish
   synchronize:
     delete: true

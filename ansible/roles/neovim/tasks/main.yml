@@ -3,17 +3,17 @@
   become: true
   pacman:
     name: ripgrep
-    state: present
+    state: latest
 - name: Install Node.js
   become: true
   pacman:
     name: nodejs
-    state: present
+    state: latest
 - name: Install NPM
   become: true
   pacman:
     name: npm
-    state: present
+    state: latest
 - name: Install Node.js package for Neovim
   become: true
   npm:
@@ -30,22 +30,22 @@
   become: true
   pacman:
     name: python-neovim
-    state: present
+    state: latest
 - name: Install TreeSitter CLI for Neovim
   become: true
   pacman:
     name: tree-sitter-cli
-    state: present
+    state: latest
 - name: Install Java SDK for Neovim
   become: true
   pacman:
     name: jdk-openjdk
-    state: present
+    state: latest
 - name: Install Ruby for Neovim
   become: true
   pacman:
     name: ruby
-    state: present
+    state: latest
 - name: Install Ruby Gem for Neovim
   become: true
   gem:

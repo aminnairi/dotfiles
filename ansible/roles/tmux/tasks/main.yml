@@ -3,7 +3,7 @@
   become: true
   pacman:
     name: tmux
-    state: present
+    state: latest
 - name: Install TPM (Tmux Plugin Manager)
   git:
     repo: https://github.com/tmux-plugins/tpm

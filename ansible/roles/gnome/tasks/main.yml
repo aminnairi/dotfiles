@@ -3,17 +3,17 @@
   become: true
   pacman:
     name: gnome
-    state: present
+    state: latest
 - name: Install Gnome extra packages
   become: true
   pacman:
     name: gnome-extra
-    state: present
+    state: latest
 - name: Install Python PSUtil (process and system utilities for Gnome)
   become: true
   pacman:
     name: python-psutil
-    state: present
+    state: latest
 - name: Enable the GDM service
   become: true
   service:

@@ -3,34 +3,34 @@
   become: true
   pacman:
     name: xf86-video-amdgpu
-    state: present
+    state: latest
 - name: Install Vulkan Radeon (Vulkan for AMDGPU)
   become: true
   pacman:
     name: vulkan-radeon
-    state: present
+    state: latest
 - name: Install Mesa (graphics driver)
   become: true
   pacman:
     name: mesa
-    state: present
+    state: latest
 - name: Install Libva Mesa (accelerated video decoding driver)
   become: true
   pacman:
     name: libva-mesa-driver
-    state: present
+    state: latest
 - name: Install Radeon Top (graphics monitoring)
   become: true
   pacman:
     name: radeontop
-    state: present
+    state: latest
 - name: Install Mesa Vdpau (accelerated video decoding driver)
   become: true
   pacman:
     name: mesa-vdpau
-    state: present
+    state: latest
 - name: Install AMD microcode
   become: true
   pacman:
     name: amd-ucode
-    state: present
+    state: latest

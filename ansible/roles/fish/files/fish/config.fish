@@ -8,6 +8,9 @@ if status is-interactive
   # Add ruby in the global path for Neovim
   fish_add_path ~/.local/share/gem/ruby/3.0.0/bin
 
+  # Add Node.js binaries in the global path
+  fish_add_path ~/.local/lib/node_modules/.bin
+
   # configuration for Oh My Fish BobTheFish theme
   set -g theme_display_git yes
   set -g theme_display_git_dirty yes

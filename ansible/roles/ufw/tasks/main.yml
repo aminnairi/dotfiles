@@ -3,7 +3,7 @@
   become: true
   pacman:
     name: ufw
-    state: present
+    state: latest
 - name: UFW deny all by default
   become: true
   ufw:

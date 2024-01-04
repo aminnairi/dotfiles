@@ -3,7 +3,7 @@
   become: true
   pacman:
     name: kitty
-    state: present
+    state: latest
 - name: Setup Kitty
   synchronize:
     delete: true

@@ -3,7 +3,7 @@
   become: true
   pacman:
     name: vifm
-    state: present
+    state: latest
 - name: Synchronizes the configuration
   synchronize:
     src: vifm

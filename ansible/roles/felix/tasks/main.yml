@@ -3,12 +3,12 @@
   become: true
   pacman:
     name: felix-rs
-    state: present
+    state: latest
 - name: Install Chafa (image previewer for Felix)
   become: true
   pacman:
     name: chafa
-    state: present
+    state: latest
 - name: Felix setup
   synchronize:
     src: felix

@@ -3,24 +3,24 @@
   become: true
   pacman:
     name: mesa
-    state: present
+    state: latest
 - name: Install Libva Mesa (accelerated video decoding driver)
   become: true
   pacman:
     name: libva-mesa-driver
-    state: present
+    state: latest
 - name: Install Intel (graphics driver)
   become: true
   pacman:
     name: xf86-video-intel
-    state: present
+    state: latest
 - name: Install Vulkan Intel (graphics driver)
   become: true
   pacman:
     name: vulkan-intel
-    state: present
+    state: latest
 - name: Install Intel microcode
   become: true
   pacman:
     name: intel-ucode
-    state: present
+    state: latest

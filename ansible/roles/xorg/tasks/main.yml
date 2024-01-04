@@ -3,19 +3,19 @@
   become: true
   pacman:
     name: xorg-server
-    state: present
+    state: latest
 - name: Install Libinput (input devices recognition)
   become: true
   pacman:
     name: libinput
-    state: present
+    state: latest
 - name: Install Xorg Libinput (input devices bridge)
   become: true
   pacman:
     name: xf86-input-libinput
-    state: present
+    state: latest
 - name: Install Xorg Xinput (input devices manager)
   become: true
   pacman:
     name: xorg-xinput
-    state: present
+    state: latest
