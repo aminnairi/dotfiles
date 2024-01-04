@@ -1,0 +1,21 @@
+---
+- name: Install Chromium
+  become: true
+  pacman:
+    name: chromium
+    state: present
+- name: Install Google Chrome
+  become: true
+  kewlftt.aur.aur:
+    name: google-chrome
+    state: present
+- name: Install Firefox
+  become: true
+  pacman:
+    name: firefox
+    state: present
+- name: Install Opera
+  become: true
+  pacman:
+    name: firefox
+    state: present
