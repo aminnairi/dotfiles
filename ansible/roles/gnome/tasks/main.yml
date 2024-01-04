@@ -24,3 +24,7 @@
     key: /org/gnome/desktop/input-sources/xkb-options
     value: "['compose:ralt']"
     state: present
+- name: Copy the autostart configuration
+  synchronize:
+    src: autostart
+    dest: /$HOME/.config
