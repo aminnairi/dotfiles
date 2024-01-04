@@ -116,7 +116,7 @@ If the playbook's path choosen is not found, then you'll get an error.
 
 ## ℹ️ Informations
 
-### Neovim
+### ✒️ Neovim
 
 Neovim's plugins gets installed only when run. Try running `nvim` at least once per user `root` and the choosen unprivileged user.
 
