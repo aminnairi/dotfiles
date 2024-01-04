@@ -114,7 +114,7 @@ This error code is returned whenever you try to call this script with an argumen
 
 If the playbook's path choosen is not found, then you'll get an error.
 
-## Informations
+## ℹ️ Informations
 
 ### Neovim
 
