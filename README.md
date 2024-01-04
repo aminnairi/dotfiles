@@ -56,7 +56,7 @@ You can also feed the script with the path to an existing playbook if you don't 
 bash main.sh ansible/amd-gnome.yml
 ```
 
-## Error codes
+## 🐛 Error codes
 
 An error code is returned each time you run this script and an error occurred.
 
