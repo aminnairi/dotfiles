@@ -4,6 +4,11 @@
   pacman:
     name: fish
     state: present
+- name: Install Neofetch (operating system informations logger)
+  become: true
+  pacman:
+    name: neofetch
+    state: present
 - name: Install OpenVPN (for openvpn.fish)
   become: true
   pacman:
