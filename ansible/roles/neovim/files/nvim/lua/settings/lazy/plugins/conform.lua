@@ -1,8 +1,8 @@
 return {
   "stevearc/conform.nvim",
   init = function()
-    local whichKey = require("which-key");
-    local conform  = require("conform")
+    local whichKey = require("which-key")
+    local conform = require("conform")
 
     whichKey.register({
       ["<leader>f"] = {
@@ -13,9 +13,9 @@ return {
 
             conform.format({ bufnr = currentFileBufferNumber })
           end,
-          "Format the current file"
-        }
-      }
+          "Format the current file",
+        },
+      },
     })
   end,
   config = function()
@@ -26,14 +26,15 @@ return {
         lua = { "stylua" },
         javascript = { "eslint_d" },
         php = { "phpcbf" },
-        elm = { "elm_format" }
+        elm = { "elm_format" },
+        fish = { "fish_indent" },
       },
     })
 
     conform.formatters.phpcbf = {
       prepend_args = {
-        "--standard=PSR12"
-      }
+        "--standard=PSR12",
+      },
     }
-  end
+  end,
 }
