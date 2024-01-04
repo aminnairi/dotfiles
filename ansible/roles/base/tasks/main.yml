@@ -1,7 +1,8 @@
 ---
-- name: Update package manager cache
+- name: Update cache & packages
   become: true
   pacman:
+    upgrade: true
     update_cache: true
 - name: Install GitHub's CLI
   become: true
