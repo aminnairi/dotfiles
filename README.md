@@ -49,6 +49,13 @@ cd ~/Documents/git/github.com/aminnairi/dotfiles
 bash main.sh
 ```
 
+You can also feed the script with the path to an existing playbook if you don't want to be prompted to choose one.
+
+```bash
+# Or by providing the path to an existing playbook directly
+bash main.sh ansible/amd-gnome.yml
+```
+
 ## Informations
 
 ### Neovim
