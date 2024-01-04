@@ -56,6 +56,64 @@ You can also feed the script with the path to an existing playbook if you don't 
 bash main.sh ansible/amd-gnome.yml
 ```
 
+## Error codes
+
+An error code is returned each time you run this script and an error occurred.
+
+In order to get the specific error code, you can use the `$?` variable in bash.
+
+```bash
+echo $?
+```
+
+Refer to the list below to know what happened in order to take remediation action.
+
+Note that a friendly error message will also appear in case an error occurs, that way you don't have to manually check for these error codes.
+
+This is documented in case you want to include this script in a bigger program or system and you probably don't ever need to read the following if you are a end-user of this script.
+
+### 1 (ERROR_BECAUSE_ROOT)
+
+This error code is returned whenever you try to run this script as root.
+
+This script should only be run as the unprivileged user that has `sudo` access only.
+
+Morever, this script contains routines that needs to be run as a non-root, for instance, the installation of Arch User Repository packages.
+
+### 2 (ERROR_BECAUSE_NOT_ARCH_LINUX)
+
+This error code is returned whenever you try to run this script in an operating system that has no `pacman` executable installed.
+
+This script has been made specifically to install this configuration for Arch operating systems only.
+
+Feel free to fork this project and to update its source-code if you wish to support other operating systems as well. You are encouraged to propose pull requests as well.
+
+### 3 (ERROR_BECAUSE_TOO_MUCH_ARGUMENTS_PROVDED)
+
+This error code is returned whenever you try to call this script with too much arguments.
+
+Too much arguments means that you tried to pass more than one argument, since this script only take at most one argument which is the path to a playbook containing the wanted configuration.
+
+You can find the list of available configuration at the [`ansible`](./ansible) folder (every file that ends with a `*.yml` extension is a playbook).
+
+### 4 (ERROR_BECAUSE_ANSIBLE_INSTALLATION_FAILED)
+
+This error code is returned whenever you try to call this script and your operating system does not have the `ansible` package installed.
+
+If the installation of `ansible` has failed, this script will return the error, otherwise, it will simply continue with the installation.
+
+### 5 (ERROR_BECAUSE_PLAYBOOK_INVALID_OR_NOT_FOUND)
+
+This error code is returned whenever you try to call this script interactively, meaning you did not provide any path to a playbook, and this script will let you choose for a wanted configuration.
+
+If the index you choosed is incorrect, then the error will be returned.
+
+### 6 (ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST)
+
+This error code is returned whenever you try to call this script with an argument, which is the path to a playbook (configuration for the installation) you know you want to use.
+
+If the playbook's path choosen is not found, then you'll get an error.
+
 ## Informations
 
 ### Neovim
