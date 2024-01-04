@@ -38,7 +38,7 @@ useradd --create-home --shell /bin/fish --groups sudo --uid 1000 user
 passwd user
 ```
 
-### 🧔 Laptop installation as user
+### 🧔 Installation as user
 
 ```bash
 # Clone the repository in the home folder
