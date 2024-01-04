@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/xset r rate 200 50
+Hidden=true
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Keyboard rate
+Comment=Set the keyboard rate to prevent lag for key repeat
+
