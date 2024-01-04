@@ -28,6 +28,7 @@
     src: tmux/tmux.conf
     dest: "/$HOME/.tmux.conf"
 - name: Setup TMUX for the root user
+  become: true
   copy:
     src: tmux/tmux.conf
     dest: "/root/.tmux.conf"
