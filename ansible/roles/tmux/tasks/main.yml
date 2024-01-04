@@ -4,7 +4,7 @@
   pacman:
     name: tmux
     state: latest
-- name: Install TPM (Tmux Plugin Manager)
+- name: Install TPM for the unprivileged user
   git:
     repo: https://github.com/tmux-plugins/tpm
     dest: /$HOME/.tmux/plugins/tpm
