@@ -4,10 +4,10 @@
   pacman:
     name: fish
     state: latest
-- name: Install Neofetch (operating system informations logger)
+- name: Install Fastfetch (operating system informations logger)
   become: true
   pacman:
-    name: neofetch
+    name: fastfetch
     state: latest
 - name: Install OpenVPN (for openvpn.fish)
   become: true

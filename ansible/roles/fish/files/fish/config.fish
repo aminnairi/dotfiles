@@ -53,6 +53,6 @@ if status is-interactive
   set -g theme_newline_cursor yes
   set -g theme_newline_prompt '$ '
 
-  # Run neofetch on each fish startup
-  neofetch
+  # Run fastfetch on each fish startup
+  fastfetch
 end
