@@ -18,6 +18,7 @@
     - tmux
     - neovim
     - slidev
+    - browsers
     - ufw
     - pipewire
     - hostname
