@@ -5,11 +5,6 @@ if status is-interactive
   # Set the editor to use vim
   set --export --global EDITOR nvim
 
-  # Install OMF if it is not already
-  if test ! -d ~/.local/share/omf
-    curl -L https://get.oh-my.fish | fish
-  end
-
   # Alias for the cat command
   alias cat="bat --theme ColdDark-Cold"
 

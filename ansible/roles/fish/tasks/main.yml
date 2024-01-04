@@ -19,6 +19,12 @@
     delete: true
     src: fish
     dest: "/$HOME/.config"
+- name: Clone Oh My Fish
+  git:
+    repo: https://github.com/oh-my-fish/oh-my-fish
+    depth: 1
+    single_branch: true
+    update: true
 - name: Setup OMF
   synchronize:
     delete: true
