@@ -19,12 +19,14 @@ ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST=6
 if [[ "$(id -u)" -eq 0 ]]
 then
   echo "Please, run this script as user"
+  display_help
   exit $ERROR_BECAUSE_ROOT
 fi
 
 if [[ ! -x $(command -v pacman) ]]
 then
   echo "Please, use this script with an Arch Linux operating system."
+  display_help
   exit $ERROR_BECAUSE_NOT_ARCH_LINUX
 fi
 
@@ -35,6 +37,7 @@ then
     then
 
     echo "Installion failed."
+    display_help
     exit $ERROR_BECAUSE_ANSIBLE_INSTALLATION_FAILED
   fi
 fi
@@ -42,6 +45,7 @@ fi
 if [[ $# -gt 1 ]]
 then
   echo "Too much arguments provided."
+  display_help
   exit $ERROR_BECAUSE_TOO_MUCH_ARGUMENTS_PROVDED
 fi
 
@@ -73,6 +77,7 @@ then
   if [[ -z $choosen_playbook_path ]]
   then
     echo "Error: invalid index."
+    display_help
     exit $ERROR_BECAUSE_PLAYBOOK_INVALID_OR_NOT_FOUND
   fi
 fi
@@ -80,6 +85,7 @@ fi
 if [[ ! -f $choosen_playbook_path ]]
 then
   echo "Error: playbook path $choosen_playbook_path does not exist on the file system."
+  display_help
   exit $ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST
 fi
 
