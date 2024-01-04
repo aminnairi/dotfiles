@@ -4,6 +4,7 @@ ERROR_BECAUSE_ROOT=1
 ERROR_BECAUSE_NOT_ARCH_LINUX=2
 ERROR_BECAUSE_ANSIBLE_INSTALLATION_FAILED=3
 ERROR_BECAUSE_PLAYBOOK_INVALID_OR_NOT_FOUND=4
+ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST=5
 
 if [[ "$(id -u)" -eq 0 ]]
 then
@@ -58,6 +59,12 @@ if [[ -z $choosen_playbook_path ]]
 then
   echo "Error: invalid index."
   exit $ERROR_BECAUSE_PLAYBOOK_INVALID_OR_NOT_FOUND
+fi
+
+if [[ ! -f $choosen_playbook_path ]]
+then
+  echo "Error: playbook path $choosen_playbook_path does not exist on the file system."
+  exit $ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST
 fi
 
 echo "Installing needed Ansible packages..."
