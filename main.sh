@@ -28,26 +28,31 @@ then
   fi
 fi
 
-echo "Choose a configuration";
+choosen_playbook_path=$1
 
-available_playbooks="$(ls ansible/*.yml)"
-available_playbook_paths=()
+if [[ -z $choosen_playbook_path ]]
+then
+  echo "Choose a configuration";
 
-for available_playbook in $available_playbooks
-do
-  available_playbook_paths+=("$available_playbook")
-done
+  available_playbooks="$(ls ansible/*.yml)"
+  available_playbook_paths=()
 
-available_playbook_paths_count=${#available_playbook_paths[@]}
+  for available_playbook in $available_playbooks
+  do
+    available_playbook_paths+=("$available_playbook")
+  done
 
-for ((index=0; index < available_playbook_paths_count; index++))
-do
-  echo "$((index + 1)). $(basename "${available_playbook_paths[$index]}")"
-done
+  available_playbook_paths_count=${#available_playbook_paths[@]}
 
-read -r -p "Choice: " index
+  for ((index=0; index < available_playbook_paths_count; index++))
+  do
+    echo "$((index + 1)). $(basename "${available_playbook_paths[$index]}")"
+  done
 
-choosen_playbook_path=${available_playbook_paths[$index - 1]}
+  read -r -p "Choice: " index
+
+  choosen_playbook_path=${available_playbook_paths[$index - 1]}
+fi
 
 if [[ -z $choosen_playbook_path ]]
 then
