@@ -13,6 +13,16 @@
     clone: true
     single_branch: true
     depth: 1
+- name: Install TPM for the root user
+  become: true
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: /root/.tmux/plugins/tpm
+    update: true
+    force: true
+    clone: true
+    single_branch: true
+    depth: 1
 - name: Setup TMUX for the unprivileged user
   copy:
     src: tmux/tmux.conf
