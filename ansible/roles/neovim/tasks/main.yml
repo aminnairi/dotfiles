@@ -19,13 +19,13 @@
   npm:
     name: neovim
     global: true
-    state: present
+    state: latest
     path: /usr/local/bin/node_modules
 - name: Install Neovim (command-line text editor)
   become: true
   pacman:
     name: neovim
-    state: present
+    state: latest
 - name: Install Neovim package for Python
   become: true
   pacman:
@@ -50,7 +50,7 @@
   become: true
   gem:
     name: neovim
-    state: present
+    state: latest
 - name: Setup NeoVim for the unprivileged user
   synchronize:
     src: nvim
