@@ -5,9 +5,6 @@ if status is-interactive
   # Set the editor to use vim
   set --export --global EDITOR nvim
 
-  # Alias for the cat command
-  alias cat="bat --theme ColdDark-Cold"
-
   # Alias for the ls command
   alias ls="eza --icons --long --classify --git --total-size --header --created --accessed --modified"
 
