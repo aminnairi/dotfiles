@@ -9,6 +9,11 @@
   pacman:
     name: lazygit
     state: present
+- name: Install GitHub's CLI
+  become: true
+  pacman:
+    name: github-cli
+    state: present
 - name: Copy the configuration for Git
   synchronize:
     src: .gitconfig

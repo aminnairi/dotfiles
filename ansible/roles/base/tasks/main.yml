@@ -4,11 +4,6 @@
   pacman:
     upgrade: true
     update_cache: true
-- name: Install GitHub's CLI
-  become: true
-  pacman:
-    name: github-cli
-    state: present
 - name: Install Bpytop (system monitor)
   become: true
   pacman:
