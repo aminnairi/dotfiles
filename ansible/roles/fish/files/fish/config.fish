@@ -2,9 +2,6 @@ if status is-interactive
   # Enable vi-mode
   fish_vi_key_bindings
 
-  # Set the keyboard rate
-  xset r rate 200 50
-
   # Set the editor to use vim
   set --export --global EDITOR nvim
 
