@@ -1,5 +1,14 @@
 #!/bin/env bash
 
+function display_help() {
+  first_playbook_found="$(find ansible -maxdepth 1 -type f -name '*.yml' | head -1 )"
+
+  echo "Example usage for interactive mode:"
+  echo "  bash $0"
+  echo "Example usage for non-interactive mode:"
+  echo "  bash $0 $first_playbook_found"
+}
+
 ERROR_BECAUSE_ROOT=1
 ERROR_BECAUSE_NOT_ARCH_LINUX=2
 ERROR_BECAUSE_TOO_MUCH_ARGUMENTS_PROVDED=3
