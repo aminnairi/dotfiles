@@ -22,6 +22,10 @@
 - name: Clone Oh My Fish
   git:
     repo: https://github.com/oh-my-fish/oh-my-fish
+    dest: /$HOME/.local/share/omf
+    depth: 1
+    single_branch: true
+    update: true
     depth: 1
     single_branch: true
     update: true
