@@ -13,7 +13,11 @@
     clone: true
     single_branch: true
     depth: 1
-- name: Setup TMUX
+- name: Setup TMUX for the unprivileged user
   copy:
     src: tmux/tmux.conf
     dest: "/$HOME/.tmux.conf"
+- name: Setup TMUX for the root user
+  copy:
+    src: tmux/tmux.conf
+    dest: "/root/.tmux.conf"
