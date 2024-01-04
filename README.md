@@ -17,7 +17,7 @@ Although the goal for any non-contributor is to get inspiration, not to use it a
 
 ## ⚙️ Setup
 
-### Create the user as administrator
+### 👮 Create the user as administrator
 
 ```bash
 # Install the necessary dependencies
