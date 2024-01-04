@@ -17,6 +17,7 @@
     - vifm
     - tmux
     - neovim
+    - browsers
     - ufw
     - pipewire
     - hostname
