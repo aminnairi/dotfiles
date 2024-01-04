@@ -1,9 +1,10 @@
 ---
-- name: Update cache & packages
+- name: Update pacman & AUR's cache & packages
   become: true
-  pacman:
-    upgrade: true
+  kewlftt.aur.aur:
     update_cache: true
+    upgrade: true
+    aur_only: false
 - name: Install Bpytop (system monitor)
   become: true
   pacman:
