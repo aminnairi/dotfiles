@@ -15,7 +15,7 @@ Although the goal for any non-contributor is to get inspiration, not to use it a
 - [Archlinux](https://archlinux.org/)
 - [GNU/Bash](https://www.gnu.org/software/bash/)
 
-## Setup
+## ⚙️ Setup
 
 ### Create the user as administrator
 
