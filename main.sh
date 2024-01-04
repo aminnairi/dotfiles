@@ -53,12 +53,12 @@ then
   read -r -p "Choice: " index
 
   choosen_playbook_path=${available_playbook_paths[$index - 1]}
-fi
 
-if [[ -z $choosen_playbook_path ]]
-then
-  echo "Error: invalid index."
-  exit $ERROR_BECAUSE_PLAYBOOK_INVALID_OR_NOT_FOUND
+  if [[ -z $choosen_playbook_path ]]
+  then
+    echo "Error: invalid index."
+    exit $ERROR_BECAUSE_PLAYBOOK_INVALID_OR_NOT_FOUND
+  fi
 fi
 
 if [[ ! -f $choosen_playbook_path ]]
