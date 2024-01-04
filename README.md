@@ -2,6 +2,8 @@
 
 My personal software installation & configuration
 
+![image](https://github.com/aminnairi/dotfiles/assets/18418459/f618bf84-e676-4c78-b249-27092f6879e7)
+
 ## ☣️ Disclaimer
 
 This is a repository that I keep public in order to ease out the installation of my different computers.
