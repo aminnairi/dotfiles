@@ -2,7 +2,7 @@
 
 My personal software installation & configuration
 
-## Disclaimer
+## ☣️ Disclaimer
 
 This is a repository that I keep public in order to ease out the installation of my different computers.
 
