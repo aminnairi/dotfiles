@@ -4,7 +4,7 @@ function tmux
     ~/.tmux/plugins/tpm/bin/install_plugins
 
     # Update Tmux plugins
-    ~/.tmux/plugins/tpm/bin/install_plugins
+    ~/.tmux/plugins/tpm/bin/update_plugins all
   end
 
   # Execute TMUX
