@@ -19,7 +19,7 @@ Although the goal for any non-contributor is to get inspiration, not to use it a
 - Tons of browsers (actually just 4 but this is something) like `chromium`, `google-chrome`, `opera` & `firefox`
 - `docker` enabled for the unprivileged user so commands don't need prefixing with `sudo` anymore
 - `tmux` for terminal multiplexing with automatic installation & update of plugins before starting `tmux`
-- `vifm` to browse files like a hacker in your terminal
+- `vifm` to manipulate your file system & `vicd` to change directory like a hacker in your terminal
 - Enhanced `ls` command with colors & icons just like in VSCode
 - Enhanced `cat` command with syntactic colorization of files just like in VSCode
 - Enhanced `rm` command so that it does not really remove the file permanently but put it in the trash can instead
