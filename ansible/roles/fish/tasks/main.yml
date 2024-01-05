@@ -19,7 +19,7 @@
   pacman:
     name: fzf
     state: present
-- name: Setup Fish
+- name: Setup Fish for the unprivileged user
   synchronize:
     delete: true
     src: fish
