@@ -134,6 +134,10 @@ See [`issues`](./issues).
 
 See [`CODE_OF_CONDUCT`](./CODE_OF_CONDUCT.md).
 
+## 💪 Contributing
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+
 ## 📃 License
 
 See [`LICENSE`](./LICENSE).
