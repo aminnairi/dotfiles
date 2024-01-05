@@ -1,6 +1,6 @@
-# Security Policy
+# 🛡️ Security Policy
 
-## Best practices
+## 💪 Best practices
 
 If you need to fork this repository, or propose changes through pull request, be sure to not commit any sensitive informations.
 
@@ -10,7 +10,7 @@ These informations can the the following form, without being an exhaustive list:
 - Environment variables (`JWT_SECRET`, `DATABASE_PASSWORD`, ...)
 - Personal informations (name, address, email, ...)
 
-## Reporting a Vulnerability
+## 🪲 Reporting a Vulnerability
 
 You just found a vulnerability in this repository and want to contribute to a safer environment.
 
