@@ -4,7 +4,7 @@
 
 If you need to fork this repository, or propose changes through pull request, be sure to not commit any sensitive informations.
 
-These informations can the the following form, without being an exhaustive list:
+These informations can take the the following form, without being an exhaustive list:
 
 - Credentials files (`.aws/credentials`, `.npmrc`, ...)
 - Environment variables (`JWT_SECRET`, `DATABASE_PASSWORD`, ...)
