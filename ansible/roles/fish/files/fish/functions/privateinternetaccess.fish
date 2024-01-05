@@ -1,4 +1,4 @@
-function openvpn
+function privateinternetaccess
   # Store the folder's path leading to the *.ovpn files
   set openvpn_files_path "/etc/privateinternetaccess"
 
