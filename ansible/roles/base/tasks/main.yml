@@ -1,8 +1,4 @@
 ---
-- name: Update Archlinux cache & packages
-  become: true
-  pacman:
-    update_cache: true
 - name: Install Bpytop (system monitor)
   become: true
   pacman:
