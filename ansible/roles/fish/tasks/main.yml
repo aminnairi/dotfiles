@@ -65,3 +65,9 @@
     delete: true
     src: omf
     dest: "/$HOME/.config"
+- name: Setup OMF for the root user
+  become: true
+  synchronize:
+    delete: true
+    src: omf
+    dest: "/root/.config"
