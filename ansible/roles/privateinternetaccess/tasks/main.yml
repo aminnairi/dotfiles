@@ -1,0 +1,22 @@
+---
+- name: Ensure the temporary folder is present
+  become: true
+  file:
+    path: /tmp/privateinternetaccess
+    state: directory
+- name: Download Private Internet Access OpenVPN configuration
+  become: true
+  get_url:
+    url: https://www.privateinternetaccess.com/openvpn/openvpn.zip
+    dest: /tmp/privateinternetaccess/openvpn.zip
+- name: Ensure the configuration folder for Private Internet Access exists
+  become: true
+  file:
+    path: /etc/privateinternetaccess
+    state: directory
+- name: Unzip the Private Internet Access OpenVPN configuration
+  become: true
+  unarchive:
+    src: /tmp/privateinternetaccess/openvpn.zip
+    dest: /etc/privateinternetaccess/
+    mode: '0600'
