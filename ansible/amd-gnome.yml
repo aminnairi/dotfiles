@@ -19,6 +19,7 @@
     - neovim
     - slidev
     - browsers
+    - privateinternetaccess
     - ufw
     - pipewire
     - hostname
