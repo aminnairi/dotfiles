@@ -37,14 +37,30 @@
     depth: 1
     single_branch: true
     update: true
-- name: Clone Agnoster theme
+- name: Clone Oh My Fish for the root user
+  become: true
+  git:
+    repo: https://github.com/oh-my-fish/oh-my-fish
+    dest: /root/.local/share/omf
+    depth: 1
+    single_branch: true
+    update: true
+- name: Clone Agnoster theme for the unprivileged user
   git:
     repo: https://github.com/oh-my-fish/theme-agnoster
     dest: /$HOME/.local/share/omf/themes/agnoster
     depth: 1
     single_branch: true
     update: true
-- name: Setup OMF
+- name: Clone Agnoster theme for the root user
+  become: true
+  git:
+    repo: https://github.com/oh-my-fish/theme-agnoster
+    dest: /root/.local/share/omf/themes/agnoster
+    depth: 1
+    single_branch: true
+    update: true
+- name: Setup OMF for the unprivileged user
   synchronize:
     delete: true
     src: omf
