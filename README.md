@@ -22,6 +22,7 @@ Although the goal for any non-contributor is to get inspiration, not to use it a
 - `vifm` to browse files like a hacker in your terminal
 - Enhanced `ls` command with colors & icons just like in VSCode
 - Enhanced `cat` command with syntactic colorization of files just like in VSCode
+- Enhanced `rm` command so that it does not really remove the file permanently but put it in the trash can instead
 - Custom `privateinternetaccess` function that lets you choose a configuration from OpenVPN using `fzf` for starting a new `openvpn` tunnel quickly
 - Support for both `intel` & `amd` architecture (pull requests welcome to add VirtualBox & VMware Guest Additions)
 - `ufw` enabled and ready to protect your personal life
