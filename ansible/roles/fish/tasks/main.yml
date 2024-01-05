@@ -14,6 +14,11 @@
   pacman:
     name: openvpn
     state: latest
+- name: Install FZF (for interacting with the OpenVPN function)
+  become: true
+  pacman:
+    name: fzf
+    state: present
 - name: Setup Fish
   synchronize:
     delete: true
