@@ -6,6 +6,7 @@
     ansible_python_interpreter: auto_silent
   gather_facts: true
   roles:
+    - reflector
     - base
     - amd
     - git
