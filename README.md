@@ -126,6 +126,10 @@ Neovim's plugins gets installed only when run. Try running `nvim` at least once 
 
 Tmux's plugins get installed once it is run without argument. A Fish function gets triggered whenever `tmux` is run. If it has no argument, then plugins gets checked and installed. If it has arguments, plugins do not get installed nor checked. Please run at least once `tmux` in order to install the necessary plugins before using it.
 
+## ✨ Feature request, bug report & vulnerability report
+
+See [`issues`](./issues).
+
 ## 📃 License
 
 See [`LICENSE`](./LICENSE).
