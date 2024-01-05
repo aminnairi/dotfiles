@@ -12,7 +12,7 @@ The repository is not intended to be used as-is by many people, although special
 
 Although the goal for any non-contributor is to get inspiration, not to use it as you daily driver. Nothing can stop you from doing it so feel free to do so and open issues, but I can't guarantee to be available to fix issues.
 
-## Features
+## 🔥 Features
 
 - Gnome with Pipewire to get the maximum of our audio/video
 - `nvim` with a ton of plugins for web development & linux stuff
