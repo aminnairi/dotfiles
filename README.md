@@ -130,6 +130,10 @@ Tmux's plugins get installed once it is run without argument. A Fish function ge
 
 See [`issues`](./issues).
 
+## 🙋 Code of conduct
+
+See [`CODE_OF_CONDUCT`](./CODE_OF_CONDUCT.md).
+
 ## 📃 License
 
 See [`LICENSE`](./LICENSE).
