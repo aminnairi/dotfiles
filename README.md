@@ -120,7 +120,7 @@ If the playbook's path choosen is not found, then you'll get an error.
 
 ### ✒️ Neovim
 
-Neovim's plugins gets installed only when run. Try running `nvim` at least once per user `root` and the choosen unprivileged user.
+[Neovim](https://neovim.io/)'s plugins gets installed only when run. Try running `nvim` at least once per user `root` and the choosen unprivileged user.
 
 ### ✈️ Tmux
 
