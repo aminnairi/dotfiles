@@ -12,6 +12,21 @@ The repository is not intended to be used as-is by many people, although special
 
 Although the goal for any non-contributor is to get inspiration, not to use it as you daily driver. Nothing can stop you from doing it so feel free to do so and open issues, but I can't guarantee to be available to fix issues.
 
+## Features
+
+- Gnome with Pipewire to get the maximum of our audio/video
+- `nvim` with a ton of plugins for web development & linux stuff
+- Tons of browsers (actually just 4 but this is something) like `chromium`, `google-chrome`, `opera` & `firefox`
+- `docker` enabled for the unprivileged user so commands don't need prefixing with `sudo` anymore
+- `tmux` for terminal multiplexing with automatic installation & update of plugins before starting `tmux`
+- `vifm` to browse files like a hacker in your terminal
+- Enhanced `ls` command with colors & icons just like in VSCode
+- Enhanced `cat` command with syntactic colorization of files just like in VSCode
+- Custom `privateinternetaccess` function that lets you choose a configuration from OpenVPN using `fzf` for starting a new `openvpn` tunnel quickly
+- Support for both `intel` & `amd` architecture (pull requests welcome to add VirtualBox & VMware Guest Additions)
+- `ufw` enabled and ready to protect your personal life
+- Lots of programing language's interpreter & compiler installed (Python, Ruby, PHP, Julia, ...)
+
 ## 📖 Requirements
 
 - [Archlinux](https://archlinux.org/)
