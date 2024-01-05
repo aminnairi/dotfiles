@@ -1,9 +1,4 @@
 ---
-- name: Install Xorg (X11 server)
-  become: true
-  pacman:
-    name: xorg-server
-    state: latest
 - name: Install Libinput (input devices recognition)
   become: true
   pacman:
