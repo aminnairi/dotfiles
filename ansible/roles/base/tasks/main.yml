@@ -80,11 +80,6 @@
   pacman:
     name: tokei
     state: latest
-- name: Install bottom (processes visualizer)
-  become: true
-  pacman:
-    name: bottom
-    state: latest
 - name: Install slides (terminal presentation tool)
   become: true
   pacman:
