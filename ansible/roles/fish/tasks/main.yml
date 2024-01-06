@@ -9,6 +9,11 @@
   pacman:
     name: eza
     state: latest
+- name: Install Bat (replacement for cat)
+  become: true
+  pacman:
+    name: bat
+    state: latest
 - name: Install Fastfetch (operating system informations logger)
   become: true
   pacman:

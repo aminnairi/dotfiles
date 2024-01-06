@@ -90,11 +90,6 @@
   pacman:
     name: bottom
     state: latest
-- name: Install Bat (replacement for cat)
-  become: true
-  pacman:
-    name: bat
-    state: latest
 - name: Install slides (terminal presentation tool)
   become: true
   pacman:
