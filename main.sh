@@ -65,7 +65,7 @@ choosen_playbook_path=$1
 
 if [[ -z $choosen_playbook_path ]]
 then
-  choosen_playbook_file="$(/usr/bin/find ansible -name '*.yml' -type f -maxdepth 1 | xargs basename -a | /usr/bin/fzf)"
+  choosen_playbook_file="$(/usr/bin/find ansible -name '*.yml' -type f -maxdepth 1 | xargs basename -a | /usr/bin/fzf --header 'Choose a configuration file' --pointer 👉 --prompt 🔍)"
   choosen_playbook_path="ansible/$choosen_playbook_file"
 fi
 
