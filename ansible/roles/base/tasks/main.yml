@@ -4,6 +4,11 @@
   pacman:
     name: bpytop
     state: latest
+- name: Install Bandwhich (bandwidth visualization tool)
+  become: true
+  pacman:
+    name: bandwhich
+    state: latest
 - name: Install Bind (network utilities, nslookup, dig, ...)
   become: true
   pacman:
