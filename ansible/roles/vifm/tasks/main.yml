@@ -9,3 +9,9 @@
     src: vifm
     dest: /$HOME/.config
     delete: true
+- name: Synchronizes the configuration for the root user
+  become: true
+  synchronize:
+    src: vifm
+    dest: /root/.config
+    delete: true
