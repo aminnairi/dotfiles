@@ -13,8 +13,28 @@
   synchronize:
     src: reflector
     dest: /etc/xdg
-- name: Enable the Reflector service at boot time
+- name: Enable the Reflector service
   become: true
   systemd_service:
-    name: reflector
+    name: reflector.service
     enabled: true
+- name: Enable the Reflector timer
+  become: true
+  systemd_service:
+    name: reflector.timer
+    enabled: true
+    state: started
+- name: Update the Reflector timer to run daily instead of weekly
+  become: true
+  lineinfile:
+    path: /usr/lib/systemd/system/reflector.timer
+    search_string: 'OnCalendar=weekly'
+    line: 'OnCalendar=daily'
+  register: reflector_timer_update
+- name: Reload the Systemd Daemon & the Reflector timer if needed
+  become: true
+  systemd_service:
+    name: reflector.timer
+    daemon_reload: true
+    state: restarted
+  when: reflector_timer_update.changed
