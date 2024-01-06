@@ -34,6 +34,7 @@
     delete: true
     src: fish
     dest: "/$HOME/.config"
+    rsync_opts: --exclude=fish_variables
 - name: Setup Fish for the root user
   become: true
   synchronize:
