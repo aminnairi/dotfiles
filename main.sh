@@ -13,6 +13,7 @@ ERROR_BECAUSE_ROOT=1
 ERROR_BECAUSE_NOT_ARCH_LINUX=2
 ERROR_BECAUSE_TOO_MUCH_ARGUMENTS_PROVDED=3
 ERROR_BECAUSE_ANSIBLE_INSTALLATION_FAILED=4
+ERRROR_BECAUSE_FUZZY_FILE_FINDER_INSTALLATION_FAILED=5
 ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST=6
 
 if [[ "$(id -u)" -eq 0 ]]
@@ -38,6 +39,18 @@ then
     echo "Installion failed."
     display_help
     exit $ERROR_BECAUSE_ANSIBLE_INSTALLATION_FAILED
+  fi
+fi
+
+if [[ ! -x "$(command -v fzf)" ]]
+then
+  echo "Fuzzy file finder not found, installing..."
+
+  if [[ ! "$(sudo pacman -Syy --noconfirm fzf)" ]]
+  then
+    echo "Installation of fuzzy file finder failed."
+    display_help
+    exit $ERRROR_BECAUSE_FUZZY_FILE_FINDER_INSTALLATION_FAILED
   fi
 fi
 
