@@ -4,7 +4,7 @@
   pacman:
     name: vifm
     state: latest
-- name: Synchronizes the configuration
+- name: Synchronizes the configuration for the unprivileged user
   synchronize:
     src: vifm
     dest: /$HOME/.config
