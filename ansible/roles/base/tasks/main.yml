@@ -80,11 +80,6 @@
   pacman:
     name: tokei
     state: latest
-- name: Install Chromium (web browser)
-  become: true
-  pacman:
-    name: chromium
-    state: latest
 - name: Install bottom (processes visualizer)
   become: true
   pacman:
