@@ -4,6 +4,11 @@
   pacman:
     name: fish
     state: latest
+- name: Install Eza (alternative to ls)
+  become: true
+  pacman:
+    name: eza
+    state: latest
 - name: Install Fastfetch (operating system informations logger)
   become: true
   pacman:
