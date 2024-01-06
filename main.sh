@@ -13,7 +13,6 @@ ERROR_BECAUSE_ROOT=1
 ERROR_BECAUSE_NOT_ARCH_LINUX=2
 ERROR_BECAUSE_TOO_MUCH_ARGUMENTS_PROVDED=3
 ERROR_BECAUSE_ANSIBLE_INSTALLATION_FAILED=4
-ERROR_BECAUSE_PLAYBOOK_INVALID_OR_NOT_FOUND=5
 ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST=6
 
 if [[ "$(id -u)" -eq 0 ]]
@@ -53,33 +52,6 @@ choosen_playbook_path=$1
 
 if [[ -z $choosen_playbook_path ]]
 then
-  echo "Choose a configuration";
-
-  available_playbooks="$(ls ansible/*.yml)"
-  available_playbook_paths=()
-
-  for available_playbook in $available_playbooks
-  do
-    available_playbook_paths+=("$available_playbook")
-  done
-
-  available_playbook_paths_count=${#available_playbook_paths[@]}
-
-  for ((index=0; index < available_playbook_paths_count; index++))
-  do
-    echo "$((index + 1)). $(basename "${available_playbook_paths[$index]}")"
-  done
-
-  read -r -p "Choice: " index
-
-  choosen_playbook_path=${available_playbook_paths[$index - 1]}
-
-  if [[ -z $choosen_playbook_path ]]
-  then
-    echo "Error: invalid index."
-    display_help
-    exit $ERROR_BECAUSE_PLAYBOOK_INVALID_OR_NOT_FOUND
-  fi
 fi
 
 if [[ ! -f $choosen_playbook_path ]]
