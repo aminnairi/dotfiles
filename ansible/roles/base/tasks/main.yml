@@ -90,3 +90,7 @@
   pacman:
     name: slides
     state: latest
+- name: Install Wttr (weather informations)
+  kewlfft.aur.aur:
+    name: wttr
+    state: latest
