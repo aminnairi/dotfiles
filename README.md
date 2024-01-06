@@ -120,11 +120,11 @@ This error code is returned whenever you try to call this script and your operat
 
 If the installation of `ansible` has failed, this script will return the error, otherwise, it will simply continue with the installation.
 
-### 🪲 5 (ERROR_BECAUSE_PLAYBOOK_INVALID_OR_NOT_FOUND)
+### 🪲 5 (ERRROR_BECAUSE_FUZZY_FILE_FINDER_INSTALLATION_FAILED)
 
-This error code is returned whenever you try to call this script interactively, meaning you did not provide any path to a playbook, and this script will let you choose for a wanted configuration.
+This error code is returned whenever you try to call this script and your operating system does not have the `fzf` package installed.
 
-If the index you choosed is incorrect, then the error will be returned.
+If the installation of `fzf` has failed, this script will return the error, otherwise, it will simply continue with the installation.
 
 ### 🪲 6 (ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST)
 
