@@ -18,3 +18,8 @@
   pacman:
     name: firefox
     state: latest
+- name: Install Vimb (browser with vim-like shortcuts)
+  become: true
+  pacman:
+    name: vimb
+    state: latest
