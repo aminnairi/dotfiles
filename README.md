@@ -2,7 +2,7 @@
 
 My personal software installation & configuration
 
-![image](https://github.com/aminnairi/dotfiles/assets/18418459/1e1a3884-94e8-498a-b099-997f47199ac6)
+![image](https://github.com/aminnairi/dotfiles/assets/18418459/9a3f32a0-76bb-4b67-bf8e-7a4db65e7589)
 
 ## ☣️ Disclaimer
 
