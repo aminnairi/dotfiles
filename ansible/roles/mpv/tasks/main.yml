@@ -1,0 +1,17 @@
+---
+- name: Install MPV (video player)
+  become: true
+  pacman:
+    name: mpv
+    state: present
+- name: Synchronizes the configuration of MPV for the unprivileged user
+  synchronize:
+    src: mpv
+    dest: /$HOME/.config
+    delete: true
+- name: Synchronizes the configuration of MPV for the root user
+  become: true
+  synchronize:
+    src: mpv
+    dest: /root/.config
+    delete: true
