@@ -22,6 +22,7 @@
     - browsers
     - privateinternetaccess
     - ufw
+    - cmus
     - pipewire
     - hostname
     - timezone
