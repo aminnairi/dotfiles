@@ -22,7 +22,6 @@
     - browsers
     - privateinternetaccess
     - ufw
-    - mpv
     - pipewire
     - hostname
     - timezone
