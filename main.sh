@@ -76,7 +76,7 @@ echo "Done updating this repository, now at the latest revision."
 
 if [[ -z $choosen_playbook_path ]]
 then
-  choosen_playbook_file="$(/usr/bin/find ansible -name '*.yml' -type f -maxdepth 1 | xargs basename -a | /usr/bin/fzf --header 'Choose a configuration file' --pointer 👉 --prompt 🔍)"
+  choosen_playbook_file="$(/usr/bin/find ansible -maxdepth 1 -name '*.yml' -type f | xargs basename -a | /usr/bin/fzf --header 'Choose a configuration file' --pointer 👉 --prompt 🔍)"
   choosen_playbook_path="ansible/$choosen_playbook_file"
 fi
 
