@@ -143,6 +143,12 @@ If the playbook's path choosen is not found, then you'll get an error.
 
 [Tmux](https://github.com/tmux/tmux)'s plugins get installed once it is run without argument. A Fish function gets triggered whenever `tmux` is run. If it has no argument, then plugins gets checked and installed. If it has arguments, plugins do not get installed nor checked. Please run at least once `tmux` in order to install the necessary plugins before using it.
 
+### 🔐 SSH
+
+It's a good idea to backup your existing `~/.ssh/config` file before erasing the informations contained in a previous computer.
+
+Once the new computer is installed, don't forget to create a new SSH key using `ssh-keygen -t ed25519` and to propagate this key to the relevant services (servers, GitHub, GitLab, ...).
+
 ## ✨ Feature request, bug report & vulnerability report
 
 See [`issues`](./issues).
