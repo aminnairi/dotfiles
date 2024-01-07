@@ -94,7 +94,7 @@
   become: true
   pacman:
     name: bitwarden
-    state: present
+    state: latest
 - name: Install Wttr (weather informations)
   kewlfft.aur.aur:
     name: wttr
