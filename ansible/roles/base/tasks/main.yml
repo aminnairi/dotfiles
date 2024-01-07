@@ -85,11 +85,8 @@
   pacman:
     name: tokei
     state: latest
-- name: Install slides (terminal presentation tool)
   become: true
   pacman:
-    name: slides
-    state: latest
 - name: Install Wttr (weather informations)
   kewlfft.aur.aur:
     name: wttr
