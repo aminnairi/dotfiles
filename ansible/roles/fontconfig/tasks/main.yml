@@ -29,6 +29,11 @@
   pacman:
     name: noto-fonts-cjk
     state: latest
+- name: Install Noto Fonts AR (for arabic support)
+  become: true
+  pacman:
+    name: noto-fonts-ar
+    state: latest
 - name: Setup Fonts
   synchronize:
     src: fontconfig
