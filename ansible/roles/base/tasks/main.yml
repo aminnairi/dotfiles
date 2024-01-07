@@ -85,8 +85,11 @@
   pacman:
     name: tokei
     state: latest
+- name: Install bitwarden (password vault)
   become: true
   pacman:
+    name: bitwarden
+    state: present
 - name: Install Wttr (weather informations)
   kewlfft.aur.aur:
     name: wttr
