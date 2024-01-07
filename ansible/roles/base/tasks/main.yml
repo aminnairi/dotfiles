@@ -1,4 +1,9 @@
 ---
+- name: Install Man (manual page in the terminal)
+  become: true
+  pacman:
+    name: man
+    state: latest
 - name: Install Bpytop (system monitor)
   become: true
   pacman:
