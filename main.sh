@@ -14,8 +14,9 @@ ERROR_BECAUSE_NOT_ARCH_LINUX=2
 ERROR_BECAUSE_TOO_MUCH_ARGUMENTS_PROVDED=3
 ERROR_BECAUSE_ANSIBLE_INSTALLATION_FAILED=4
 ERRROR_BECAUSE_FUZZY_FILE_FINDER_INSTALLATION_FAILED=5
-ERROR_BECAUSE_GIT_PULL_FAILED=6
-ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST=7
+ERROR_BECAUSE_GIT_INSTALLATION_FAILED=6
+ERROR_BECAUSE_GIT_PULL_FAILED=7
+ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST=8
 
 if [[ "$(id -u)" -eq 0 ]]
 then
@@ -52,6 +53,17 @@ then
     echo "Installation of fuzzy file finder failed."
     display_help
     exit $ERRROR_BECAUSE_FUZZY_FILE_FINDER_INSTALLATION_FAILED
+  fi
+fi
+
+if [[ ! -x "$(command -v git)" ]]
+then
+  echo "Git not found, installing..."
+
+  if [[ ! "$(sudo pacman -Syy --noconfirm git)" ]]
+  then
+    echo "Installation of git failed."
+    exit $ERROR_BECAUSE_GIT_INSTALLATION_FAILED
   fi
 fi
 
