@@ -14,11 +14,6 @@
   pacman:
     name: noto-fonts-emoji
     state: latest
-- name: Install Noto Fonts TC (for traditional chinese support)
-  become: true
-  pacman:
-    name: noto-fonts-tc
-    state: latest
 - name: Install Noto Fonts SC (for simplified chinese support)
   become: true
   pacman:
