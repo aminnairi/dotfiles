@@ -20,7 +20,6 @@
     name: noto-fonts-cjk
     state: latest
 - name: Install Noto Fonts AR (for arabic support)
-  become: true
   kewlfft.aur.aur:
     name: noto-fonts-ar
     state: latest
