@@ -19,6 +19,11 @@
   pacman:
     name: noto-fonts-tc
     state: latest
+- name: Install Noto Fonts SC (for simplified chinese support)
+  become: true
+  pacman:
+    name: noto-fonts-sc
+    state: latest
 - name: Setup Fonts
   synchronize:
     src: fontconfig
