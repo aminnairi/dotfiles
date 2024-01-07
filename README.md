@@ -129,13 +129,21 @@ If the installation of `fzf` has failed, this script will return the error, othe
 
 ### 🪲 6 (ERROR_BECAUSE_GIT_PULL_FAILED)
 
+This error code is returned whenever the script detect that `git` has not been installed and tries to install it, but the installation has failed.
+
+This error (and the verification for `git`) should not happen since this repository should have been downloaded using `git`.
+
+However, for people that have downloaded the repository using the GitLab or GitHub user interface's download button, this might be helpful since it might not necessarily means that `git` is installed yet.
+
+### 🪲 7 (ERROR_BECAUSE_GIT_PULL_FAILED)
+
 This error code is returned whenever the script attempts at updating the local git repository.
 
 This may happen if you have local changes, or if you don't have any http connection anymore.
 
 This script will require an internet connection so it does not make sense to continue if you don't have one.
 
-### 🪲 7 (ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST)
+### 🪲 8 (ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST)
 
 This error code is returned whenever you try to call this script with an argument, which is the path to a playbook (configuration for the installation) you know you want to use.
 
