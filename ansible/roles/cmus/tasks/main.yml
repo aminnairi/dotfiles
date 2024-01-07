@@ -1,0 +1,6 @@
+---
+- name: Install Cmus (music player for the terminal)
+  become: true
+  pacman:
+    name: cmus
+    state: latest
