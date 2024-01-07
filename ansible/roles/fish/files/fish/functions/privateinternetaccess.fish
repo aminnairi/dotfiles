@@ -3,7 +3,7 @@ function privateinternetaccess
   set openvpn_files_path "/etc/privateinternetaccess"
 
   # If there are no openvpn configuration files available
-  if test -eq 0 (/usr/bin/ls $openvpn_files_path)
+  if not count $openvpn_files_path/* > /dev/null
     # Bail out and exit with an error
     echo "Error: no OpenVPN files found in $openvpn_files_path"
     return 1
