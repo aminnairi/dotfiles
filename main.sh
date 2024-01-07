@@ -14,7 +14,8 @@ ERROR_BECAUSE_NOT_ARCH_LINUX=2
 ERROR_BECAUSE_TOO_MUCH_ARGUMENTS_PROVDED=3
 ERROR_BECAUSE_ANSIBLE_INSTALLATION_FAILED=4
 ERRROR_BECAUSE_FUZZY_FILE_FINDER_INSTALLATION_FAILED=5
-ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST=6
+ERROR_BECAUSE_GIT_PULL_FAILED=6
+ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST=7
 
 if [[ "$(id -u)" -eq 0 ]]
 then
@@ -62,6 +63,16 @@ then
 fi
 
 choosen_playbook_path=$1
+
+echo "Updating this repository before anything else..."
+
+if [[ ! $(git pull --all --rebase --prune) ]]
+then
+  echo "Failed to update this repository"
+  exit $ERROR_BECAUSE_GIT_PULL_FAILED
+fi
+
+echo "Done updating this repository, now at the latest revision."
 
 if [[ -z $choosen_playbook_path ]]
 then
