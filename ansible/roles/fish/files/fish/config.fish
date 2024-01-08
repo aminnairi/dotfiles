@@ -67,7 +67,7 @@ if status is-interactive
   abbr --add dcpa "docker compose pause"
   abbr --add dcpr "docker compose port"
   abbr --add dcpl "docker compose pull"
-  abbr --add dcpsh "docker compose pull"
+  abbr --add dcps "docker compose ps"
   abbr --add dcrs "docker compose restart"
   abbr --add dcrn "docker compose run"
   abbr --add dcsc "docker compose scale"
