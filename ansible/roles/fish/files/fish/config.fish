@@ -53,6 +53,33 @@ if status is-interactive
   set -g theme_newline_cursor yes
   set -g theme_newline_prompt '$ '
 
+  # Abbreviations for Docker Compose
+  abbr --add dcb "docker compose build"
+  abbr --add dccf "docker compose config"
+  abbr --add dccp "docker compose cp"
+  abbr --add dccr "docker compose cp"
+  abbr --add dcd "docker compose down --remove-orphans --volumes --timeout 0"
+  abbr --add dce "docker compose events"
+  abbr --add dci "docker compose images"
+  abbr --add dck "docker compose kill"
+  abbr --add dclg "docker compose logs"
+  abbr --add dcls "docker compose ls"
+  abbr --add dcpa "docker compose pause"
+  abbr --add dcpr "docker compose port"
+  abbr --add dcpl "docker compose pull"
+  abbr --add dcpsh "docker compose pull"
+  abbr --add dcrs "docker compose restart"
+  abbr --add dcrn "docker compose run"
+  abbr --add dcsc "docker compose scale"
+  abbr --add dcstrt "docker compose start"
+  abbr --add dcstp "docker compose start"
+  abbr --add dct "docker compose top"
+  abbr --add dcunp "docker compose unpause"
+  abbr --add dcup "docker compose up"
+  abbr --add dcv "docker compose version"
+  abbr --add dcwt "docker compose wait"
+  abbr --add dcwa "docker compose watch"
+
   # Run fastfetch on each fish startup
   fastfetch
 end
