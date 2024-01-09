@@ -58,3 +58,6 @@ abbr --add dstevt "docker system events"
 abbr --add dstif "docker system info"
 abbr --add dstpn "docker system prune"
 
+# Abbrevations for "docker swarm"
+abbr --add dsint "docker swarm init"
+abbr --add dslv "docker swarm leave"
