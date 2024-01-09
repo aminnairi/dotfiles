@@ -24,7 +24,7 @@ abbr --add dcpups "docker compose unpause"
 abbr --add dcpup "docker compose up"
 abbr --add dcpv "docker compose version"
 abbr --add dcpwt "docker compose wait"
-abbr --add dcpwt "docker compose watch"
+abbr --add dcpwa "docker compose watch"
 
 # Abbrevations for "docker"
 abbr --add dca "docker container attach"
