@@ -52,3 +52,9 @@ abbr --add dcud "docker container update"
 abbr --add dcup "docker container unpause"
 abbr --add dcw "docker container wait"
 
+# Abbrevations for "docker system"
+abbr --add dstdf "docker system df"
+abbr --add dstevt "docker system events"
+abbr --add dstif "docker system info"
+abbr --add dstpn "docker system prune"
+
