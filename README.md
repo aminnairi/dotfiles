@@ -28,6 +28,7 @@ Although the goal for any non-contributor is to get inspiration, not to use it a
 - Support for both `intel` & `amd` architecture (pull requests welcome to add VirtualBox & VMware Guest Additions)
 - `ufw` enabled and ready to protect your personal life
 - Lots of programing language's interpreter & compiler installed (Python, Ruby, PHP, Julia, ...)
+- Tons of Fish's abbreviations for `docker` & `docker-compose`
 
 ## 📖 Requirements
 
