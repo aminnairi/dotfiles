@@ -2,6 +2,9 @@ return {
   "nvim-neorg/neorg",
   build = ":Neorg sync-parsers",
   dependencies = { "nvim-lua/plenary.nvim" },
+  init = function()
+    vim.g.maplocalleader = ","
+  end,
   config = function()
     require("neorg").setup {
       load = {
@@ -23,11 +26,6 @@ return {
                 }
               }
             }
-          }
-        },
-        ["core.keybinds"] = {
-          config = {
-            default_keybinds = false
           }
         },
         ["core.dirman"] = {
