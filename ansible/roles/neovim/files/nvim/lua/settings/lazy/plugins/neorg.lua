@@ -21,7 +21,5 @@ return {
         },
       },
     }
-
-    vim.opt.localleader = " o"
   end,
 }
