@@ -7,6 +7,11 @@ return {
       load = {
         ["core.defaults"] = {},
         ["core.concealer"] = {},
+        ["core.keybinds"] = {
+          config = {
+            neorg_leader = "<leader>o"
+          }
+        },
         ["core.dirman"] = {
           config = {
             workspaces = {
