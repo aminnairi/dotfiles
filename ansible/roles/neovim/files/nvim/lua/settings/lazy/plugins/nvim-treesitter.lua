@@ -16,7 +16,7 @@ return {
         "jsdoc",
         "json",
         "lua",
-        "neorg",
+        "norg",
         "markdown",
         "markdown_inline",
         "php",
