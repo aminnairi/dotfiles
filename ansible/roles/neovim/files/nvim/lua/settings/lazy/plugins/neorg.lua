@@ -80,6 +80,17 @@ return {
           ":Neorg return<CR>",
           "Return"
         },
+        l = {
+          name = "List",
+          t = {
+            ":Neorg keybind norg core.pivot.toggle-list-type",
+            "Toggle"
+          },
+          i = {
+            ":Neorg keybind norg core.pivot.invert-list-type",
+            "Invert"
+          }
+        },
         w = {
           name = "Workspace",
           n = {
