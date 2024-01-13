@@ -21,5 +21,6 @@ return {
         },
       },
     }
+    -- TODO: add keybinds for neorg
   end,
 }
