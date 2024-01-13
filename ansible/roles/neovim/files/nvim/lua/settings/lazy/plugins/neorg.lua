@@ -7,6 +7,11 @@ return {
       load = {
         ["core.defaults"] = {},
         ["core.concealer"] = {},
+        ["core.keybinds"] = {
+          config = {
+            default_keybinds = false
+          }
+        },
         ["core.dirman"] = {
           config = {
             workspaces = {
