@@ -7,16 +7,18 @@ return {
       load = {
         ["core.defaults"] = {},
         ["core.concealer"] = {
-          folds = true,
-          icons_preset = true,
-          icons = {
-            code_blocks = {
-              conceal = true,
-              padding = {
-                left = 2
+          config = {
+            folds = true,
+            icons_preset = true,
+            icons = {
+              code_blocks = {
+                conceal = true,
+                padding = {
+                  left = 2
+                }
               }
             }
-          }
+          },
         },
         ["core.dirman"] = {
           config = {
