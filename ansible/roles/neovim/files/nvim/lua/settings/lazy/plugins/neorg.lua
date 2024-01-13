@@ -6,19 +6,7 @@ return {
     require("neorg").setup {
       load = {
         ["core.defaults"] = {},
-        ["core.concealer"] = {
-          config = {
-            folds = true,
-            icons = {
-              code_blocks = {
-                conceal = true,
-                padding = {
-                  left = 2
-                }
-              }
-            }
-          },
-        },
+        ["core.concealer"] = {},
         ["core.dirman"] = {
           config = {
             workspaces = {
