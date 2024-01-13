@@ -63,11 +63,11 @@ return {
 				p = {
 					name = "Presenter",
 					s = {
-						":Neorg presenter start",
+						":Neorg presenter start<CR>",
 						"Start",
 					},
 					S = {
-						":Neorg presenter stop",
+						":Neorg presenter stop<CR>",
 						"Stop",
 					},
 				},
