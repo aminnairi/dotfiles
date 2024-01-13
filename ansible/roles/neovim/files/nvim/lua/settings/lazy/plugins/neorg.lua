@@ -9,7 +9,6 @@ return {
         ["core.concealer"] = {
           config = {
             folds = true,
-            icons_preset = true,
             icons = {
               code_blocks = {
                 conceal = true,
