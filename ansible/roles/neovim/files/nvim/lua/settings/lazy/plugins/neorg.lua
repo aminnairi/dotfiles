@@ -21,9 +21,13 @@ return {
           config = {
             -- Configure icons for concealed items
             icons = {
+              -- Configure the code blocks
               code_block = {
+                -- Conceal the "@code" and "@end" completely when in normal modej
                 conceal = true,
+                -- Add padding to a code inside a code block
                 padding = {
+                  -- Add 2 spaces before the code inside a code block
                   left = 2
                 }
               },
