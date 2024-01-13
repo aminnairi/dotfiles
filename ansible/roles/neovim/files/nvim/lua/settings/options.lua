@@ -44,3 +44,4 @@ opt.splitbelow = true
 opt.conceallevel = 3
 opt.foldtext = "▼"
 opt.fillchars:append("fold:▾,foldopen:▾,foldsep:│,foldclose:▸")
+opt.fillchars:append("fold: ")
