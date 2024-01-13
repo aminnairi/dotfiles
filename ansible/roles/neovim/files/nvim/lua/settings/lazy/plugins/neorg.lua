@@ -4,7 +4,7 @@ return {
 	event = "VeryLazy",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"folke/which-key",
+		"folke/which-key.nvim",
 	},
 	init = function()
 		-- Configure the key to use for keybinds used in the "core.keybinds" module
