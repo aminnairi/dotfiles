@@ -19,6 +19,9 @@ return {
 				["core.concealer"] = {
 					-- Configuration for the "core.concealer" module
 					config = {
+					  code_block = {
+					    conceal = true
+            },
 						-- Configure icons for concealed items
 						icons = {
 							-- Configure the headings
