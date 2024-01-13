@@ -62,6 +62,25 @@ return {
 		require("which-key").register({
 			["<leader>o"] = {
 				name = "Neorg",
+				i = {
+				  ":Neorg index<CR>",
+				  "Index"
+        },
+				r = {
+				  ":Neorg return<CR>",
+				  "Return"
+        },
+				w = {
+				  name = "Workspace",
+				  n = {
+				    ":Neorg workspace notes",
+            "Notes"
+          },
+				  d = {
+				    ":Neorg workspace default",
+            "Default"
+          }
+        },
 				p = {
 					name = "Presenter",
 					s = {
