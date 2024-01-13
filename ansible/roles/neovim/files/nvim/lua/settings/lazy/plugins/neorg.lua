@@ -20,7 +20,10 @@ return {
 					-- Configuration for the "core.concealer" module
 					config = {
 					  code_block = {
-					    conceal = true
+					    conceal = true,
+					    padding = {
+					      left = 2
+              }
             },
 						-- Configure icons for concealed items
 						icons = {
