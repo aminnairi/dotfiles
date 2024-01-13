@@ -54,6 +54,8 @@ return {
 						zen_mode = "zen-mode",
 					},
 				},
+				-- Module for controling the ability to export Neorg files
+				["core.export"] = {}
 			},
 		})
 
