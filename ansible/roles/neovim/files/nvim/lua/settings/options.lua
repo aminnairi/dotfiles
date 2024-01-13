@@ -1,5 +1,9 @@
 local opt = vim.opt
 
+function MyFoldText()
+  return "▼"
+end
+
 opt.autoindent = true
 opt.autoread = true
 opt.backspace = "indent,eol,start"
@@ -42,6 +46,6 @@ opt.signcolumn = "yes"
 opt.splitright = true
 opt.splitbelow = true
 opt.conceallevel = 3
-opt.foldtext = "▼"
-opt.fillchars:append("fold:▾,foldopen:▾,foldsep:│,foldclose:▸")
+opt.foldmethod = "manual"
 opt.foldcolumn = "1"
+opt.foldtext = "MyFoldText()"
