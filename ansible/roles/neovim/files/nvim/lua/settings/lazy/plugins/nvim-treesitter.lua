@@ -128,12 +128,6 @@ return {
             ["iR"] = { query = "@return.inner", desc = "Select inside of a return statement" },
             -- The whole return statement
             ["aR"] = { query = "@return.outer", desc = "Select the whole return statement" },
-            -- Inside of a scope
-            ["i{"] = { query = "@scopename.inner", desc = "Select inside of a scope" },
-            -- Inside of a statement
-            ["iS"] = { query = "@statement.outer", desc = "Select inside of a statement" },
-            -- Inside of a statement
-            ["aS"] = { query = "@statement.outer", desc = "Select the whole statement" },
           },
           -- Select surrounding white spaces as well as the selected text object
           include_surrounding_whitespace = true,
