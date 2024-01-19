@@ -1,5 +1,5 @@
 # Abbreviations for "docker compose"
-abbr --add dkcpb "docker compose text build"
+abbr --add dkcpb "docker compose build"
 abbr --add dkcpcf "docker compose config"
 abbr --add dkcpcp "docker compose cp"
 abbr --add dkcpce "docker compose create"
