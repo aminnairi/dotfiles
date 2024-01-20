@@ -99,3 +99,7 @@
   kewlfft.aur.aur:
     name: wttr
     state: latest
+- name: Install LaTeX tools
+  become: true
+  pacman:
+    name: texlive
