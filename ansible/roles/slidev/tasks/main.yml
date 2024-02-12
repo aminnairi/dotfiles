@@ -1,0 +1,26 @@
+---
+- name: Install Node.js
+  become: true
+  pacman:
+    name: nodejs
+    state: latest
+- name: Install NPM
+  become: true
+  pacman:
+    name: npm
+    state: latest
+- name: Install Slidev globally through NPM
+  community.general.npm:
+    path: /$HOME/.local/lib/node_modules
+    name: '@slidev/cli'
+    state: latest
+- name: Install Slidev default theme globally through NPM
+  community.general.npm:
+    path: /$HOME/.local/lib/node_modules
+    name: '@slidev/theme-default'
+    state: latest
+- name: Install Playwright Chromium for Slidev globally through NPM
+  community.general.npm:
+    path: /$HOME/.local/lib/node_modules
+    name: playwright-chromium
+    state: latest
