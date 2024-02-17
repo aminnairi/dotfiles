@@ -13,14 +13,14 @@
   community.general.npm:
     path: /$HOME/.local/lib/node_modules
     name: '@slidev/cli'
-    state: latest
+    version: 0.47.5
 - name: Install Slidev default theme globally through NPM
   community.general.npm:
     path: /$HOME/.local/lib/node_modules
     name: '@slidev/theme-default'
-    state: latest
+    version: 0.25.0
 - name: Install Playwright Chromium for Slidev globally through NPM
   community.general.npm:
     path: /$HOME/.local/lib/node_modules
     name: playwright-chromium
-    state: latest
+    version: 1.41.2
