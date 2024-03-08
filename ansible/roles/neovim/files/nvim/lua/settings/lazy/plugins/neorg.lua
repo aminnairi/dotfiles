@@ -6,10 +6,10 @@ return {
     "nvim-lua/plenary.nvim",
     "folke/which-key.nvim",
   },
-  init = function()
-    -- Configure the key to use for keybinds used in the "core.keybinds" module
-    vim.g.maplocalleader = ","
-  end,
+  -- init = function()
+  --   -- Configure the key to use for keybinds used in the "core.keybinds" module
+  --   vim.g.maplocalleader = ","
+  -- end,
   config = function()
     require("neorg").setup({
       load = {
