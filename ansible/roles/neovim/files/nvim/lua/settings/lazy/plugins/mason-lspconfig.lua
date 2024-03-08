@@ -18,7 +18,7 @@ return {
 			"prismals",
 			"rust_analyzer",
 			"tsserver",
-			"volar",
+			"vuels",
 			"yamlls",
 		},
 	},
