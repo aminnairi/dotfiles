@@ -21,8 +21,7 @@ return {
       "eslint_d",
       "phpcbf",
       "phpcs",
-      "phpstan",
-      "vuels"
+      "phpstan"
     },
     auto_update = true,
     run_on_start = true,
