@@ -1,4 +1,9 @@
 ---
+- name: Install Lua 5.1
+  become: true
+  pacman:
+    name: lua51
+    state: latest
 - name: Install RipGrep
   become: true
   pacman:
