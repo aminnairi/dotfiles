@@ -9,6 +9,11 @@
   pacman:
     name: viu
     state: latest
+- name: Install ueberzugpp (C++ based terminal image viewer)
+  become: true
+  pacman:
+    name: ueberzugpp 
+    state: latest
 - name: Setup Kitty
   synchronize:
     delete: true
