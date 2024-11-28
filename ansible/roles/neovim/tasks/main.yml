@@ -4,6 +4,11 @@
   pacman:
     name: lua51
     state: latest
+- name: Install Lua JS Regexp
+  become: true
+  pacman:
+    name: lua-jsregexp
+    state: latest
 - name: Install RipGrep
   become: true
   pacman:
