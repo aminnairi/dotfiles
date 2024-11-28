@@ -126,7 +126,7 @@ return {
 
     local languageServers = {
       "lua_ls",
-      "tsserver",
+      "ts_ls",
       "volar",
       "cssls",
       "cssmodules_ls",
