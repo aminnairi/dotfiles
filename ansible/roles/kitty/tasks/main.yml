@@ -4,6 +4,11 @@
   pacman:
     name: kitty
     state: latest
+- name: Install Viu (simple terminal image viewer)
+  become: true
+  pacman:
+    name: viu
+    state: latest
 - name: Setup Kitty
   synchronize:
     delete: true
