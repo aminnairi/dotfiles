@@ -1,12 +1,10 @@
 ---
 - name: Install Docker Language Server
-  become: true
-  kewlftt.aur.aur:
+  kewlfft.aur.aur:
     name: dockerfile-language-server
     state: latest
 
 - name: Install VSCode Language Server Extracted
-  become: true
   kewlfft.aur.aur:
     name: vscode-langservers-extracted
     state: latest
