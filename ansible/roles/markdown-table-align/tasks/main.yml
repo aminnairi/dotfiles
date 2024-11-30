@@ -13,7 +13,7 @@
 - name: Compile the binary
   ansible.builtin.command:
     chdir: /$HOME/Documents/git/github.com/aminnairi/markdown-table-align
-    run: deno compile index.ts
+    cmd: deno compile index.ts
   when: git_clone_result.changed
 
 - name: Copy the binary
