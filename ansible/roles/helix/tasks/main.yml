@@ -13,3 +13,4 @@
   synchronize:
     src: helix
     dest: "$HOME/.config"
+    delete: true
