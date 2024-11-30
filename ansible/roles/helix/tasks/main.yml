@@ -8,3 +8,8 @@
   kewlfft.aur.aur:
     name: vscode-langservers-extracted
     state: latest
+
+- name: Synchronize the configuration
+  synchronize:
+    src: helix
+    dest: "$HOME/.config"
