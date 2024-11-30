@@ -3,7 +3,7 @@
   ansible.builtin.git:
     repo: https://github.com/aminnairi/markdown-table-align
     dest: /$HOME/Documents/git/github.com/aminnairi/markdown-table-align
-    register: git_clone_result
+  register: git_clone_result
 
 - name: Install Deno
   pacman:
