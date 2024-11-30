@@ -12,5 +12,5 @@
 - name: Synchronize the configuration
   synchronize:
     src: helix
-    dest: "$HOME/.config"
+    dest: "/$HOME/.config"
     delete: true
