@@ -14,16 +14,16 @@
   ansible.builtin.command:
     chdir: /$HOME/Documents/git/github.com/aminnairi/markdown-table-align
     run: deno compile index.ts
-    when: git_clone_result.changed
+  when: git_clone_result.changed
 
 - name: Copy the binary
   ansible.builtin.copy:
     src: /$HOME/Documents/git/github.com/aminnairi/markdown-table-align/markdown-table-align
     dest: /$HOME/.local/bin
-    when: git_clone_result.changed
+  when: git_clone_result.changed
 
 - name: Remove the binary
   ansible.builtin.file:
     path: /$HOME/Document/git/github.com/aminnairi/markdown-table-align/markdown-table-align
     state: absent
-    when: git_clone_result.changed
+  when: git_clone_result.changed
