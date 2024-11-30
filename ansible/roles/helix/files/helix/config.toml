@@ -1,7 +1,6 @@
 [editor]
 mouse = false
 middle-click-paste = false
-shell = [ "fish" "-c" ]
 line-number = "relative"
 cursorline = false
 cursorcolumn = false
