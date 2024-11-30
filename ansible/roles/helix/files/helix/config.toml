@@ -1,0 +1,24 @@
+[editor]
+mouse = false
+middle-click-paste = false
+shell = [ "fish" "-c" ]
+line-number = "relative"
+cursorline = false
+cursorcolumn = false
+completion-replace = true
+true-color = true
+undercurl = true
+bufferline = "always"
+color-modes = true
+popup-border = "popup"
+
+[editor.auto-pairs]
+"(" = ")"
+"{" = "}"
+"[" = "]"
+" = "
+"`" = "`"
+"<" = ">"
+
+[keys.normal]
+C-g = [ ":new", ":insert-output lazygit", ":buffer-close!", ":redraw" ]
