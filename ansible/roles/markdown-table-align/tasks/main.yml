@@ -13,18 +13,6 @@
 - name: Compile the binary
   ansible.builtin.command:
     chdir: /$HOME/Documents/git/github.com/aminnairi/markdown-table-align/
-    cmd: deno compile index.ts
+    cmd: deno compile --allow-read --output $HOME/.local/bin/markdown-table-align index.ts
   when: git_clone_result.changed
   register: compile_the_binary
-
-- name: Copy the binary
-  ansible.builtin.copy:
-    src: /$HOME/Documents/git/github.com/aminnairi/markdown-table-align/markdown-table-align
-    dest: /$HOME/.local/bin/
-  when: compile_the_binary.changed
-
-- name: Remove the binary
-  ansible.builtin.file:
-    path: /$HOME/Document/git/github.com/aminnairi/markdown-table-align/markdown-table-align
-    state: absent
-  when: compile_the_binary.changed
