@@ -6,27 +6,28 @@
     ansible_python_interpreter: auto_silent
   gather_facts: true
   roles:
-    - reflector
-    - base
-    - amd
-    - git
-    - xorg
-    - fish
-    - fontconfig
-    - kitty
-    - felix
-    - vifm
-    - tmux
-    - neovim
-    - helix
-    - browsers
-    - privateinternetaccess
-    - ufw
-    - cmus
-    - pipewire
-    - hostname
-    - timezone
-    - locale
-    - network
-    - docker
-    - gnome
+    # - reflector
+    # - base
+    # - amd
+    # - git
+    - markdown-table-align
+    # - xorg
+    # - fish
+    # - fontconfig
+    # - kitty
+    # - felix
+    # - vifm
+    # - tmux
+    # - neovim
+    # - helix
+    # - browsers
+    # - privateinternetaccess
+    # - ufw
+    # - cmus
+    # - pipewire
+    # - hostname
+    # - timezone
+    # - locale
+    # - network
+    # - docker
+    # - gnome
