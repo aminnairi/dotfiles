@@ -16,6 +16,7 @@ Although the goal for any non-contributor is to get inspiration, not to use it a
 
 - Gnome with Pipewire to get the maximum of our audio/video
 - `nvim` with a ton of plugins for web development & linux stuff
+- `helix` setup & configured with support for `lazygit` and `lazydocker`
 - Tons of browsers (actually just 4 but this is something) like `chromium`, `google-chrome`, `opera` & `firefox`
 - `docker` enabled for the unprivileged user so commands don't need prefixing with `sudo` anymore
 - `tmux` for terminal multiplexing with automatic installation & update of plugins before starting `tmux`
