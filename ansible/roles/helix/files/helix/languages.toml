@@ -1,0 +1,9 @@
+[language-server.deno-language-server]
+command = "deno"
+args = ["lsp"]
+required-root-patterns = ["deno.json", "deno.jsonc", "package.json"]
+
+[[language]]
+name = "typescript"
+roots = ["deno.json", "deno.jsonc", "package.json"]
+language-servers = ["deno-language-server"]
