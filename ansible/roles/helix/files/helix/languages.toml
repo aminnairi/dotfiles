@@ -1,9 +1,17 @@
-[language-server.deno-language-server]
-command = "deno"
-args = ["lsp"]
-required-root-patterns = ["deno.json", "deno.jsonc", "package.json"]
-
 [[language]]
 name = "typescript"
+language-id = "typescript"
+scope = "source.ts"
+injection-regex = "^(ts|typescript)$"
+file-types = ["ts"]
+shebangs = ["deno"]
 roots = ["deno.json", "deno.jsonc", "package.json"]
-language-servers = ["deno-language-server"]
+auto-format = true
+language-servers = ["deno-lsp"]
+
+[language-server.deno-lsp]
+command = "deno"
+args = ["lsp"]
+
+[language-server.deno-lsp.config.deno]
+enable = true
