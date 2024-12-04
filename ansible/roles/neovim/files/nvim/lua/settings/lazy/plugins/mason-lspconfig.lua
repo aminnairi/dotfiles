@@ -13,6 +13,7 @@ return {
 			"eslint",
 			"intelephense",
 			"jsonls",
+			"denols",
 			"lua_ls",
 			"marksman",
 			"prismals",
