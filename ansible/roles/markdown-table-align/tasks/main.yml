@@ -1,5 +1,6 @@
 ---
 - name: Install Deno
+  become: true
   pacman:
     name: deno
     state: latest
