@@ -167,6 +167,16 @@ It's a good idea to backup your existing `~/.ssh/config` file before erasing the
 
 Once the new computer is installed, don't forget to create a new SSH key using `ssh-keygen -t ed25519` and to propagate this key to the relevant services (servers, GitHub, GitLab, ...).
 
+### 🛡️ Passbolt
+
+Passbolt has been installed and is the default password manager used in this configuration.
+
+In order to initialize an account, use the following command after installation.
+
+```bash
+passbolt configure --serverAddress https://passbolt.com --userPassword "..." --userPrivateKeyFile "..."
+```
+
 ## ✨ Feature request, bug report & vulnerability report
 
 See [`issues`](./issues).
