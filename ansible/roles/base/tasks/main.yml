@@ -39,11 +39,6 @@
   pacman:
     name: python
     state: latest
-- name: Install Julia
-  become: true
-  pacman:
-    name: julia
-    state: latest
 - name: Install Ruby
   become: true
   pacman:
