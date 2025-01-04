@@ -4,6 +4,11 @@
   pacman:
     name: man
     state: latest
+- name: Install Passbolt (password manager)
+  become: true
+  kewlfft.aur.aur:
+    name: passbolt
+    state: latest
 - name: Install Bpytop (system monitor)
   become: true
   pacman:
