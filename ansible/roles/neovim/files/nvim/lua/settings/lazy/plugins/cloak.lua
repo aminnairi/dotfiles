@@ -36,21 +36,23 @@ return {
     })
 
     require("which-key").register({
-      ["<leader>c"] = {
-        name = "Cloak",
-        t = {
-          ":CloakToggle<CR>",
-          "Toggle"
-        },
-        d = {
-          ":CloakDisable<CR>",
-          "Disable"
-        },
-        e = {
-          ":CloakEnable<CR>",
-          "Enable"
-        }
-      }
+      "<leader>c",
+      desc = "Cloak",
+      {
+        "<leader>ct",
+        ":CloakToggle<CR>",
+        desc = "Toggle Cloak"
+      },
+      {
+        "<leader>cd",
+        ":CloakDisable<CR>",
+        desc = "Cloak disable"
+      },
+      {
+        "<leader>ce",
+        ":CloakDisable<CR>",
+        desc = "Cloak enable"
+      },
     })
   end,
 }

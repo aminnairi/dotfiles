@@ -68,52 +68,5 @@ return {
         ["core.export"] = {}
       },
     })
-
-    require("which-key").register({
-      ["<leader>o"] = {
-        name = "Neorg",
-        i = {
-          ":Neorg index<CR>",
-          "Index"
-        },
-        r = {
-          ":Neorg return<CR>",
-          "Return"
-        },
-        l = {
-          name = "List",
-          t = {
-            ":Neorg keybind norg core.pivot.toggle-list-type",
-            "Toggle"
-          },
-          i = {
-            ":Neorg keybind norg core.pivot.invert-list-type",
-            "Invert"
-          }
-        },
-        w = {
-          name = "Workspace",
-          n = {
-            ":Neorg workspace notes",
-            "Notes"
-          },
-          d = {
-            ":Neorg workspace default",
-            "Default"
-          }
-        },
-        p = {
-          name = "Presenter",
-          s = {
-            ":Neorg presenter start<CR>",
-            "Start",
-          },
-          S = {
-            ":Neorg presenter stop<CR>",
-            "Stop",
-          },
-        },
-      },
-    })
   end,
 }
