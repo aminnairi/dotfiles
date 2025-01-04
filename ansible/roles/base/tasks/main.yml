@@ -9,6 +9,11 @@
   kewlfft.aur.aur:
     name: passbolt
     state: latest
+- name: Install Toipe (typing testing in the terminal)
+  become: true
+  kewlfft.aur.aur:
+    name: toipe
+    state: latest
 - name: Install Bpytop (system monitor)
   become: true
   pacman:
