@@ -7,12 +7,12 @@ return {
   end,
   config = function()
     require("which-key").register({
-      { "", "<C-l>", desc = "<C-w>l" },
-      { "", "<C-h>", desc = "<C-w>h" },
-      { "", "<C-j>", desc = "<C-w>j" },
-      { "", "<C-s>", desc = ":write<CR>" },
-      { "", "<C-q>", desc = ":quitall<CR>" },
-      { "", "<C-k>", desc = "<C-w>k" },
+      { "<C-h>", "<C-w>h", },
+      { "<C-l>", "<C-w>l", },
+      { "<C-j>", "<C-w>j", },
+      { "<C-s>", ":write<CR>", },
+      { "<C-q>", ":quitall<CR>", },
+      { "<C-k>", "<C-w>k", },
     })
   end
 }
