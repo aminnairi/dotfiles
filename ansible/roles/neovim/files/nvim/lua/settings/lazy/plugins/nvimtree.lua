@@ -160,48 +160,16 @@ return {
     local whichKey = require("which-key")
 
     whichKey.register({
-      ["<leader>n"] = {
-        name = "NvimTree",
-        w = {
-          name = "NvimTree Width",
-          i = {
-            increment_width,
-            "Increment NvimTree Width"
-          },
-          d = {
-            decrement_width,
-            "Increment NvimTree Width"
-          },
-          a = {
-            dynamic_width,
-            "Automatic NvimTree Width"
-          }
-        },
-        t = {
-          function()
-            nvimTreeApi.tree.toggle()
-          end,
-          "Toggle NvimTree",
-        },
-        f = {
-          function()
-            nvimTreeApi.tree.focus()
-          end,
-          "Focus NvimTree",
-        },
-        e = {
-          function()
-            nvimTreeApi.tree.expand_all()
-          end,
-          "Expand NvimTree",
-        },
-        c = {
-          function()
-            nvimTreeApi.tree.collapse_all()
-          end,
-          "Collapse NvimTree",
-        },
-      },
+      { "<leader>n", group = "NvimTree" },
+      { "<leader>nt", function() nvimTreeApi.tree.toggle() end, desc = "Toggle" },
+      { "<leader>nf", function() nvimTreeApi.tree.focus() end, desc = "Focus" },
+      { "<leader>ne", function() nvimTreeApi.tree.expand_all() end, desc = "Expand All" },
+      { "<leader>nc", function() nvimTreeApi.tree.collapse_all() end, desc = "Collapse All" },
+      { "<leader>nw", group = "Width" },
+      { "<leader>nwi", increment_width, desc = "Increase" },
+      { "<leader>nwd", decrement_width, desc = "Decrease" },
+      { "<leader>nwa", dynamic_width, desc = "Decrease" },
+      { "<leader>nt", function() nvimTreeApi.tree.toggle() end, desc = "Toggle" },
     })
   end,
 }

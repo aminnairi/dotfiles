@@ -12,45 +12,13 @@ return {
     local whichKey = require("which-key")
 
     whichKey.register({
-      ["<leader>t"] = {
-        name = "Telescope",
-        h = {
-          function()
-            telescopeBuiltin.help_tags()
-          end,
-          "Find help tags"
-        },
-        t = {
-          function()
-            telescopeBuiltin.treesitter()
-          end,
-          "Explore the Abstract Syntax Tree",
-        },
-        f = {
-          function()
-            telescopeBuiltin.find_files()
-          end,
-          "Find files",
-        },
-        w = {
-          function()
-            telescopeBuiltin.live_grep()
-          end,
-          "Find words",
-        },
-        c = {
-          function()
-            telescopeBuiltin.colorscheme()
-          end,
-          "Find color schemes",
-        },
-        g = {
-          function()
-            telescopeBuiltin.git_files()
-          end,
-          "Find git files",
-        },
-      },
+      { "<leader>t", group = "Telescope" },
+      { "<leader>th", function() telescopeBuiltin.help_tags() end, desc = "Help Tags" },
+      { "<leader>tt", function() telescopeBuiltin.treesitter() end, desc = "Treesitter" },
+      { "<leader>tf", function() telescopeBuiltin.find_files() end, desc = "Files" },
+      { "<leader>tw", function() telescopeBuiltin.live_grep() end, desc = "Words" },
+      { "<leader>tc", function() telescopeBuiltin.colorscheme() end, desc = "Colorscheme" },
+      { "<leader>tg", function() telescopeBuiltin.git_files() end, desc = "Colorscheme" },
     })
   end,
 }

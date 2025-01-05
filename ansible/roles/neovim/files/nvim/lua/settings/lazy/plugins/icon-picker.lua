@@ -10,27 +10,10 @@ return {
     })
 
     whichKey.register({
-      ["<leader>i"] = {
-        name = "Icon Picker",
-        e = {
-          function()
-            vim.cmd("IconPickerInsert emoji")
-          end,
-          "Pick emoji"
-        },
-        s = {
-          function()
-            vim.cmd("IconPickerInsert symbols")
-          end,
-          "Pick symbol"
-        },
-        n = {
-          function()
-            vim.cmd("IconPickerInsert nerd_font")
-          end,
-          "Pick Nerd font symbol"
-        }
-      }
+      { "<leader>i", group = "Icon" },
+      { "<leader>ie", function() vim.cmd("IconPickerInsert emoji") end, group = "Emoji" },
+      { "<leader>is", function() vim.cmd("IconPickerInsert symbols") end, group = "Symbol" },
+      { "<leader>in", function() vim.cmd("IconPickerInsert nerd_font") end, group = "Nerd Font Symbol" },
     })
   end
 }

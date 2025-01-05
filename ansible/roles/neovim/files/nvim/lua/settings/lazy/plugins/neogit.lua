@@ -14,15 +14,8 @@ return {
     neogit.setup({})
 
     whichKey.register({
-      "<leader>g",
-      desc = "Neogit",
-      {
-        "<leader>go",
-        function()
-          neogit.open()
-        end,
-        desc = "Neogit open"
-      },
+      { "<leader>g", group = "Neogit", },
+      { "<leader>go", function() neogit.open() end, },
     })
   end
 }

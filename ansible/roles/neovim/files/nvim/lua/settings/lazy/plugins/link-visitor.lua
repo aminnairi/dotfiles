@@ -9,35 +9,14 @@ return {
   },
   config = function()
     local whichKey = require("which-key")
+    local linkVisitor = require("link-visitor");
 
     whichKey.register({
-      ["<leader>v"] = {
-        name = "Visit link",
-        v = {
-          function()
-            require("link-visitor").visit()
-          end,
-          "Visit",
-        },
-        l = {
-          function()
-            require("link-visitor").link_under_cursor()
-          end,
-          "Under cursor",
-        },
-        n = {
-          function()
-            require("link-visitor").link_near_cursor()
-          end,
-          "Near cursor",
-        },
-        N = {
-          function()
-            require("link-visitor").link_nearest()
-          end,
-          "Near cursor",
-        },
-      },
+      { "<leader>v", group = "Link", },
+      { "<leader>vv", function() linkVisitor.visit() end, },
+      { "<leader>vl", function() linkVisitor.link_under_cursor() end, },
+      { "<leader>vn", function() linkVisitor.link_near_cursor() end, },
+      { "<leader>vN", function() linkVisitor.link_nearest() end, },
     })
   end
 }
