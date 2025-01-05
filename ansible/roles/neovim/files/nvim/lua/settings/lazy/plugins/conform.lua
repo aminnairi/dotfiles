@@ -5,16 +5,14 @@ return {
     local conform = require("conform")
 
     whichKey.add({
-      ["<leader>f"] = {
-        name = "Format",
-        f = {
-          function()
-            local currentFileBufferNumber = vim.fn.bufnr("%")
-
-            conform.format({ bufnr = currentFileBufferNumber })
-          end,
-          "Format the current file",
-        },
+      { "<leader>f", group = "Format" },
+      {
+        "<leader>ff",
+        function() 
+          local currentFileBufferNumber = vim.fn.bufnr("%")
+          conform.format({ bufnr = currentFileBufferNumber })
+        end,
+        desc = "Current File",
       },
     })
   end,
