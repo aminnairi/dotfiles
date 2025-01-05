@@ -10,14 +10,6 @@ return {
 
     local map = vim.api.nvim_set_keymap
     local opts = { noremap = true, silent = true }
-    local whichKey = require("which-key")
-
-    whichKey.add({
-      { "", "<leader>bcl", desc = "<cmd>BufferCloseAllBuffersLeft<cr>" },
-      { "", desc = "<leader>bc" },
-      { "", "<leader>bcr", desc = "<cmd>BufferCloseAllBuffersRight<cr>" },
-      { "", "<leader>bcc", desc = "<cmd>BufferCloseAllButCurrent<cr>" },
-    })
 
     map("n", "<A-,>", "<Cmd>BufferPrevious<CR>", opts)
     map("n", "<A-.>", "<Cmd>BufferNext<CR>", opts)
