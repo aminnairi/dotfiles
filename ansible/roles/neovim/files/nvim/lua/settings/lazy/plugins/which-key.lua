@@ -7,30 +7,12 @@ return {
   end,
   config = function()
     require("which-key").register({
-      ["<C-s>"] = {
-        ":write<CR>",
-        "Persist the content of the current buffer to the file system"
-      },
-      ["<C-q>"] = {
-        ":quitall<CR>",
-        "Quit the editor with confirmation"
-      },
-      ["<C-h>"] = {
-        "<C-w>h",
-        "Move to the window on the left"
-      },
-      ["<C-l>"] = {
-        "<C-w>l",
-        "Move to the window on the right"
-      },
-      ["<C-k>"] = {
-        "<C-w>k",
-        "Move to the window on the top"
-      },
-      ["<C-j>"] = {
-        "<C-w>j",
-        "Move to the window on the bottom"
-      }
+      { "<C-h>", "<C-w>h", desc = "Move to the window on the left" },
+      { "<C-j>", "<C-w>j", desc = "Move to the window on the bottom" },
+      { "<C-k>", "<C-w>k", desc = "Move to the window on the top" },
+      { "<C-l>", "<C-w>l", desc = "Move to the window on the right" },
+      { "<C-q>", ":quitall<CR>", desc = "Quit the editor with confirmation" },
+      { "<C-s>", ":write<CR>", desc = "Persist the content of the current buffer to the file system" },
     })
   end
 }

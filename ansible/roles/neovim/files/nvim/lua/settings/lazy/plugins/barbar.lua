@@ -13,27 +13,10 @@ return {
     local whichKey = require("which-key")
 
     whichKey.register({
-      "<leader>b",
-      desc = "Barbar",
-      {
-        "<leader>bc",
-        desc = "Barbar Close",
-        {
-          "<leader>bcc",
-          "<cmd>BufferCloseAllButCurrent<cr>",
-          desc = "Barbar Close All But Current"
-        },
-        {
-          "<leader>bcl",
-          "<cmd>BufferCloseAllBuffersLeft<cr>",
-          desc = "Barbar Close All Buffers Left"
-        },
-        {
-          "<leader>bcr",
-          "<cmd>BufferCloseAllBuffersRight<cr>",
-          desc = "Barbar Close All Buffers Right"
-        }
-      },
+      { "", "<leader>bcl", desc = "<cmd>BufferCloseAllBuffersLeft<cr>" },
+      { "", desc = "<leader>bc" },
+      { "", "<leader>bcr", desc = "<cmd>BufferCloseAllBuffersRight<cr>" },
+      { "", "<leader>bcc", desc = "<cmd>BufferCloseAllButCurrent<cr>" },
     })
 
     map("n", "<A-,>", "<Cmd>BufferPrevious<CR>", opts)

@@ -19,105 +19,22 @@ return {
 
     local on_attach = function(_, buffer)
       whichKey.register({
-        ["<leader>l"] = {
-          name = "LSP",
-          d = {
-            name = "LSP Diagnostic",
-            o = {
-              function()
-                vim.diagnostic.open_float()
-              end,
-              "Open LSP diagnostic",
-            },
-            p = {
-              function()
-                vim.diagnostic.goto_prev()
-              end,
-              "Previous LSP diagnostic",
-            },
-            n = {
-              function()
-                vim.diagnostic.goto_next()
-              end,
-              "Next LSP diagnostic",
-            },
-          },
-          b = {
-            name = "LSP Buffer",
-            D = {
-              function()
-                vim.lsp.buf.declaration()
-              end,
-              "Go to symbol declaration",
-              buffer = buffer,
-            },
-            d = {
-              function()
-                vim.lsp.buf.definition()
-              end,
-              "Go to symbol definition",
-              buffer = buffer,
-            },
-            h = {
-              function()
-                vim.lsp.buf.hover()
-              end,
-              "Hover symbol documentation",
-              buffer = buffer,
-            },
-            i = {
-              function()
-                vim.lsp.buf.implementation()
-              end,
-              "Go to symbol implementation",
-              buffer = buffer,
-            },
-            s = {
-              function()
-                vim.lsp.buf.signature_help()
-              end,
-              "Go to symbol signature",
-              buffer = buffer,
-            },
-            t = {
-              function()
-                vim.lsp.buf.type_definition()
-              end,
-              "Go to symbol type definition",
-              buffer = buffer,
-            },
-            r = {
-              function()
-                vim.lsp.buf.rename()
-              end,
-              "Rename symbol",
-              buffer = buffer,
-            },
-            c = {
-              function()
-                vim.lsp.buf.code_action()
-              end,
-              "LSP code action",
-              buffer = buffer,
-            },
-            R = {
-              function()
-                vim.lsp.buf.references()
-              end,
-              "Go to symbol deferences",
-              buffer = buffer,
-            },
-            f = {
-              function()
-                vim.lsp.buf.format({
-                  async = true,
-                })
-              end,
-              "Format file",
-              buffer = buffer,
-            },
-          },
-        },
+        { "<leader>l", group = "LSP" },
+        { "<leader>lb", group = "LSP Buffer" },
+        { "<leader>lbD", function() vim.lsp.buf.declaration() end, buffer = 1, desc = "Go to symbol declaration" },
+        { "<leader>lbR", function() vim.lsp.buf.references() end, buffer = 1, desc = "Go to symbol references" },
+        { "<leader>lbc", function() vim.lsp.buf.code_action() end, buffer = 1, desc = "LSP code action" },
+        { "<leader>lbd", function() vim.lsp.buf.definition() end, buffer = 1, desc = "Go to symbol definition" },
+        { "<leader>lbf", function() vim.lsp.buf.format() end, buffer = 1, desc = "Format file" },
+        { "<leader>lbh", function() vim.lsp.buf.hover() end, buffer = 1, desc = "Hover symbol documentation" },
+        { "<leader>lbi", function() vim.lsp.buf.implementation() end, buffer = 1, desc = "Go to symbol implementation" },
+        { "<leader>lbr", function() vim.lsp.buf.rename() end, buffer = 1, desc = "Rename symbol" },
+        { "<leader>lbs", function() vim.lsp.buf.signature_help() end, buffer = 1, desc = "Go to symbol signature" },
+        { "<leader>lbt", function() vim.lsp.buf.type_definition() end, buffer = 1, desc = "Go to symbol type definition" },
+        { "<leader>ld", group = "LSP Diagnostic" },
+        { "<leader>ldn", function() vim.diagnostic.goto_next() end, desc = "Next LSP diagnostic" },
+        { "<leader>ldo", function() vim.diagnostic.open_float() end, desc = "Open LSP diagnostic" },
+        { "<leader>ldp", function() vim.diagnostic.goto_prev() end, desc = "Previous LSP diagnostic" },
       })
     end
 
