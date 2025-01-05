@@ -159,7 +159,7 @@ return {
 
     local whichKey = require("which-key")
 
-    whichKey.register({
+    whichKey.add({
       { "<leader>n", group = "NvimTree" },
       { "<leader>nt", function() nvimTreeApi.tree.toggle() end, desc = "Toggle" },
       { "<leader>nf", function() nvimTreeApi.tree.focus() end, desc = "Focus" },

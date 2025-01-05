@@ -12,7 +12,7 @@ return {
     local opts = { noremap = true, silent = true }
     local whichKey = require("which-key")
 
-    whichKey.register({
+    whichKey.add({
       { "", "<leader>bcl", desc = "<cmd>BufferCloseAllBuffersLeft<cr>" },
       { "", desc = "<leader>bc" },
       { "", "<leader>bcr", desc = "<cmd>BufferCloseAllBuffersRight<cr>" },

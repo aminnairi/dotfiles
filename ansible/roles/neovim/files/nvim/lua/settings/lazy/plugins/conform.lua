@@ -4,7 +4,7 @@ return {
     local whichKey = require("which-key")
     local conform = require("conform")
 
-    whichKey.register({
+    whichKey.add({
       ["<leader>f"] = {
         name = "Format",
         f = {

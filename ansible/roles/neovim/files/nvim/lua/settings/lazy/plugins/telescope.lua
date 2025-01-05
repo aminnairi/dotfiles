@@ -11,7 +11,7 @@ return {
 
     local whichKey = require("which-key")
 
-    whichKey.register({
+    whichKey.add({
       { "<leader>t", group = "Telescope" },
       { "<leader>th", function() telescopeBuiltin.help_tags() end, desc = "Help Tags" },
       { "<leader>tt", function() telescopeBuiltin.treesitter() end, desc = "Treesitter" },

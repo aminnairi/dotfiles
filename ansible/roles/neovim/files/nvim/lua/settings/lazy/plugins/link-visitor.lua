@@ -11,7 +11,7 @@ return {
     local whichKey = require("which-key")
     local linkVisitor = require("link-visitor");
 
-    whichKey.register({
+    whichKey.add({
       { "<leader>v", group = "Link", },
       { "<leader>vv", function() linkVisitor.visit() end, },
       { "<leader>vl", function() linkVisitor.link_under_cursor() end, },

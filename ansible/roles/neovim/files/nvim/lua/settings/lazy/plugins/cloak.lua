@@ -35,7 +35,7 @@ return {
       },
     })
 
-    require("which-key").register({
+    require("which-key").add({
       { "<leader>c", "Cloak", },
       { "<leader>ct", ":CloakToggle<CR>", desc = "Toggle" },
       { "<leader>cd", ":CloakDisable<CR>", desc = "Disable" },

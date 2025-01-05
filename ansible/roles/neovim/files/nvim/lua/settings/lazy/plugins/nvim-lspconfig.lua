@@ -18,7 +18,7 @@ return {
     end
 
     local on_attach = function(_, buffer)
-      whichKey.register({
+      whichKey.add({
         { "<leader>l", group = "LSP" },
         { "<leader>lb", group = "LSP Buffer" },
         { "<leader>lbD", function() vim.lsp.buf.declaration() end, buffer = 1, desc = "Go to symbol declaration" },

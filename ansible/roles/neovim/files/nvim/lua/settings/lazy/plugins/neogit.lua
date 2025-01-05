@@ -13,7 +13,7 @@ return {
 
     neogit.setup({})
 
-    whichKey.register({
+    whichKey.add({
       { "<leader>g", group = "Neogit", },
       { "<leader>go", function() neogit.open() end, },
     })

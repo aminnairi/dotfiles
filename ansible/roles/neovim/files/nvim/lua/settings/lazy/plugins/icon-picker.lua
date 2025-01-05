@@ -9,7 +9,7 @@ return {
       disable_legacy_commands = true
     })
 
-    whichKey.register({
+    whichKey.add({
       { "<leader>i", group = "Icon" },
       { "<leader>ie", function() vim.cmd("IconPickerInsert emoji") end, group = "Emoji" },
       { "<leader>is", function() vim.cmd("IconPickerInsert symbols") end, group = "Symbol" },
