@@ -3,6 +3,10 @@
   kewlfft.aur.aur:
     name: vlang-bin
     state: latest
+- name: Install V Analyzer
+  kewlfft.aur.aur:
+    name: v-analyzer-bin
+    state: latest
 - name: Install Lua 5.1
   become: true
   pacman:
