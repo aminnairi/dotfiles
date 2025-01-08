@@ -8,6 +8,12 @@
     name: "@angular/language-server"
     global: true
     state: latest
+- name: Install VSCode Langservers Extracted
+  become: true
+  npm:
+    name: vscode-langservers-extracted
+    global: true
+    state: latest
     state: latest
 - name: Install V Analyzer
   kewlfft.aur.aur:
