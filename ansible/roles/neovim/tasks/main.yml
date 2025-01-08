@@ -1,4 +1,8 @@
 ---
+- name: Install V language
+  kewlfft.aur.aur:
+    name: vlang-bin
+    state: latest
 - name: Install Lua 5.1
   become: true
   pacman:
