@@ -29,6 +29,11 @@
 - name: Install V Analyzer
   kewlfft.aur.aur:
     name: v-analyzer-bin
+- name: Install Biome
+  become: true
+  npm:
+    name: "@biomejs/biome"
+    global: true
     state: latest
 - name: Install Lua 5.1
   become: true
