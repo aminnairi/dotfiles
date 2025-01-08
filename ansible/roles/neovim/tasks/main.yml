@@ -20,6 +20,11 @@
     name: "@olrtg/emmet-language-server"
     global: true
     state: latest
+- name: Install TypeScript Language Server
+  become: true
+  npm:
+    name: typescript-language-server
+    global: true
     state: latest
 - name: Install V Analyzer
   kewlfft.aur.aur:
