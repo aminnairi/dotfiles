@@ -1,7 +1,4 @@
 ---
-- name: Install V language
-  kewlfft.aur.aur:
-    name: vlang-bin
 - name: Install Angular Language Server
   become: true
   npm:
@@ -26,9 +23,6 @@
     name: typescript-language-server
     global: true
     state: latest
-- name: Install V Analyzer
-  kewlfft.aur.aur:
-    name: v-analyzer-bin
 - name: Install Biome
   become: true
   npm:
