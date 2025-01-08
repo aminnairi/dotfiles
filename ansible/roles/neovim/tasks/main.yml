@@ -14,6 +14,12 @@
     name: vscode-langservers-extracted
     global: true
     state: latest
+- name: Install Emmet Language Server
+  become: true
+  npm:
+    name: "@olrtg/emmet-language-server"
+    global: true
+    state: latest
     state: latest
 - name: Install V Analyzer
   kewlfft.aur.aur:
