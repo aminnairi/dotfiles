@@ -1,0 +1,24 @@
+---
+- name: Ensure systemd user directory exists
+  ansible.builin.file:
+    path: "/home/amin/.config/systemd/user"
+    state: directory
+    owner: amin
+    group: amin
+    mode: '0755'
+
+- name: Copy Syncthing systemd service file
+  ansible.builtin.copy:
+    src: syncthing.service
+    dest: /$HOME/.config/systemd/user
+    owner: amin
+    group: amin
+    mode: 0644
+
+- name: Reload Systemd User Daemon
+  ansible.builtin.systemd_service:
+    enabled: true
+    daemon_reload: true
+    name: syncthing
+    scope: user
+    state: started
