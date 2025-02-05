@@ -1,13 +1,9 @@
 [Unit]
-Description=Syncthing - Open Source Continuous File Synchronization
-Documentation=https://docs.syncthing.net/
+Name=Syncthing
 After=network.target
 
 [Service]
 ExecStart=/usr/bin/syncthing serve --no-browser --no-restart --no-upgrade
-Restart=on-failure
-User=amin
-Group=amin
 
 [Install]
 WantedBy=default.target
