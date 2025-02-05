@@ -22,10 +22,9 @@
     scope: user
   when: syncthing_service_copy.changed
 
-- name: Reload Systemd User Daemon
+- name: Start the Systemd User Daemon Syncthing service
   ansible.builtin.systemd_service:
     enabled: true
-    daemon_reload: true
     name: syncthing
     scope: user
     state: started
