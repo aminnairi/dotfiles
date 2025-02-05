@@ -14,6 +14,13 @@
     owner: amin
     group: amin
     mode: 0644
+  register: syncthing_service_copy
+
+- name: Reload Systemd User Daemon
+  ansible.builtin.systemd_service:
+    daemon_reload: true
+    scope: user
+  when: syncthing_service_copy.changed
 
 - name: Reload Systemd User Daemon
   ansible.builtin.systemd_service:
