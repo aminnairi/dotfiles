@@ -1,6 +1,6 @@
 ---
 - name: Ensure systemd user directory exists
-  ansible.builin.file:
+  ansible.builtin.file:
     path: "/home/amin/.config/systemd/user"
     state: directory
     owner: amin
