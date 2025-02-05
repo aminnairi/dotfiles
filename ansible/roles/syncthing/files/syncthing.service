@@ -4,10 +4,8 @@ Documentation=https://docs.syncthing.net/
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/syncthing serve --no-browser --no-restart --no-upgrades
+ExecStart=/usr/bin/syncthing serve --no-browser --no-restart --no-upgrade
 Restart=on-failure
-SuccessExitStatus=3 4
-RestartForceExitStatus=3 4
 User=amin
 Group=amin
 
