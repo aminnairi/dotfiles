@@ -9,6 +9,7 @@
     - reflector
     - base
     - intel
+    - syncthing
     - git
     - markdown-table-align
     - xorg
