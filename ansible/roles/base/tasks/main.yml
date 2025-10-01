@@ -3,7 +3,7 @@
   become: true
   pacman:
     name: syncthing
-    stsate: latest
+    state: latest
 - name: Install Man (manual page in the terminal)
   become: true
   pacman:
