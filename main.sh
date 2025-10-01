@@ -104,5 +104,5 @@ echo "Installing needed Ansible packages..." \
   && echo "Done installing needed Ansible packages." \
   && echo "Running choosen Ansible Playbook at $choosen_playbook_path..." \
   && yes O | yay \
-  && ansible-playbook --inventory localhost --ask-become-pass --module-path ansible/collections "$choosen_playbook_path" \
+  && ansible-playbook --inventory localhost, --ask-become-pass --module-path ansible/collections "$choosen_playbook_path" \
   && echo "Done running choosen Ansible Playbook. If this is your first installation, you might want to reboot in order for the settings to take effect."
