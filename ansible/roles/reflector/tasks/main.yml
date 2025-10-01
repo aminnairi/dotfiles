@@ -1,5 +1,5 @@
 ---
-- name: Update Archlinux cache & packages
+- name: Update package cache
   become: true
   pacman:
     update_cache: true
@@ -38,3 +38,7 @@
     daemon_reload: true
     state: restarted
   when: reflector_timer_update.changed
+- name: Upgrade packages and operating system
+  become: true
+  pacman:
+    upgrade: true
