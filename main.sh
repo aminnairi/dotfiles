@@ -99,13 +99,10 @@ then
   exit $ERROR_BECAUSE_PLAYBOOK_PATH_DOES_NOT_EXIST
 fi
 
-echo "Installing needed Ansible packages..."
-
-ANSIBLE_COLLECTIONS_PATH="$PWD/ansible/collections" ansible-galaxy collection install --collections-path ansible/collections --requirements-file ansible/galaxy/requirements.yml
-
-echo "Done installing needed Ansible packages."
-echo "Running choosen Ansible Playbook at $choosen_playbook_path..."
-
-ansible-playbook --inventory localhost, --ask-become-pass --module-path ansible/collections "$choosen_playbook_path"
-
-echo "Done running choosen Ansible Playbook. If this is your first installation, you might want to reboot in order for the settings to take effect."
+echo "Installing needed Ansible packages..." \
+  && ANSIBLE_COLLECTIONS_PATH="$PWD/ansible/collections" ansible-galaxy collection install --collections-path ansible/collections --requirements-file ansible/galaxy/requirements.yml \
+  && echo "Done installing needed Ansible packages." \
+  && echo "Running choosen Ansible Playbook at $choosen_playbook_path..." \
+  && yes | yay \
+  && ansible-playbook --inventory localhost --ask-become-pass --module-path ansible/collections "$choosen_playbook_path" \
+  && echo "Done running choosen Ansible Playbook. If this is your first installation, you might want to reboot in order for the settings to take effect."
