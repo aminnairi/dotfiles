@@ -58,7 +58,6 @@ return {
 			"graphql",
 			"html",
 			"intelephense",
-			"java_language_sever",
 			"jsonls",
 			"lua_ls",
 			"marksman",
