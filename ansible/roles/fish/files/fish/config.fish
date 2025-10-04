@@ -14,6 +14,9 @@ if status is-interactive
     # Add local binary in the global path
     fish_add_path ~/.local/bin
 
+    # Add Go binary path to global path
+    fish_add_path ~/go/bin
+
     # configuration for Oh My Fish BobTheFish theme
     set -g theme_display_git yes
     set -g theme_display_git_dirty yes
