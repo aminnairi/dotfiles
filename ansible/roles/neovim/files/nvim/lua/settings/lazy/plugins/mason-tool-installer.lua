@@ -14,7 +14,6 @@ return {
       "jsonlint",
       "htmlbeautifier",
       "eslint",
-      "blade-formatter",
       "markdownlint",
       "yamllint",
       "ansible-lint",
