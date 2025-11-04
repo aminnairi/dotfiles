@@ -20,7 +20,6 @@ return {
       "eslint_d",
       "phpcbf",
       "phpcs",
-      "phpstan"
     },
     auto_update = true,
     run_on_start = true,
