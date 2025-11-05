@@ -19,6 +19,7 @@ return {
       "ansible-lint",
       "eslint_d",
       "phpcbf",
+      "typescript-language-server",
       "phpcs",
     },
     auto_update = true,
