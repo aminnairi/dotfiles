@@ -1,0 +1,9 @@
+[Unit]
+Name=Syncthing
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/syncthing serve --no-browser --no-restart --no-upgrade
+
+[Install]
+WantedBy=default.target
