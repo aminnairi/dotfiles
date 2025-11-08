@@ -6,6 +6,9 @@ ensure_system_is_updated \
   && ensure_git_configuration_set "user.email" \
   && ensure_git_configuration_set "init.defaultbranch" \
   && ensure_ssh_key_installed \
+  && ensure_package_is_installed linux \
+  && ensure_package_is_installed linux-headers \
+  && ensure_package_is_installed linux-firmware \
   && ensure_package_is_installed xf86-video-amdgpu \
   && ensure_package_is_installed vulkan-radeon \
   && ensure_package_is_installed mesa \
@@ -31,4 +34,5 @@ ensure_system_is_updated \
   && ensure_package_is_installed texlive-bin \
   && ensure_package_is_installed neovim \
   && ensure_package_is_installed chromium \
-  && ensure_package_is_installed firefox
+  && ensure_package_is_installed firefox \
+  && ensure_mkinitcpio_configured_for linux
