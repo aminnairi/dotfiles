@@ -8,4 +8,5 @@ ensure_package_is_installed git \
   && ensure_root_git_configuration_set "user.name" \
   && ensure_root_git_configuration_set "user.email" \
   && ensure_root_git_configuration_set "init.defaultbranch" \
-  && ensure_ssh_key_installed
+  && ensure_ssh_key_installed \
+  && ensure_github_cli_authenticated
