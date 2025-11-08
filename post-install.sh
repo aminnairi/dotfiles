@@ -10,4 +10,5 @@ source ./modules/00-library.sh \
   && source ./modules/07-services.sh \
   && source ./modules/08-gnome.sh \
   && source ./modules/09-kitty.sh \
-  && source ./modules/10-tmux.sh
+  && source ./modules/10-tmux.sh \
+  && source ./modules/11-syncthing.sh
