@@ -4,6 +4,26 @@ function log() {
   echo "[POSTINSTALL] $1"
 }
 
+function ensure_user_folder_present() {
+  local folder_path="$1"
+
+  if [[ -d "$folder_path" ]]
+  then
+    log "Dossier $folder_path déjà présent."
+    return 0
+  fi
+
+  log "Création du dossier $folder_path..."
+
+  if ! mkdir --parent "$folder_path"
+  then
+    log "Impossible de créer le dossier $folder_path."
+    return 1
+  fi
+
+  log "Dossier $folder_path créé avec succès."
+}
+
 function is_installed() {
   pacman -Q "$1" > /dev/null 2>&1
 }
@@ -162,6 +182,34 @@ function ensure_service_active() {
     log "Le service '${service_name}' n'est pas démarré. Démarrage en cours..."
 
     if ! sudo systemctl start "${service_name}" > /dev/null 2>&1; then
+        log "Impossible de démarrer le service '${service_name}'."
+    else
+      log "Service '${service_name}' démarré."
+    fi
+  else
+    log "Service '${service_name}' déjà démarré."
+  fi
+}
+
+function ensure_user_service_active() {
+  local service_name="$1"
+
+  if ! systemctl --user is-enabled --quiet "${service_name}"; then
+    log "Le service '${service_name}' n'est pas activé. Activation en cours..."
+
+    if ! sudo systemctl --user enable "${service_name}" > /dev/null 2>&1; then
+      log "Impossible d'activer le service '${service_name}'."
+    else
+      log "Service $service_name activé."
+    fi
+  else
+    log "Service $service_name déjà activé."
+  fi
+
+  if ! systemctl --user is-active --quiet "${service_name}"; then
+    log "Le service '${service_name}' n'est pas démarré. Démarrage en cours..."
+
+    if ! sudo systemctl --user start "${service_name}" > /dev/null 2>&1; then
         log "Impossible de démarrer le service '${service_name}'."
     else
       log "Service '${service_name}' démarré."
