@@ -289,3 +289,14 @@ function ensure_gnome_setting_set() {
 
   log "Paramètre $setting_schema $setting_key paramétré avec succès."
 }
+
+function ensure_mkinitcpio_configured_for() {
+  local kernel="$1"
+
+  if sudo mkinitcpio -p "$kernel"
+  then
+    log "Noyau $kernel installé."
+  else
+    log "Echec lors de l'installation du noyau $kernel, ne redémarrez surtout pas !"
+  fi
+}
