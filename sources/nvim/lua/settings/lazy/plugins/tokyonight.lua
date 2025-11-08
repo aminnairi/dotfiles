@@ -8,7 +8,7 @@ return {
     end,
     opts = {
       style = "storm",
-      transparent = true,
+      transparent = false,
       light_style = "day",
       terminal_colors = true,
     },
