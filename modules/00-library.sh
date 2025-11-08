@@ -300,3 +300,21 @@ function ensure_mkinitcpio_configured_for() {
     log "Echec lors de l'installation du noyau $kernel, ne redémarrez surtout pas !"
   fi
 }
+
+function ensure_github_cli_authenticated() {
+  if gh auth status > /dev/null 2>&1
+  then
+    log "Déjà connecté à GitHub CLI."
+    return 0
+  fi
+
+  log "Déconnecté de GitHub CLI, connexion..."
+
+  if ! gh auth login
+  then
+    log "Echec d'authentification à GitHub CLI."
+    return 1
+  else
+    log "Connecté à GitHub CLI avec succès."
+  fi
+}
