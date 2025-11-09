@@ -101,7 +101,7 @@ function ensure_package_is_installed() {
   if ! is_installed "$1"
   then
     log "Installation de $1..."
-    yay -Syyu --noconfirm --needed "$1"
+    yay -S --noconfirm --needed "$1"
   else
     log "Paquet $1 déjà installé."
   fi
