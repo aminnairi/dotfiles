@@ -362,9 +362,9 @@ binds {
   Mod+Shift+Slash { show-hotkey-overlay; }
 
   // Suggested binds for running programs: terminal, app launcher, screen locker.
-  Mod+T hotkey-overlay-title="Open a Terminal" { spawn "kitty"; }
-  Mod+D hotkey-overlay-title="Run an Application" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-  Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+  Mod+T hotkey-overlay-title="Kitty Terminal" { spawn "kitty"; }
+  Mod+D hotkey-overlay-title="Lanceur d'application" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+  Super+Alt+L hotkey-overlay-title="Verrouillage d'écran" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
 
   // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
   // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -395,10 +395,8 @@ binds {
   // Open/close the Overview: a zoomed-out view of workspaces and windows.
   // You can also move the mouse into the top-left hot corner,
   // or do a four-finger swipe up on a touchpad.
-  Mod+O repeat=false { toggle-overview; }
-
-  Mod+Q repeat=false { close-window; }
-
+  Mod+O hotkey-overlay-title="Zoom/Dézoom" repeat=false { toggle-overview; }
+  Mod+Q hotkey-overlay-title="Fermer la fenêtre" repeat=false { close-window; }
 
   // Mod+Ctrl+Left  { move-column-left; }
   // Mod+Ctrl+Down  { move-window-down; }
@@ -416,12 +414,10 @@ binds {
   // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
   // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
 
-  Mod+Home { focus-column-first; }
-  Mod+End  { focus-column-last; }
-  Mod+Ctrl+Home { move-column-to-first; }
-  Mod+Ctrl+End  { move-column-to-last; }
-
-
+  // Mod+Home { focus-column-first; }
+  // Mod+End  { focus-column-last; }
+  // Mod+Ctrl+Home { move-column-to-first; }
+  // Mod+Ctrl+End  { move-column-to-last; }
 
   // Alternatively, there are commands to move just a single window:
   // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
@@ -432,23 +428,27 @@ binds {
   // ...
 
   // Workspace & column focus
-  Mod+H              { focus-column-left; }
-  Mod+L              { focus-column-right; }
-  Mod+J              { focus-workspace-down; }
-  Mod+K              { focus-workspace-up; }
+  Mod+H hotkey-overlay-title="Se déplacer vers la gauche" { focus-column-left; }
+  Mod+L hotkey-overlay-title="Se déplacer vers la droite" { focus-column-right; }
+  Mod+J hotkey-overlay-title="Se déplacer vers le bas"    { focus-workspace-down; }
+  Mod+K hotkey-overlay-title="Se déplacer vers le haut"   { focus-workspace-up; }
+
   // Monitor Focus
-  Mod+Shift+H        { focus-monitor-left; }
-  Mod+Shift+J        { focus-monitor-down; }
-  Mod+Shift+K        { focus-monitor-up; }
-  Mod+Shift+L        { focus-monitor-right; }
+  Mod+Shift+H hotkey-overlay-title="Se déplacer vers l'écran de gauche"     { focus-monitor-left; }
+  Mod+Shift+J hotkey-overlay-title="Se déplacer vers le moniteur du bas"    { focus-monitor-down; }
+  Mod+Shift+K hotkey-overlay-title="Se déplacer vers le moniteur du haut"   { focus-monitor-up; }
+  Mod+Shift+L hotkey-overlay-title="Se déplacer vers le moniteur de droite" { focus-monitor-right; }
+
   // Column movement
-  Mod+Ctrl+H         { move-column-left; }
-  Mod+Ctrl+J         { move-column-to-workspace-down; }
-  Mod+Ctrl+K         { move-column-to-workspace-up; }
-  Mod+Ctrl+L         { move-column-right; }
+  Mod+Ctrl+H hotkey-overlay-title="Déplacer la fenêtre vers la gauche" { move-column-left; }
+  Mod+Ctrl+J hotkey-overlay-title="Déplacer la fenêtre vers le bas"    { move-column-to-workspace-down; }
+  Mod+Ctrl+K hotkey-overlay-title="Déplacer la fenêtre vers le haut"   { move-column-to-workspace-up; }
+  Mod+Ctrl+L hotkey-overlay-title="Déplacer la fenêtre vers la droite" { move-column-right; }
+
   // Workspace movement
-  Mod+Shift+Ctrl+J   { move-workspace-down; }
-  Mod+Shift+Ctrl+K   { move-workspace-up; }
+  Mod+Shift+Ctrl+J hotkey-overlay-title="Déplacer l'environnement de travail vers le bas" { move-workspace-down; }
+  Mod+Shift+Ctrl+K hotkey-overlay-title="Déplacer l'environnement de travail vers le haut" { move-workspace-up; }
+
   // Monitor movement
   // Mod+Alt+H       { move-column-to-monitor-left; }
   // Mod+Alt+J       { move-column-to-monitor-down; }
