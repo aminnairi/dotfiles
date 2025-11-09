@@ -347,6 +347,14 @@ function ensure_mkinitcpio_configured_for() {
   else
     log "Echec lors de l'installation du noyau $kernel, ne redémarrez surtout pas !"
   fi
+
+	if ! sudo grub-mkconfig -o /boot/grub/grub.cfg
+	then
+		log "Erreur lors de la configuration du noyau dans Grub, ne redemarrez pas !"
+		return 1
+	fi
+
+	log "Grub configure pour le noyau linux avec succes."
 }
 
 function ensure_github_cli_authenticated() {
