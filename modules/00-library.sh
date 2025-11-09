@@ -113,7 +113,7 @@ function ensure_package_group_is_installed() {
 
     log "Vérification du groupe de paquets : $group_name"
 
-    local members=$(pacman -Sg "$group_name" 2>/dev/null | awk '{print $2}')
+    members=$(pacman -Sg "$group_name" 2>/dev/null | awk '{print $2}')
 
     if [[ -z "$members" ]]
     then
@@ -121,10 +121,10 @@ function ensure_package_group_is_installed() {
       return 1
     fi
 
-    local missing_packages=""
+    missing_packages=""
 
     for pkg in $members; do
-      if ! is_installed $pkg
+      if ! is_installed "$pkg"
       then
         missing_packages+="$pkg "
         exit_status=1
@@ -138,7 +138,7 @@ function ensure_package_group_is_installed() {
         log "Le groupe '$group_name' est INCOMPLET. Paquets manquants :"
         for pkg in $missing_pkgs
         do
-          ensure_package_is_installed $pkg
+          ensure_package_is_installed "$pkg"
         done
     fi
 }
