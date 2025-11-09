@@ -31,6 +31,7 @@ Although the goal for any non-contributor is to get inspiration, not to use it a
 - `pass` Fish function to select and copy a password using Passbolt
 - Lots of programing language's interpreter & compiler installed (Python, Ruby, PHP, Julia, ...)
 - Tons of Fish's abbreviations for `docker` & `docker-compose`
+- `posting` for HTTP requests in the terminal
 
 ## 📖 Requirements
 
