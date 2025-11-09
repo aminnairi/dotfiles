@@ -38,4 +38,5 @@ ensure_system_is_updated \
   && ensure_package_is_installed chromium \
   && ensure_package_is_installed firefox \
   && ensure_package_is_installed cheat \
+  && ensure_package_is_installed posting \
   && ensure_mkinitcpio_configured_for linux
