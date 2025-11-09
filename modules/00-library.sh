@@ -366,3 +366,13 @@ function ensure_github_cli_authenticated() {
     log "Connecté à GitHub CLI avec succès."
   fi
 }
+
+function ensure_grub_is_configured() {
+	if ! grub-mkconfig -o /boot/grub/grub.cfg
+	then
+		log "Erreur lors de la configuration du noyau dans Grub, ne redemarrez pas !"
+		return 1
+	fi
+
+	log "Grub configure pour le noyau linux avec succes."
+}
