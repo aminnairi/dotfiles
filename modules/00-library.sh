@@ -101,10 +101,17 @@ function ensure_package_is_installed() {
   if ! is_installed "$1"
   then
     log "Installation de $1..."
-    yay -S --noconfirm --needed "$1"
-  else
-    log "Paquet $1 déjà installé."
+    if ! yay -S --noconfirm --needed "$1"
+    then
+      log "Echec lors de l'installation de $1."
+      return 1
+    fi
+
+    log "Paquet $1 installé avec succès."
+    return 0
   fi
+
+  log "Paquet $1 déjà installé."
 }
 
 function ensure_package_group_is_installed() {
