@@ -11,7 +11,7 @@ ensure_package_is_installed niri \
   && ensure_package_is_installed xdg-desktop-portal-gtk \
   && ensure_package_is_installed xdg-desktop-portal-gnome \
   && ensure_package_is_installed gnome-keyring \
-  && ensure_package_is_installed plasma-polkit-agent \
+  && ensure_package_is_installed polkit-kde-agent \
   && ensure_package_is_installed xwayland-satellite \
   && ensure_package_is_installed cliphist \
   && ensure_package_is_installed matugen-git \
