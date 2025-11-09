@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ensure_package_is_installed git \
-  && ensure_package_is_installed gh-cli \
+  && ensure_package_is_installed github-cli \
   && ensure_git_configuration_set "user.name" \
   && ensure_git_configuration_set "user.email" \
   && ensure_git_configuration_set "init.defaultbranch" \
