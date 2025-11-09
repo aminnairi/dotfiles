@@ -7,7 +7,6 @@ return {
     "folke/neodev.nvim"
   },
   config = function()
-    local lspconfig = require("lspconfig")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     local whichKey = require("which-key")
     local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
@@ -73,7 +72,7 @@ return {
     }
 
     for _, languageServerName in pairs(languageServers) do
-      lspconfig[languageServerName].setup({
+      vim.lsp.config(languageServerName, {
         capabilities = capabilities,
         on_attach = on_attach
       })
