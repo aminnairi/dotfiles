@@ -194,10 +194,12 @@ function ensure_service_active() {
 function ensure_user_service_active() {
   local service_name="$1"
 
-  if ! systemctl --user is-enabled --quiet "${service_name}"; then
+  if ! systemctl --user is-enabled --quiet "${service_name}"
+  then
     log "Le service '${service_name}' n'est pas activé. Activation en cours..."
 
-    if ! sudo systemctl --user enable "${service_name}" > /dev/null 2>&1; then
+    if ! systemctl --quiet --user enable "${service_name}"
+    then
       log "Impossible d'activer le service '${service_name}'."
     else
       log "Service $service_name activé."
@@ -206,10 +208,12 @@ function ensure_user_service_active() {
     log "Service $service_name déjà activé."
   fi
 
-  if ! systemctl --user is-active --quiet "${service_name}"; then
+  if ! systemctl --user is-active --quiet "${service_name}"
+  then
     log "Le service '${service_name}' n'est pas démarré. Démarrage en cours..."
 
-    if ! sudo systemctl --user start "${service_name}" > /dev/null 2>&1; then
+    if ! systemctl --quiet --user start "${service_name}"
+    then
         log "Impossible de démarrer le service '${service_name}'."
     else
       log "Service '${service_name}' démarré."
