@@ -375,17 +375,17 @@ binds {
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteInput"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    XF86AudioMute        allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteInput"; }
 
     // Example media keys mapping using playerctl.
     // This will work with any MPRIS-enabled media player.
-    XF86AudioPlay        allow-when-locked=true { spawn-sh "qs" "-c" "noctalia-shell" "ipc" "call" "media" "playPause"; }
-    XF86AudioStop        allow-when-locked=true { spawn-sh "qs" "-c" "noctalia-shell" "ipc" "call" "media" "pause"; }
-    XF86AudioPrev        allow-when-locked=true { spawn-sh "qs" "-c" "noctalia-shell" "ipc" "call" "media" "previous"; }
-    XF86AudioNext        allow-when-locked=true { spawn-sh "qs" "-c" "noctalia-shell" "ipc" "call" "media" "next"; }
+    XF86AudioPlay        allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "media" "playPause"; }
+    XF86AudioStop        allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "media" "pause"; }
+    XF86AudioPrev        allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "media" "previous"; }
+    XF86AudioNext        allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "media" "next"; }
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
@@ -405,8 +405,6 @@ binds {
     Mod+Up    { focus-window-up; }
     Mod+Right { focus-column-right; }
     Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
     Mod+L     { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
@@ -456,10 +454,8 @@ binds {
     // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
     // ...
 
-    Mod+Page_Down      { focus-workspace-down; }
-    Mod+Page_Up        { focus-workspace-up; }
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
+    Mod+J              { focus-workspace-down; }
+    Mod+K              { focus-workspace-up; }
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
     Mod+Ctrl+U         { move-column-to-workspace-down; }
@@ -503,8 +499,8 @@ binds {
     // These binds are also affected by touchpad's natural-scroll, so these
     // example binds are "inverted", since we have natural-scroll enabled for
     // touchpads by default.
-    Mod+TouchpadScrollDown { spawn-sh "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    Mod+TouchpadScrollUp   { spawn-sh "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    Mod+TouchpadScrollDown { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    Mod+TouchpadScrollUp   { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
 
     // You can refer to workspaces by index. However, keep in mind that
     // niri is a dynamic workspace system, so these commands are kind of
