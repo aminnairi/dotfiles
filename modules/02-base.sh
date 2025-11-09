@@ -37,5 +37,4 @@ ensure_system_is_updated \
   && ensure_package_is_installed neovim \
   && ensure_package_is_installed chromium \
   && ensure_package_is_installed firefox \
-  && ensure_mkinitcpio_configured_for linux \
-  && ensure_grub_is_updated
+  && ensure_mkinitcpio_configured_for linux
