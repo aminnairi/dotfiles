@@ -13,7 +13,7 @@ input {
       // For more information, see xkeyboard-config(7).
       // For example:
       // layout "us,ru"
-      options "compose:caps"
+      options "compose:ralt"
 
       // If this section is empty, niri will fetch xkb settings
       // from org.freedesktop.locale1. You can control these using
