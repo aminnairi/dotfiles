@@ -40,4 +40,5 @@ ensure_system_is_updated \
   && ensure_package_is_installed cheat \
   && ensure_package_is_installed posting \
   && ensure_package_is_installed thefuck \
+  && ensure_package_is_installed dust \
   && ensure_mkinitcpio_configured_for linux
