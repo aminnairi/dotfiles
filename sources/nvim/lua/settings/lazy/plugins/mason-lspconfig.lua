@@ -31,7 +31,6 @@ return {
 			"svelte",
 			"templ",
       "ts_ls",
-			"vls",
 			"vuels",
 			"yamlls",
 		},
