@@ -53,7 +53,7 @@ and open issues, but I can't guarantee to be available to fix issues.
 
 ## ⚙️ Setup
 
-### Hardware Installation
+### 💻 Hardware Installation
 
 Coming soon...
 
