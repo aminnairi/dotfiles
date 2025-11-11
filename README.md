@@ -44,6 +44,7 @@ and open issues, but I can't guarantee to be available to fix issues.
 - `posting` for HTTP requests in the terminal
 - `ticker` for watching various tickers from stocks & cryptos using Yahoo Finance tickers
 - `slides` for presenting markdown files directly in the terminal
+- `duf` & `dust` for better replacement of `du` and `df`
 
 ## 📖 Requirements
 
