@@ -43,6 +43,7 @@ and open issues, but I can't guarantee to be available to fix issues.
 - Tons of Fish's abbreviations for `docker` & `docker-compose`
 - `posting` for HTTP requests in the terminal
 - `ticker` for watching various tickers from stocks & cryptos using Yahoo Finance tickers
+- `slides` for presenting markdown files directly in the terminal
 
 ## 📖 Requirements
 
