@@ -28,24 +28,21 @@ and open issues, but I can't guarantee to be available to fix issues.
   with `sudo` anymore
 - `tmux` for terminal multiplexing with automatic installation & update of
   plugins before starting `tmux`
-- `vifm` to manipulate your file system & `vicd` to change directory like a
-  hacker in your terminal
+- `yazi` to manipulate your file system using the `y` fish function
 - Enhanced `ls` command with colors & icons just like in VSCode
 - Enhanced `cat` command with syntactic colorization of files just like in
   VSCode
-- Enhanced `rm` command so that it does not really remove the file permanently
-  but put it in the trash can instead
 - Custom `privateinternetaccess` function that lets you choose a configuration
   from OpenVPN using `fzf` for starting a new `openvpn` tunnel quickly
 - Get the latest weather news right in your terminal with `wttr`
 - Support for both `intel` & `amd` architecture (pull requests welcome to add
   VirtualBox & VMware Guest Additions)
 - `ufw` enabled and ready to protect your personal life
-- `pass` Fish function to select and copy a password using Passbolt
 - Lots of programming language's interpreter & compiler installed (Python, Ruby,
   PHP, Julia, ...)
 - Tons of Fish's abbreviations for `docker` & `docker-compose`
 - `posting` for HTTP requests in the terminal
+- `ticker` for watching various tickers from stocks & cryptos using Yahoo Finance tickers
 
 ## 📖 Requirements
 
