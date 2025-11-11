@@ -39,5 +39,6 @@ ensure_system_is_updated &&
   ensure_package_is_installed duf &&
   ensure_package_is_installed wttr &&
   ensure_package_is_installed ticker &&
+  ensure_package_is_installed slides &&
   ensure_graphics_packages_installed &&
   ensure_mkinitcpio_configured_for linux
