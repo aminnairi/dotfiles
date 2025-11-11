@@ -11,12 +11,7 @@ ensure_system_is_updated \
   && ensure_package_is_installed linux-firmware \
   && ensure_package_is_installed grub \
   && ensure_package_is_installed efibootmgr \
-  && ensure_package_is_installed xf86-video-amdgpu \
-  && ensure_package_is_installed vulkan-radeon \
   && ensure_package_is_installed mesa \
-  && ensure_package_is_installed libva-mesa-driver \
-  && ensure_package_is_installed mesa-vdpau \
-  && ensure_package_is_installed amd-ucode \
   && ensure_package_is_installed syncthing \
   && ensure_package_is_installed man \
   && ensure_package_is_installed bpytop \
@@ -41,4 +36,5 @@ ensure_system_is_updated \
   && ensure_package_is_installed posting \
   && ensure_package_is_installed thefuck \
   && ensure_package_is_installed dust \
+  && ensure_graphics_packages_installed \
   && ensure_mkinitcpio_configured_for linux
