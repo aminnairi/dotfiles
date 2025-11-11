@@ -7,16 +7,14 @@ function log() {
 function ensure_user_folder_present() {
   local folder_path="$1"
 
-  if [[ -d "$folder_path" ]]
-  then
+  if [[ -d "$folder_path" ]]; then
     log "Dossier $folder_path déjà présent."
     return 0
   fi
 
   log "Création du dossier $folder_path..."
 
-  if ! mkdir --parent "$folder_path"
-  then
+  if ! mkdir --parent "$folder_path"; then
     log "Impossible de créer le dossier $folder_path."
     return 1
   fi
@@ -25,7 +23,7 @@ function ensure_user_folder_present() {
 }
 
 function is_installed() {
-  pacman -Q "$1" > /dev/null 2>&1
+  pacman -Q "$1" >/dev/null 2>&1
 }
 
 function is_global_git_configuration_set() {
@@ -39,14 +37,12 @@ function is_global_root_git_configuration_set() {
 function ensure_git_configuration_set() {
   ensure_package_is_installed git
 
-  if is_global_git_configuration_set "$1"
-  then
+  if is_global_git_configuration_set "$1"; then
     log "Configuration Git pour $1 déjà présente."
   else
-    if log "Configuration Git pour $1 manquante, configuration en cours..." \
-      && read -rp "Valeur pour $1 : " CONFIGURATION_VALUE \
-      && git config --global "$1" "$CONFIGURATION_VALUE"
-    then
+    if log "Configuration Git pour $1 manquante, configuration en cours..." &&
+      read -rp "Valeur pour $1 : " CONFIGURATION_VALUE &&
+      git config --global "$1" "$CONFIGURATION_VALUE"; then
       log "Configuration pour $1 installée."
     else
       log "Impossible de configurer $1 pour Git."
@@ -58,14 +54,12 @@ function ensure_git_configuration_set() {
 function ensure_root_git_configuration_set() {
   ensure_package_is_installed git
 
-  if is_global_root_git_configuration_set "$1"
-  then
+  if is_global_root_git_configuration_set "$1"; then
     log "Configuration administrateur Git pour $1 déjà présente."
   else
-    if log "Configuration administrateur Git pour $1 manquante, configuration en cours..." \
-      && read -rp "Valeur pour $1 : " CONFIGURATION_VALUE \
-      && sudo git config --global "$1" "$CONFIGURATION_VALUE"
-    then
+    if log "Configuration administrateur Git pour $1 manquante, configuration en cours..." &&
+      read -rp "Valeur pour $1 : " CONFIGURATION_VALUE &&
+      sudo git config --global "$1" "$CONFIGURATION_VALUE"; then
       log "Configuration administrateur pour $1 installée."
     else
       log "Impossible de configurer $1 pour l'adminsitrateur Git."
@@ -75,34 +69,31 @@ function ensure_root_git_configuration_set() {
 }
 
 function ensure_yay_installed() {
-  if ! is_installed yay
-  then
+  if ! is_installed yay; then
     log "Installation de yay..."
-    sudo pacman -Syyu --needed --noconfirm git base-devel \
-      && rm -rf /tmp/yay \
-      && mkdir --parent /tmp/yay \
-      && git clone https://aur.archlinux.org/yay /tmp/yay \
-      && cd /tmp/yay \
-      && makepkg -sri --noconfirm --needed \
-      && yay --version \
-      && cd ... || exit
+    sudo pacman -Syyu --needed --noconfirm git base-devel &&
+      rm -rf /tmp/yay &&
+      mkdir --parent /tmp/yay &&
+      git clone https://aur.archlinux.org/yay /tmp/yay &&
+      cd /tmp/yay &&
+      makepkg -sri --noconfirm --needed &&
+      yay --version &&
+      cd ... || exit
   fi
 }
 
 function ensure_system_is_updated() {
-  ensure_yay_installed \
-    && log "Mise à jour du système d'exploitation" \
-    && yay --noconfirm --needed
+  ensure_yay_installed &&
+    log "Mise à jour du système d'exploitation" &&
+    yay --noconfirm --needed
 }
 
 function ensure_package_is_installed() {
   ensure_yay_installed
 
-  if ! is_installed "$1"
-  then
+  if ! is_installed "$1"; then
     log "Installation de $1..."
-    if ! yay -S --noconfirm --needed "$1"
-    then
+    if ! yay -S --noconfirm --needed "$1"; then
       log "Echec lors de l'installation de $1."
       return 1
     fi
@@ -115,54 +106,50 @@ function ensure_package_is_installed() {
 }
 
 function ensure_package_group_is_installed() {
-    local group_name="$1"
-    local exit_status=0
+  local group_name="$1"
+  local exit_status=0
 
-    log "Vérification du groupe de paquets : $group_name"
+  log "Vérification du groupe de paquets : $group_name"
 
-    members=$(pacman -Sg "$group_name" 2>/dev/null | awk '{print $2}')
+  members=$(pacman -Sg "$group_name" 2>/dev/null | awk '{print $2}')
 
-    if [[ -z "$members" ]]
-    then
-      log "Le groupe '$group_name' n'existe pas ou ne contient aucun paquet." >&2
-      return 1
+  if [[ -z "$members" ]]; then
+    log "Le groupe '$group_name' n'existe pas ou ne contient aucun paquet." >&2
+    return 1
+  fi
+
+  missing_packages=""
+
+  for pkg in $members; do
+    if ! is_installed "$pkg"; then
+      missing_packages+="$pkg "
+      exit_status=1
     fi
+  done
 
-    missing_packages=""
-
-    for pkg in $members; do
-      if ! is_installed "$pkg"
-      then
-        missing_packages+="$pkg "
-        exit_status=1
-      fi
+  if [ $exit_status -eq 0 ]; then
+    log "Le groupe '$group_name' est COMPLÈTEMENT installé."
+    return 0
+  else
+    log "Le groupe '$group_name' est INCOMPLET. Paquets manquants :"
+    for pkg in $missing_pkgs; do
+      ensure_package_is_installed "$pkg"
     done
-
-    if [ $exit_status -eq 0 ]; then
-        log "Le groupe '$group_name' est COMPLÈTEMENT installé."
-        return 0
-    else
-        log "Le groupe '$group_name' est INCOMPLET. Paquets manquants :"
-        for pkg in $missing_pkgs
-        do
-          ensure_package_is_installed "$pkg"
-        done
-    fi
+  fi
 }
 
 function synchronize_user_folder() {
-  log "Synchronisation du dossier $1 vers $2..." \
-    && rsync --archive --quiet --delete "$1" "$2"
+  log "Synchronisation du dossier $1 vers $2..." &&
+    rsync --archive --quiet --delete "$1" "$2"
 }
 
 function synchronize_root_folder() {
-  log "Synchronisation du dossier $1 vers $2..." \
-    && sudo rsync --archive --quiet --delete "$1" "$2"
+  log "Synchronisation du dossier $1 vers $2..." &&
+    sudo rsync --archive --quiet --delete "$1" "$2"
 }
 
 function ensure_group_is_installed() {
-  if groups "$USER" | grep "$1" > /dev/null 2>&1
-  then
+  if groups "$USER" | grep "$1" >/dev/null 2>&1; then
     log "Groupe $1 déjà présent pour l'utilisateur $USER."
   else
     log "Groupe $1 absent pour l'utilisateur $USER, configuration..."
@@ -176,7 +163,7 @@ function ensure_service_active() {
   if ! systemctl is-enabled --quiet "${service_name}"; then
     log "Le service '${service_name}' n'est pas activé. Activation en cours..."
 
-    if ! sudo systemctl enable "${service_name}" > /dev/null 2>&1; then
+    if ! sudo systemctl enable "${service_name}" >/dev/null 2>&1; then
       log "Impossible d'activer le service '${service_name}'."
     else
       log "Service $service_name activé."
@@ -188,8 +175,8 @@ function ensure_service_active() {
   if ! systemctl is-active --quiet "${service_name}"; then
     log "Le service '${service_name}' n'est pas démarré. Démarrage en cours..."
 
-    if ! sudo systemctl start "${service_name}" > /dev/null 2>&1; then
-        log "Impossible de démarrer le service '${service_name}'."
+    if ! sudo systemctl start "${service_name}" >/dev/null 2>&1; then
+      log "Impossible de démarrer le service '${service_name}'."
     else
       log "Service '${service_name}' démarré."
     fi
@@ -201,12 +188,10 @@ function ensure_service_active() {
 function ensure_user_service_active() {
   local service_name="$1"
 
-  if ! systemctl --user is-enabled --quiet "${service_name}"
-  then
+  if ! systemctl --user is-enabled --quiet "${service_name}"; then
     log "Le service '${service_name}' n'est pas activé. Activation en cours..."
 
-    if ! systemctl --quiet --user enable "${service_name}"
-    then
+    if ! systemctl --quiet --user enable "${service_name}"; then
       log "Impossible d'activer le service '${service_name}'."
     else
       log "Service $service_name activé."
@@ -215,13 +200,11 @@ function ensure_user_service_active() {
     log "Service $service_name déjà activé."
   fi
 
-  if ! systemctl --user is-active --quiet "${service_name}"
-  then
+  if ! systemctl --user is-active --quiet "${service_name}"; then
     log "Le service '${service_name}' n'est pas démarré. Démarrage en cours..."
 
-    if ! systemctl --quiet --user start "${service_name}"
-    then
-        log "Impossible de démarrer le service '${service_name}'."
+    if ! systemctl --quiet --user start "${service_name}"; then
+      log "Impossible de démarrer le service '${service_name}'."
     else
       log "Service '${service_name}' démarré."
     fi
@@ -234,13 +217,11 @@ function ensure_ssh_key_installed() {
   # Installing ssk-keygen and other OpenSSH related packages
   ensure_package_is_installed openssh
 
-  if ls -d ~/.ssh/*.pub > /dev/null 2>&1
-  then
+  if ls -d ~/.ssh/*.pub >/dev/null 2>&1; then
     log "Clé SSH configurée sur ce système d'exploitation."
   else
     log "Aucune clé SSH configurée sur ce système d'exploitation."
-    if ! ssh-keygen -t ed25519
-    then
+    if ! ssh-keygen -t ed25519; then
       log "Impossible d'installer la clé SSH."
       return 1
     fi
@@ -248,16 +229,14 @@ function ensure_ssh_key_installed() {
 }
 
 function ensure_shell_installed() {
-  if grep "^$USER:.*:.*/$1$" /etc/passwd > /dev/null 2>&1
-  then
+  if grep "^$USER:.*:.*/$1$" /etc/passwd >/dev/null 2>&1; then
     log "Shell $1 déjà installé pour l'utilisateur $USER."
     return 0
   fi
 
   log "Installation du shell $1 pour $USER."
 
-  if sudo chsh -s fish "$USER"
-  then
+  if sudo chsh -s fish "$USER"; then
     log "Shell $1 installé pour $USER."
   else
     log "Echec lors de l'installation du shell $1 pour l'utilisateur $USER."
@@ -271,12 +250,10 @@ function ensure_git_folder_installed_for_user() {
 
   local full_url="https://github.com/$git_path"
 
-  if [[ -d "$repo_dir" ]]
-  then
+  if [[ -d "$repo_dir" ]]; then
     log "Dossier $repo_dir existant, mise à jour..."
 
-    if git -C "$repo_dir" pull --quiet
-    then
+    if git -C "$repo_dir" pull --quiet; then
       log "Dépôt $repo_dir mis à jour."
       return 0
     else
@@ -287,8 +264,7 @@ function ensure_git_folder_installed_for_user() {
 
   log "Dépôt $repo_dir innexistant, installation..."
 
-  if git clone --quiet "$full_url" "$repo_dir"
-  then
+  if git clone --quiet "$full_url" "$repo_dir"; then
     log "Dépôt cloné avec succès dans $repo_dir."
     return 0
   else
@@ -303,12 +279,10 @@ function ensure_git_folder_installed_for_root() {
 
   local full_url="https://github.com/$git_path"
 
-  if sudo test -d "$repo_dir"
-  then
+  if sudo test -d "$repo_dir"; then
     log "Dossier $repo_dir existant, mise à jour..."
 
-    if sudo git -C "$repo_dir" pull --quiet
-    then
+    if sudo git -C "$repo_dir" pull --quiet; then
       log "Dépôt $repo_dir mis à jour."
       return 0
     else
@@ -319,8 +293,7 @@ function ensure_git_folder_installed_for_root() {
 
   log "Dépôt $repo_dir innexistant, installation..."
 
-  if sudo git clone --quiet "$full_url" "$repo_dir"
-  then
+  if sudo git clone --quiet "$full_url" "$repo_dir"; then
     log "Dépôt cloné pour l'administrateur avec succès dans $repo_dir."
     return 0
   else
@@ -334,14 +307,12 @@ function ensure_gnome_setting_set() {
   local setting_key="$2"
   local setting_value="$3"
 
-  if gsettings get "$setting_schema" "$setting_key" > /dev/null 2>&1
-  then
+  if gsettings get "$setting_schema" "$setting_key" >/dev/null 2>&1; then
     log "Paramètre $setting_schema déjà paramétré."
     return 0
   fi
 
-  if ! gsettings set "$setting_schema" "$setting_key" "$setting_value"
-  then
+  if ! gsettings set "$setting_schema" "$setting_key" "$setting_value"; then
     log "Echec lor de la configuration du paramètre $1."
     return 1
   fi
@@ -352,36 +323,78 @@ function ensure_gnome_setting_set() {
 function ensure_mkinitcpio_configured_for() {
   local kernel="$1"
 
-  if sudo mkinitcpio -p "$kernel"
-  then
+  if sudo mkinitcpio -p "$kernel"; then
     log "Noyau $kernel installé."
   else
     log "Echec lors de l'installation du noyau $kernel, ne redémarrez surtout pas !"
   fi
 
-	if ! sudo grub-mkconfig -o /boot/grub/grub.cfg
-	then
-		log "Erreur lors de la configuration du noyau dans Grub, ne redemarrez pas !"
-		return 1
-	fi
+  if ! sudo grub-mkconfig -o /boot/grub/grub.cfg; then
+    log "Erreur lors de la configuration du noyau dans Grub, ne redemarrez pas !"
+    return 1
+  fi
 
-	log "Grub configure pour le noyau linux avec succes."
+  log "Grub configure pour le noyau linux avec succes."
 }
 
 function ensure_github_cli_authenticated() {
-  if gh auth status > /dev/null 2>&1
-  then
+  if gh auth status >/dev/null 2>&1; then
     log "Déjà connecté à GitHub CLI."
     return 0
   fi
 
   log "Déconnecté de GitHub CLI, connexion..."
 
-  if ! gh auth login
-  then
+  if ! gh auth login; then
     log "Echec d'authentification à GitHub CLI."
     return 1
   else
     log "Connecté à GitHub CLI avec succès."
   fi
+}
+
+function ensure_graphics_packages_installed() {
+  ensure_package_is_installed pciutils
+  log "Détection du matériel graphique..."
+
+  local vendor
+  local lspci_output
+  lspci_output=$(lspci | grep -i 'vga\|display')
+
+  if echo "$lspci_output" | grep -iq "NVIDIA"; then
+    vendor="NVIDIA"
+  elif echo "$lspci_output" | grep -iq "AMD\|ATI"; then
+    vendor="AMD"
+  elif echo "$lspci_output" | grep -iq "Intel"; then
+    vendor="Intel"
+  else
+    log "Impossible de détecter le fournisseur de la carte graphique. Aucun paquet graphique ne sera installé."
+    return 0
+  fi
+
+  log "Fournisseur de carte graphique détecté : $vendor"
+
+  case $vendor in
+  "AMD")
+    log "Installation des paquets pour AMD..."
+    ensure_package_is_installed xf86-video-amdgpu &&
+      ensure_package_is_installed vulkan-radeon &&
+      ensure_package_is_installed libva-mesa-driver &&
+      ensure_package_is_installed mesa-vdpau &&
+      ensure_package_is_installed amd-ucode
+    ;;
+  "Intel")
+    log "Installation des paquets pour Intel..."
+    ensure_package_is_installed xf86-video-intel &&
+      ensure_package_is_installed vulkan-intel &&
+      ensure_package_is_installed intel-ucode &&
+      ensure_package_is_installed libva-intel-driver
+    ;;
+  "NVIDIA")
+    log "Installation des paquets pour NVIDIA..."
+    ensure_package_is_installed nvidia &&
+      ensure_package_is_installed nvidia-utils &&
+      ensure_package_is_installed nvidia-settings
+    ;;
+  esac
 }
