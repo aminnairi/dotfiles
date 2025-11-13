@@ -1,3 +1,3 @@
-function v
+function n
     nvim
 end
