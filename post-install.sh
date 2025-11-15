@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# TODO: ensure that reflector is run when installing packages
 source ./modules/00-library.sh &&
   source ./modules/01-git.sh &&
   source ./modules/02-base.sh &&
