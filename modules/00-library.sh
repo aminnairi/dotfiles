@@ -78,7 +78,7 @@ function ensure_yay_installed() {
       cd /tmp/yay &&
       makepkg -sri --noconfirm --needed &&
       yay --version &&
-      cd ... || exit
+      cd - || exit
   fi
 }
 
