@@ -398,3 +398,26 @@ function ensure_graphics_packages_installed() {
     ;;
   esac
 }
+
+function ensure_npm_package_installed() {
+  if ! command -v "$1"; then
+    log "Installation de $1..."
+    if ! sudo npm install --global "$1" >/dev/null 2>&1; then
+      log "Echec d'installation de $1."
+      exit 1
+    fi
+
+    log "Installation de $1 résussie."
+    return
+  fi
+
+  log "$1 déjà installé, mise-à-jour..."
+
+  if ! sudo npm install --global "$1" >/dev/null 2>&1; then
+    log "Echec de la mise à jour de $1."
+    exit 1
+  fi
+
+  log "$1 mis-à-jour."
+  exit 1
+}
