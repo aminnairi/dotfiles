@@ -5,6 +5,9 @@ if status is-interactive
     # Set the editor to use vim
     set --export --global EDITOR nvim
 
+    # Add Rust global crates in the global path
+    fish_add_path ~/.cargo/bin
+
     # Add ruby in the global path for Neovim
     fish_add_path ~/.local/share/gem/ruby/3.0.0/bin
 
