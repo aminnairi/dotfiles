@@ -378,21 +378,25 @@ function ensure_graphics_packages_installed() {
   "AMD")
     log "Installation des paquets pour AMD..."
     ensure_package_is_installed xf86-video-amdgpu &&
+      ensure_package_is_installed mesa &&
+      ensure_package_is_installed lib32-mesa &&
       ensure_package_is_installed vulkan-radeon &&
-      ensure_package_is_installed libva-mesa-driver &&
-      ensure_package_is_installed mesa-vdpau &&
+      ensure_package_is_installed lib32-vulkan-radeon &&
       ensure_package_is_installed amd-ucode
     ;;
   "Intel")
     log "Installation des paquets pour Intel..."
     ensure_package_is_installed xf86-video-intel &&
+      ensure_package_is_installed mesa &&
+      ensure_package_is_installed lib32-mesa &&
       ensure_package_is_installed vulkan-intel &&
-      ensure_package_is_installed intel-ucode &&
-      ensure_package_is_installed libva-intel-driver
+      ensure_package_is_installed intel-ucode
     ;;
   "NVIDIA")
     log "Installation des paquets pour NVIDIA..."
     ensure_package_is_installed nvidia &&
+      ensure_package_is_installed mesa &&
+      ensure_package_is_installed lib32-mesa &&
       ensure_package_is_installed nvidia-utils &&
       ensure_package_is_installed nvidia-settings
     ;;
