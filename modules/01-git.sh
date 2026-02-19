@@ -1,6 +1,7 @@
 #!/bin/bash
 
-ensure_package_is_installed git &&
+sudo pacman-key --refresh-keys &&
+  ensure_package_is_installed git &&
   ensure_package_is_installed github-cli &&
   ensure_git_configuration_set "user.name" &&
   ensure_git_configuration_set "user.email" &&
