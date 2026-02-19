@@ -84,8 +84,18 @@ function ensure_yay_installed() {
 
 function ensure_system_is_updated() {
   ensure_yay_installed &&
+    log "Suppression du cache des paquets" &&
+    sudo rm -rf /var/cache/pacman/pkg/* &&
+    log "Mise à jour de la liste des clés de confiance" &&
+    sudo pacman -Sc --noconfirm archlinux-keyring &&
+    log "Réinitialisation du trousseau de clés de confiance" &&
+    sudo pacman-key --init &&
+    log "Population du trousseau de clés avec les clés de confiance Archlinux" &&
+    sudo pacman-key --populate archlinux &&
+    log "Réinstallation des clés Archlinux" &&
+    sudo pacman -Syyu --noconfirm archlinux-keyring &&
     log "Mise à jour du système d'exploitation" &&
-    yay --noconfirm --needed
+    yay --noconfirm
 }
 
 function ensure_package_is_installed() {
