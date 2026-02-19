@@ -1,8 +1,6 @@
 #!/bin/bash
 
-ensure_system_is_updated &&
-  ensure_package_is_installed sudo &&
-  ensure_git_configuration_set "user.name" &&
+ensure_git_configuration_set "user.name" &&
   ensure_git_configuration_set "user.email" &&
   ensure_git_configuration_set "init.defaultbranch" &&
   ensure_ssh_key_installed &&
