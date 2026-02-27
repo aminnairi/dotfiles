@@ -15,4 +15,5 @@ source ./modules/00-library.sh &&
   source ./modules/11-syncthing.sh &&
   source ./modules/12-yazi.sh &&
   source ./modules/13-rust.sh &&
-  source ./modules/14-steam.sh
+  source ./modules/14-steam.sh &&
+  source ./modules/15-dns-over-tls.sh
