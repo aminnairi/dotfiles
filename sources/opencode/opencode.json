@@ -1,0 +1,105 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "logLevel": "INFO",
+  "share": "auto",
+  "provider": {
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LM Studio (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:1234/v1"
+      },
+      "models": {
+        "qwen/qwen3.5-9b": {
+          "name": "Qwen 3.5 9b (local)"
+        }
+      }
+    }
+  },
+  "plugin": [
+    "@mohak34/opencode-notifier@latest"
+  ],
+  "tools": {
+    "read": true,
+    "write": true,
+    "edit": true,
+    "glob": true,
+    "grep": true,
+    "bash": true,
+    "websearch": true,
+    "webfetch": true,
+    "question": true,
+    "skill": true,
+    "task": true,
+    "todoread": true,
+    "todowrite": true
+  },
+  "permission": {
+    "edit": "allow",
+    "bash": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "skill": {
+      "*": "allow"
+    }
+  },
+  "formatter": {
+    "prettier": {
+      "disabled": false
+    },
+    "eslint": {
+      "disabled": false
+    },
+    "gofmt": {
+      "disabled": false
+    },
+    "rustfmt": {
+      "disabled": false
+    }
+  },
+  "command": {},
+  "agent": {
+    "developer": {
+      "mode": "primary",
+      "temperature": 0.2,
+      "description": "A developer with experience in developing Web applications",
+      "prompt": "./agents/developer.md",
+      "permission": {
+        "read": "allow",
+        "edit": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "bash": "allow",
+        "task": "allow",
+        "external_directory": "deny",
+        "todowrite": "allow",
+        "todoread": "allow",
+        "question": "allow",
+        "webfetch": "allow",
+        "websearch": "allow",
+        "codesearch": "allow",
+        "lsp": "allow",
+        "skill": "allow"
+      }
+    }
+  },
+  "default_agent": "developer",
+  "watcher": {
+    "ignore": [
+      "node_modules/**",
+      ".git/**",
+      "dist/**",
+      "build/**",
+      "*.log",
+      ".cache/**"
+    ]
+  },
+  "compaction": {
+    "auto": true,
+    "prune": true
+  },
+  "enterprise": {
+    "url": ""
+  }
+}
