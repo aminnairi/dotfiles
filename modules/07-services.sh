@@ -1,3 +1,5 @@
 #!/bin/bash
 
-ensure_service_active acpid
+source ./modules/00-library.sh &&
+  ensure_service_active acpid
+

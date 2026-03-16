@@ -1,6 +1,7 @@
 #!/bin/bash
 
-ensure_package_is_installed fish &&
+source ./modules/00-library.sh &&
+  ensure_package_is_installed fish &&
   ensure_package_is_installed eza &&
   ensure_package_is_installed bat &&
   ensure_package_is_installed fastfetch &&

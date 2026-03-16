@@ -1,6 +1,7 @@
 #!/bin/bash
 
-ensure_package_is_installed yazi &&
+source ./modules/00-library.sh &&
+  ensure_package_is_installed yazi &&
   ensure_package_is_installed ffmpeg &&
   ensure_package_is_installed 7zip &&
   ensure_package_is_installed jq &&

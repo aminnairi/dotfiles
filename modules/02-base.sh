@@ -1,6 +1,7 @@
 #!/bin/bash
 
-ensure_git_configuration_set "user.name" &&
+source ./modules/00-library.sh &&
+  ensure_git_configuration_set "user.name" &&
   ensure_git_configuration_set "user.email" &&
   ensure_git_configuration_set "init.defaultbranch" &&
   ensure_ssh_key_installed &&

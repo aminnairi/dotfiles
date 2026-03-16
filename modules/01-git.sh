@@ -1,6 +1,7 @@
 #!/bin/bash
 
-ensure_system_is_updated &&
+source ./modules/00-library.sh &&
+  ensure_system_is_updated &&
   ensure_package_is_installed git &&
   ensure_package_is_installed github-cli &&
   ensure_git_configuration_set "user.name" &&

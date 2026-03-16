@@ -1,6 +1,7 @@
 #!/bin/sh
 
-ensure_package_is_installed steam &&
+source ./modules/00-library.sh &&
+  ensure_package_is_installed steam &&
   ensure_package_is_installed bluez &&
   ensure_package_is_installed bluez-utils &&
   ensure_package_is_installed xone-dkms
