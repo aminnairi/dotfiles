@@ -19,4 +19,6 @@ source ./modules/00-library.sh &&
   ensure_git_folder_installed_for_user oh-my-fish/theme-agnoster ~/.local/share/omf/themes/agnoster &&
   ensure_git_folder_installed_for_root oh-my-fish/oh-my-fish /root/.local/share/omf &&
   ensure_git_folder_installed_for_root oh-my-fish/theme-agnoster /root/.local/share/omf/themes/agnoster &&
-  ensure_shell_installed fish
+  ensure_shell_installed fish &&
+  omf install bobthefish &&
+  omf update
