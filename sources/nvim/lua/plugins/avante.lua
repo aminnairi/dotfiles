@@ -1,23 +1,16 @@
 return {
   "yetone/avante.nvim",
   opts = {
-    ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-    provider = "ollama",
-    auto_suggestions_provider = "ollama",
+    provider = "openrouter",
+    auto_suggestions_provider = "openrouter",
     providers = {
-      claude = {
-        endpoint = "https://api.anthropic.com",
-        api_key_name = "ANTHROPIC_API_KEY",
+      openrouter = {
+        __inherited_from = "openai",
+        endpoint = "https://openrouter.ai/api/v1",
+        model = "openrouter/hunter-alpha",
         extra_request_body = {
           temperature = 0,
-          max_tokens = 8192,
-        },
-      },
-      ollama = {
-        endpoint = "http://ollama.nairi.local",
-        model = "qwen2.5-coder:7b",
-        extra_request_body = {
-          temperature = 0,
+          max_tokens = 32768,
         },
       },
     },
