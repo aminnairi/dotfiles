@@ -1,4 +1,9 @@
 if status is-interactive
+    # Load the environment variable (specific to Avante Neovim plugin)
+    if test -f ~/.env
+        source ~/.env
+    end
+
     # Enable vi-mode
     fish_vi_key_bindings
 
