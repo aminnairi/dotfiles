@@ -14,7 +14,7 @@ return {
       openrouter = {
         __inherited_from = "openai",
         endpoint = "https://openrouter.ai/api/v1",
-        model = "z-ai/glm-4.5-air:free",
+        model = "stepfun/step-3.5-flash:free",
         extra_request_body = {
           temperature = 0,
           max_tokens = 32768,
