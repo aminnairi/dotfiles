@@ -4,13 +4,27 @@ return {
     provider = "openrouter",
     auto_suggestions_provider = "openrouter",
     providers = {
+      ollama = {
+        endpoint = "http://ollama.nairi.local",
+        model = "qwen2.5-coder:7b",
+        extra_request_body = {
+          temperature = 0,
+        },
+      },
       openrouter = {
         __inherited_from = "openai",
         endpoint = "https://openrouter.ai/api/v1",
-        model = "openrouter/hunter-alpha",
+        model = "z-ai/glm-4.5-air:free",
         extra_request_body = {
           temperature = 0,
           max_tokens = 32768,
+        },
+      },
+      claude = {
+        endpoint = "https://api.anthropic.com",
+        extra_request_body = {
+          temperature = 0,
+          max_tokens = 8192,
         },
       },
     },
