@@ -89,6 +89,62 @@ cd ~/Documents/git/github.com/aminnairi/dotfiles
 bash post-install.sh
 ```
 
+## 🚀 Running the Installation Script
+
+### 📋 Prerequisites
+
+Before running the installation script, ensure you have:
+
+1. **Arch Linux** installed
+2. **Fish shell** installed: `sudo pacman -S fish`
+3. **Git** installed: `sudo pacman -S git`
+4. **Sudo privileges** for your user account
+
+### 🛠️ Installation Methods
+
+#### Method 1: Using the main script (Recommended)
+
+The main script provides an interactive interface for choosing different configurations:
+
+```bash
+# Run in interactive mode (recommended)
+bash main.sh
+
+# Run with a specific configuration file
+bash main.sh ansible/amd-gnome.yml
+```
+
+#### Method 2: Using the post-install script
+
+The post-install script runs all modules sequentially:
+
+```bash
+bash post-install.sh
+```
+
+### 📝 What to Expect During Installation
+
+1. **System updates**: The script will update your system packages
+2. **Module execution**: Each module installs specific software and configurations
+3. **Plugin installations**: Neovim and Tmux plugins will be installed on first run
+4. **Configuration setup**: Fish shell configurations and aliases will be set up
+5. **Service configuration**: System services will be enabled and configured
+
+### ⚠️ Important Notes
+
+- **Reboot required**: After installation, reboot your system for all changes to take effect
+- **First-time software runs**: Some applications (like Neovim and Tmux) need to be run once to install their plugins
+- **SSH setup**: The script will prompt you to create SSH keys if none exist
+- **Backup important files**: Consider backing up existing configurations before installation
+
+### 🔧 Post-Installation Steps
+
+1. **Reboot your system**: `sudo reboot`
+2. **Initialize Neovim plugins**: Run `nvim` (this will install plugins automatically)
+3. **Initialize Tmux plugins**: Run `tmux` (this will install plugins automatically)
+4. **Verify installations**: Check that all installed software works correctly
+5. **Customize configurations**: Edit configuration files in `~/.config/` as needed
+
 ## ℹ️ Informations
 
 ### ✒️ Neovim
