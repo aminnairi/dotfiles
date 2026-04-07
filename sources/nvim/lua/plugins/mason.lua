@@ -2,8 +2,9 @@ return {
   "mason-org/mason.nvim",
   opts = {
     ensure_installed = {
-      -- LSP Servers
-      "typescript-language-server", -- TypeScript/JavaScript LSP
+       -- LSP Servers
+       "angular-language-server", -- Angular Language Server
+       "typescript-language-server", -- TypeScript/JavaScript LSP
       "eslint-lsp", -- ESLint LSP for linting
       "tailwindcss-language-server", -- Tailwind CSS LSP
       "css-lsp", -- CSS LSP
