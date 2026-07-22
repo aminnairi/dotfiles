@@ -93,7 +93,7 @@ function ensure_system_is_updated() {
     log "Population du trousseau de clés avec les clés de confiance Archlinux" &&
     sudo pacman-key --populate archlinux &&
     log "Réinstallation des clés Archlinux" &&
-    sudo pacman -Syyu --noconfirm archlinux-keyring &&
+    sudo pacman -Syy --noconfirm archlinux-keyring &&
     log "Mise à jour du système d'exploitation" &&
     yay --noconfirm
 }
