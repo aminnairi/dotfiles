@@ -7,6 +7,7 @@ source ./modules/00-library.sh &&
   ensure_package_is_installed fastfetch &&
   ensure_package_is_installed openvpn &&
   ensure_package_is_installed fzf &&
+  ensure_package_is_installed omf &&
   rm -rf ~/.config/fish/themes &&
   ensure_user_folder_present ~/.config/fish &&
   synchronize_user_folder ./sources/fish/ ~/.config/fish &&
@@ -19,6 +20,8 @@ source ./modules/00-library.sh &&
   ensure_git_folder_installed_for_user oh-my-fish/theme-agnoster ~/.local/share/omf/themes/agnoster &&
   ensure_git_folder_installed_for_root oh-my-fish/oh-my-fish /root/.local/share/omf &&
   ensure_git_folder_installed_for_root oh-my-fish/theme-agnoster /root/.local/share/omf/themes/agnoster &&
-  ensure_shell_installed fish &&
-  omf install bobthefish &&
-  omf update
+  ensure_shell_installed fish
+
+# TODO: find a way to ensure omf is both installed and works in the script
+# omf install bobthefish &&
+# omf update
